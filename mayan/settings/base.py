@@ -181,9 +181,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-Hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -198,10 +198,14 @@ STATIC_URL = '/static/'
 
 # ------------ Custom settings section ----------
 
-PROJECT_TITLE = mayan.__title__
-PROJECT_WEBSITE = 'http://www.mayan-edms.com'
-PROJECT_COPYRIGHT = mayan.__copyright__
-PROJECT_LICENSE = mayan.__license__
+# PROJECT_TITLE = mayan.__title__
+# PROJECT_WEBSITE = 'http://www.mayan-edms.com'
+# PROJECT_COPYRIGHT = mayan.__copyright__
+# PROJECT_LICENSE = mayan.__license__
+PROJECT_TITLE = "奇瑞400坐席知识库"
+PROJECT_WEBSITE = 'http://kb.tu2e.com'
+PROJECT_COPYRIGHT = "诺码科技版权所有 &cp; 2017~2018"
+PROJECT_LICENSE = "GPL"
 
 LANGUAGES = (
     ('ar', _('Arabic')),
@@ -226,7 +230,7 @@ LANGUAGES = (
     ('sl', _('Slovenian')),
     ('tr', _('Turkish')),
     ('vi', _('Vietnamese (Viet Nam)')),
-    ('zh-cn', _('Chinese (China)')),
+    ('zh-Hans', _('Chinese (China)')),
 )
 
 SITE_ID = 1
