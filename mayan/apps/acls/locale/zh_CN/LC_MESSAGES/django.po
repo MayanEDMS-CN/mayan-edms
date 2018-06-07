@@ -27,20 +27,20 @@ msgstr "权限"
 
 #: apps.py:29 models.py:47
 msgid "Role"
-msgstr ""
+msgstr "角色"
 
 #: links.py:31
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 #: links.py:43
 msgid "New ACL"
-msgstr ""
+msgstr "新建访问控制列表"
 
 #: managers.py:57 managers.py:86
 #, python-format
 msgid "Insufficient access for: %s"
-msgstr ""
+msgstr "无权访问：%s"
 
 #: models.py:54
 msgid "Access entry"
@@ -53,7 +53,7 @@ msgstr "多个访问入口"
 #: models.py:59
 #, python-format
 msgid "Permissions \"%(permissions)s\" to role \"%(role)s\" for \"%(object)s\""
-msgstr ""
+msgstr "为角色 \"%(role)s\" 分配的权限 \"%(permissions)s\"，适用于对象 \"%(object)s\""
 
 #: models.py:76
 msgid "None"
@@ -74,81 +74,81 @@ msgstr "查看访问控制列表"
 #: serializers.py:24 serializers.py:132
 msgid ""
 "API URL pointing to the list of permissions for this access control list."
-msgstr ""
+msgstr "指向访问控制列表权限的API URL"
 
 #: serializers.py:57
 msgid ""
 "API URL pointing to a permission in relation to the access control list to "
 "which it is attached. This URL is different than the canonical workflow URL."
-msgstr ""
+msgstr "指向相关附件访问控制列表权限的API URL，此URL与标准工作流的URL不同。"
 
 #: serializers.py:87
 msgid "Primary key of the new permission to grant to the access control list."
-msgstr ""
+msgstr "为访问控制列表授权的主键"
 
 #: serializers.py:111 serializers.py:187
 #, python-format
 msgid "No such permission: %s"
-msgstr ""
+msgstr "无此权限：%s"
 
 #: serializers.py:126
 msgid ""
 "Comma separated list of permission primary keys to grant to this access "
 "control list."
-msgstr ""
+msgstr "为访问控制列表授权的主键（以逗号分隔）"
 
 #: serializers.py:138
 msgid "Primary keys of the role to which this access control list binds to."
-msgstr ""
+msgstr "此访问控制列表所绑定角色的主键"
 
 #: views.py:74
 #, python-format
 msgid "New access control lists for: %s"
-msgstr ""
+msgstr "为 %s 创建新访问控制列表"
 
 #: views.py:101
 #, python-format
 msgid "Delete ACL: %s"
-msgstr ""
+msgstr "删除访问控制列表：%s"
 
 #: views.py:139
 #, python-format
 msgid "Access control lists for: %s"
-msgstr ""
+msgstr "%s 的访问控制列表"
 
 #: views.py:151
 msgid "Available permissions"
-msgstr ""
+msgstr "可用权限"
 
 #: views.py:152
 msgid "Granted permissions"
-msgstr ""
+msgstr "已分配权限"
 
 #: views.py:207
 #, python-format
 msgid "Role \"%(role)s\" permission's for \"%(object)s\""
-msgstr ""
+msgstr "为角色 \"%(role)s\" 分配的权限，适用于对象 \"%(object)s\""
 
 #: views.py:227
 msgid "Disabled permissions are inherited from a parent object."
-msgstr ""
+msgstr "父级对象取消的授权会影响下级对象。"
 
 #: workflow_actions.py:25
 msgid "Object type"
-msgstr ""
+msgstr "对象类型"
 
 #: workflow_actions.py:28
 msgid "Type of the object for which the access will be modified."
-msgstr ""
+msgstr "被修改权限的对象的类型"
 
 #: workflow_actions.py:34
 msgid "Object ID"
-msgstr ""
+msgstr "对象ID"
 
 #: workflow_actions.py:37
 msgid ""
 "Numeric identifier of the object for which the access will be modified."
-msgstr ""
+msgstr "被修改对象的数字化标识"
 
 #: workflow_actions.py:42
 msgid "Roles"
@@ -156,17 +156,17 @@ msgstr "角色"
 
 #: workflow_actions.py:44
 msgid "Roles whose access will be modified."
-msgstr ""
+msgstr "被修改权限的角色"
 
 #: workflow_actions.py:51
 msgid ""
 "Permissions to grant/revoke to/from the role for the object selected above."
-msgstr ""
+msgstr "对以上所选对象的角色进行取消或授权的权限"
 
 #: workflow_actions.py:59
 msgid "Grant access"
-msgstr ""
+msgstr "授权访问"
 
 #: workflow_actions.py:129
 msgid "Revoke access"
-msgstr ""
+msgstr "取消授权"

@@ -20,7 +20,7 @@ msgstr ""
 
 #: apps.py:77 permissions_runtime.py:7 settings.py:11
 msgid "Common"
-msgstr ""
+msgstr "通用"
 
 #: apps.py:82
 msgid "Anonymous"
@@ -28,7 +28,7 @@ msgstr "匿名用户"
 
 #: apps.py:94 models.py:24
 msgid "Namespace"
-msgstr ""
+msgstr "命名空间"
 
 #: apps.py:98 mixins.py:245
 msgid "Object"
@@ -36,19 +36,19 @@ msgstr "对象"
 
 #: apps.py:102
 msgid "Date and time"
-msgstr ""
+msgstr "日期和时间"
 
 #: apps.py:106 models.py:37
 msgid "Result"
-msgstr ""
+msgstr "结果"
 
 #: classes.py:222
 msgid "Available attributes: \n"
-msgstr ""
+msgstr "可用属性：\n"
 
 #: dashboards.py:7
 msgid "Main"
-msgstr ""
+msgstr "首要"
 
 #: forms.py:27
 msgid "Selection"
@@ -56,12 +56,12 @@ msgstr "选择"
 
 #: forms.py:143
 msgid "Filter"
-msgstr ""
+msgstr "过滤"
 
 #: generics.py:136
 #, python-format
 msgid "Unable to transfer selection: %s."
-msgstr ""
+msgstr "无法传输所选：%s。"
 
 #: generics.py:160
 msgid "Add"
@@ -74,76 +74,76 @@ msgstr "移除"
 #: generics.py:353
 #, python-format
 msgid "%(object)s not created, error: %(error)s"
-msgstr ""
+msgstr "%(object)s 未被创建，错误信息：%(error)s"
 
 #: generics.py:364
 #, python-format
 msgid "%(object)s created successfully."
-msgstr ""
+msgstr "%(object)s 已成功创建"
 
 #: generics.py:393
 #, python-format
 msgid "%(object)s not deleted, error: %(error)s."
-msgstr ""
+msgstr "%(object)s 未被删除，错误信息：%(error)s"
 
 #: generics.py:404
 #, python-format
 msgid "%(object)s deleted successfully."
-msgstr ""
+msgstr "%(object)s 已成功删除。"
 
 #: generics.py:450
 #, python-format
 msgid "%(object)s not updated, error: %(error)s."
-msgstr ""
+msgstr "%(object)s 未被更新，错误信息：%(error)s"
 
 #: generics.py:461
 #, python-format
 msgid "%(object)s updated successfully."
-msgstr ""
+msgstr "%(object)s 已成功更新。"
 
 #: links.py:30
 msgid "About this"
-msgstr ""
+msgstr "关于此项"
 
 #: links.py:33 views.py:58
 msgid "Check for updates"
-msgstr ""
+msgstr "检查更新"
 
 #: links.py:37
 msgid "User details"
-msgstr "用户信息"
+msgstr "用户详情"
 
 #: links.py:41
 msgid "Edit details"
-msgstr ""
+msgstr "编辑用户详情"
 
 #: links.py:44
 msgid "Locale profile"
-msgstr ""
+msgstr "地域设置"
 
 #: links.py:48
 msgid "Edit locale profile"
-msgstr ""
+msgstr "编辑地域设置"
 
 #: links.py:52
 msgid "Source code"
-msgstr ""
+msgstr "源码"
 
 #: links.py:56
 msgid "Documentation"
-msgstr ""
+msgstr "文档"
 
 #: links.py:60 links.py:65
 msgid "Errors"
-msgstr ""
+msgstr "错误"
 
 #: links.py:69
 msgid "Data filters"
-msgstr ""
+msgstr "数据过滤"
 
 #: links.py:73
 msgid "Forum"
-msgstr ""
+msgstr "论坛"
 
 #: links.py:77 views.py:234
 msgid "License"
@@ -151,19 +151,19 @@ msgstr "许可证"
 
 #: links.py:80 views.py:248
 msgid "Other packages licenses"
-msgstr ""
+msgstr "其它"
 
 #: links.py:84
 msgid "Setup"
-msgstr ""
+msgstr "设置"
 
 #: links.py:87
 msgid "Support"
-msgstr ""
+msgstr "支持"
 
 #: links.py:91 queues.py:10 views.py:278
 msgid "Tools"
-msgstr ""
+msgstr "工具"
 
 #: literals.py:13
 msgid "Days"
@@ -179,7 +179,7 @@ msgstr "分钟"
 
 #: menus.py:12
 msgid "System"
-msgstr ""
+msgstr "系统"
 
 #: menus.py:22 models.py:81
 msgid "User"
@@ -188,24 +188,24 @@ msgstr "用户"
 #: mixins.py:84
 #, python-format
 msgid "Operation performed on %(count)d object"
-msgstr ""
+msgstr "已处理 %(count)d 个对象"
 
 #: mixins.py:85
 #, python-format
 msgid "Operation performed on %(count)d objects"
-msgstr ""
+msgstr "已处理 %(count)d 个对象"
 
 #: models.py:35 models.py:55
 msgid "Date time"
-msgstr ""
+msgstr "日期时间"
 
 #: models.py:43
 msgid "Error log entry"
-msgstr ""
+msgstr "错误日志入口"
 
 #: models.py:44
 msgid "Error log entries"
-msgstr ""
+msgstr "错误日志入口"
 
 #: models.py:51
 msgid "File"
@@ -217,11 +217,11 @@ msgstr "文件名"
 
 #: models.py:59
 msgid "Shared uploaded file"
-msgstr ""
+msgstr "上传的分享文件"
 
 #: models.py:60
 msgid "Shared uploaded files"
-msgstr ""
+msgstr "上传的分享文件"
 
 #: models.py:85
 msgid "Timezone"
@@ -277,64 +277,64 @@ msgstr ""
 msgid ""
 "Temporary directory used site wide to store thumbnails, previews and "
 "temporary files."
-msgstr ""
+msgstr "时区"
 
 #: settings.py:48
 msgid "Path to the logfile that will track errors during production."
-msgstr ""
+msgstr "过程错误日志存储地址"
 
 #: validators.py:29
 msgid ""
 "Enter a valid 'internal name' consisting of letters, numbers, and "
 "underscores."
-msgstr ""
+msgstr "请输入一个仅由字母、数字和下划线组成的“内部名称”。"
 
 #: views.py:51
 #, python-format
 msgid "The version you are using is outdated. The latest version is %s"
-msgstr ""
+msgstr "你的版本已过期，最新版本为：%s"
 
 #: views.py:55
 msgid "Your version is up-to-date."
-msgstr ""
+msgstr "你的版本已是最新。"
 
 #: views.py:72
 msgid "Current user details"
-msgstr ""
+msgstr "当前用户详情"
 
 #: views.py:77
 msgid "Edit current user details"
-msgstr ""
+msgstr "编辑当前用户详情"
 
 #: views.py:97
 msgid "Current user locale profile details"
-msgstr ""
+msgstr "当前用户地域设定详情"
 
 #: views.py:104
 msgid "Edit current user locale profile details"
-msgstr ""
+msgstr "编辑当前用户地域详情"
 
 #: views.py:165
 #, python-format
 msgid "Error log entries for: %s"
-msgstr ""
+msgstr "错误日志入口，针对：%s"
 
 #: views.py:197
 msgid "Filter selection"
-msgstr ""
+msgstr "过滤选项"
 
 #: views.py:213
 #, python-format
 msgid "Results for filter: %s"
-msgstr ""
+msgstr "过滤结果：%s"
 
 #: views.py:220
 msgid "Filter not found"
-msgstr ""
+msgstr "过滤未找到"
 
 #: views.py:261
 msgid "Setup items"
-msgstr ""
+msgstr "设置项"
 
 #: views.py:305
 msgid "No action selected."

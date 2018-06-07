@@ -19,11 +19,11 @@ msgstr ""
 
 #: apps.py:36 links.py:30
 msgid "Checkouts"
-msgstr ""
+msgstr "检出"
 
 #: dashboard_widgets.py:18
 msgid "Checkedout documents"
-msgstr ""
+msgstr "检出文档"
 
 #: events.py:9
 msgid "Document automatically checked in"
@@ -47,7 +47,7 @@ msgstr "文档已经检出"
 
 #: forms.py:28
 msgid "Document status"
-msgstr ""
+msgstr "文档状态"
 
 #: forms.py:37 models.py:41 views.py:84
 msgid "User"
@@ -55,15 +55,15 @@ msgstr "用户"
 
 #: forms.py:41
 msgid "Check out time"
-msgstr ""
+msgstr "检出时间"
 
 #: forms.py:46
 msgid "Check out expiration"
-msgstr ""
+msgstr "检出逾期"
 
 #: forms.py:51
 msgid "New versions allowed?"
-msgstr ""
+msgstr "允许新建版本？"
 
 #: forms.py:52
 msgid "Yes"
@@ -75,31 +75,31 @@ msgstr "否"
 
 #: links.py:35
 msgid "Check out document"
-msgstr ""
+msgstr "检出文档"
 
 #: links.py:41
 msgid "Check in document"
-msgstr ""
+msgstr "签入文档"
 
 #: links.py:48
 msgid "Check in/out"
-msgstr ""
+msgstr "签入/检出"
 
 #: literals.py:12
 msgid "Checked out"
-msgstr ""
+msgstr "检出"
 
 #: literals.py:13
 msgid "Checked in/available"
-msgstr ""
+msgstr "签入/可选"
 
 #: models.py:28 models.py:98
 msgid "Document"
-msgstr ""
+msgstr "文档"
 
 #: models.py:31
 msgid "Check out date and time"
-msgstr ""
+msgstr "检出日期和时间"
 
 #: models.py:35
 msgid "Amount of time to hold the document checked out in minutes."
@@ -115,11 +115,11 @@ msgstr "此文档不允许上传新版本"
 
 #: models.py:48
 msgid "Block new version upload"
-msgstr ""
+msgstr "禁止上传新版本"
 
 #: models.py:59
 msgid "Check out expiration date and time must be in the future."
-msgstr ""
+msgstr "检出过期时间必须晚于当前。"
 
 #: models.py:92 permissions.py:7
 msgid "Document checkout"
@@ -127,15 +127,15 @@ msgstr "文档检出"
 
 #: models.py:93
 msgid "Document checkouts"
-msgstr ""
+msgstr "文档检出"
 
 #: models.py:104
 msgid "New version block"
-msgstr ""
+msgstr "禁止新版本"
 
 #: models.py:105
 msgid "New version blocks"
-msgstr ""
+msgstr "禁止新版本"
 
 #: permissions.py:10
 msgid "Check in documents"
@@ -151,15 +151,15 @@ msgstr "检出文档"
 
 #: permissions.py:19
 msgid "Check out details view"
-msgstr ""
+msgstr "检出详情"
 
 #: queues.py:8
 msgid "Checkouts periodic"
-msgstr ""
+msgstr "周期性检出"
 
 #: queues.py:12
 msgid "Check expired checkouts"
-msgstr ""
+msgstr "检查逾期检出"
 
 #: views.py:53
 #, python-format
@@ -178,15 +178,15 @@ msgstr "检出文档: %s"
 
 #: views.py:81
 msgid "Documents checked out"
-msgstr ""
+msgstr "检出的文档"
 
 #: views.py:90
 msgid "Checkout time and date"
-msgstr ""
+msgstr "检出时间和日期"
 
 #: views.py:96
 msgid "Checkout expiration"
-msgstr ""
+msgstr "检出逾期"
 
 #: views.py:116
 #, python-format
@@ -198,12 +198,12 @@ msgstr "文档：%s的检出信息"
 msgid ""
 "You didn't originally checked out this document. Forcefully check in the "
 "document: %s?"
-msgstr ""
+msgstr "你并不是文档的原始检出者，要强制签入文档: %s 吗？"
 
 #: views.py:138
 #, python-format
 msgid "Check in the document: %s?"
-msgstr ""
+msgstr "签入文档：%s？"
 
 #: views.py:166
 msgid "Document has not been checked out."
@@ -221,4 +221,4 @@ msgstr "文档\"%s\"签入成功"
 
 #: widgets.py:23
 msgid "Period"
-msgstr ""
+msgstr "周期"

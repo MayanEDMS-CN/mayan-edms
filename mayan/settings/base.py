@@ -181,7 +181,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
-LANGUAGE_CODE = 'zh-Hans'
+LANGUAGE_CODE = 'zh_CN'
 
 TIME_ZONE = 'Asia/Shanghai'
 
@@ -204,33 +204,11 @@ STATIC_URL = '/static/'
 # PROJECT_LICENSE = mayan.__license__
 PROJECT_TITLE = "奇瑞400坐席知识库"
 PROJECT_WEBSITE = 'http://kb.tu2e.com'
-PROJECT_COPYRIGHT = "诺码科技版权所有 &cp; 2017~2018"
+PROJECT_COPYRIGHT = "诺码科技版权所有 &copy; 2017~2018"
 PROJECT_LICENSE = "GPL"
 
 LANGUAGES = (
-    ('ar', _('Arabic')),
-    ('bg', _('Bulgarian')),
-    ('bs', _('Bosnian (Bosnia and Herzegovina)')),
-    ('da', _('Danish')),
-    ('de', _('German (Germany)')),
-    ('en', _('English')),
-    ('es', _('Spanish')),
-    ('fa', _('Persian')),
-    ('fr', _('French')),
-    ('hu', _('Hungarian')),
-    ('hr', _('Croatian')),
-    ('id', _('Indonesian')),
-    ('it', _('Italian')),
-    ('nl', _('Dutch (Netherlands)')),
-    ('pl', _('Polish')),
-    ('pt', _('Portuguese')),
-    ('pt-br', _('Portuguese (Brazil)')),
-    ('ro', _('Romanian (Romania)')),
-    ('ru', _('Russian')),
-    ('sl', _('Slovenian')),
-    ('tr', _('Turkish')),
-    ('vi', _('Vietnamese (Viet Nam)')),
-    ('zh-Hans', _('Chinese (China)')),
+    ('zh_CN', _('Chinese (China)')),
 )
 
 SITE_ID = 1

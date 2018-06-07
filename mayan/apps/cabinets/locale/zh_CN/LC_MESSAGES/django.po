@@ -21,35 +21,35 @@ msgstr ""
 #: apps.py:36 apps.py:76 apps.py:84 apps.py:87 forms.py:30 links.py:21
 #: menus.py:8 models.py:38 permissions.py:7 views.py:152
 msgid "Cabinets"
-msgstr ""
+msgstr "分类"
 
 #: links.py:27 links.py:38
 msgid "Remove from cabinets"
-msgstr ""
+msgstr "从分类中移除"
 
 #: links.py:31 links.py:35
 msgid "Add to cabinets"
-msgstr ""
+msgstr "加入到分类"
 
 #: links.py:55
 msgid "Add new level"
-msgstr ""
+msgstr "增加新的层级"
 
 #: links.py:60 views.py:38
 msgid "Create cabinet"
-msgstr ""
+msgstr "创建分类"
 
 #: links.py:64
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 #: links.py:67
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 #: links.py:71
 msgid "All"
-msgstr ""
+msgstr "全部"
 
 #: links.py:74
 msgid "Details"
@@ -57,7 +57,7 @@ msgstr "细节"
 
 #: models.py:26 search.py:16
 msgid "Label"
-msgstr ""
+msgstr "标签"
 
 #: models.py:29
 msgid "Documents"
@@ -65,114 +65,114 @@ msgstr "文档"
 
 #: models.py:37 models.py:87 serializers.py:139
 msgid "Cabinet"
-msgstr ""
+msgstr "分类"
 
 #: models.py:88 serializers.py:140
 msgid "Parent and Label"
-msgstr ""
+msgstr "父级和标签"
 
 #: models.py:95 serializers.py:146
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
-msgstr ""
+msgstr "%(model_name)s 的 %(field_labels)s 已存在。"
 
 #: models.py:107
 msgid "Document cabinet"
-msgstr ""
+msgstr "文档分类"
 
 #: models.py:108
 msgid "Document cabinets"
-msgstr ""
+msgstr "文档分类"
 
 #: permissions.py:12
 msgid "Add documents to cabinets"
-msgstr ""
+msgstr "把文档加入分类"
 
 #: permissions.py:15
 msgid "Create cabinets"
-msgstr ""
+msgstr "创建分类"
 
 #: permissions.py:18
 msgid "Delete cabinets"
-msgstr ""
+msgstr "删除分类"
 
 #: permissions.py:21
 msgid "Edit cabinets"
-msgstr ""
+msgstr "编辑分类"
 
 #: permissions.py:24
 msgid "Remove documents from cabinets"
-msgstr ""
+msgstr "从分类中删除文档"
 
 #: permissions.py:27
 msgid "View cabinets"
-msgstr ""
+msgstr "查看分类"
 
 #: serializers.py:20
 msgid "List of children cabinets."
-msgstr ""
+msgstr "下级分类列表"
 
 #: serializers.py:23
 msgid "Number of documents on this cabinet level."
-msgstr ""
+msgstr "本级分类的文档数"
 
 #: serializers.py:27
 msgid "The name of this cabinet level appended to the names of its ancestors."
-msgstr ""
+msgstr "本级分类的名称附加到父级名称后。"
 
 #: serializers.py:33
 msgid ""
 "URL of the API endpoint showing the list documents inside this cabinet."
-msgstr ""
+msgstr "显示此分类中文档列表的API接入点URL"
 
 #: serializers.py:69 serializers.py:180
 msgid "Comma separated list of document primary keys to add to this cabinet."
-msgstr ""
+msgstr "要加入此分类的文档主键，以逗号分隔。"
 
 #: serializers.py:159
 msgid ""
 "API URL pointing to a document in relation to the cabinet storing it. This "
 "URL is different than the canonical document URL."
-msgstr ""
+msgstr "跟此分类中存储文档相关的API接入点URL，此URL与标准文档URL不同。"
 
 #: templates/cabinets/cabinet_details.html:21
 msgid "Navigation:"
-msgstr ""
+msgstr "导航条："
 
 #: views.py:69
 #, python-format
 msgid "Add new level to: %s"
-msgstr ""
+msgstr "增加新层级到：%s"
 
 #: views.py:82
 #, python-format
 msgid "Delete the cabinet: %s?"
-msgstr ""
+msgstr "删除分类：%s？"
 
 #: views.py:111
 #, python-format
 msgid "Details of cabinet: %s"
-msgstr ""
+msgstr "分类详情：%s？"
 
 #: views.py:142
 #, python-format
 msgid "Edit cabinet: %s"
-msgstr ""
+msgstr "编辑分类：%s"
 
 #: views.py:176
 #, python-format
 msgid "Cabinets containing document: %s"
-msgstr ""
+msgstr "含有文档的分类：%s"
 
 #: views.py:188
 #, python-format
 msgid "Add to cabinet request performed on %(count)d document"
-msgstr ""
+msgstr "%(count)d 条数据已加入分类"
 
 #: views.py:191
 #, python-format
 msgid "Add to cabinet request performed on %(count)d documents"
-msgstr ""
+msgstr "%(count)d 条数据已加入分类"
 
 #: views.py:198
 msgid "Add"
@@ -181,31 +181,31 @@ msgstr "新增"
 #: views.py:213
 #, python-format
 msgid "Add document \"%s\" to cabinets"
-msgstr ""
+msgstr "文档 \"%s\" 加到分类"
 
 #: views.py:224
 msgid "Cabinets to which the selected documents will be added."
-msgstr ""
+msgstr "所选文档将要加入的分类。"
 
 #: views.py:252
 #, python-format
 msgid "Document: %(document)s is already in cabinet: %(cabinet)s."
-msgstr ""
+msgstr "文档: %(document)s 已存在于分类: %(cabinet)s 中。"
 
 #: views.py:264
 #, python-format
 msgid "Document: %(document)s added to cabinet: %(cabinet)s successfully."
-msgstr ""
+msgstr "文档: %(document)s 已成功加入分类: %(cabinet)s 中。"
 
 #: views.py:277
 #, python-format
 msgid "Remove from cabinet request performed on %(count)d document"
-msgstr ""
+msgstr "%(count)d 个文档已从分类中移除"
 
 #: views.py:280
 #, python-format
 msgid "Remove from cabinet request performed on %(count)d documents"
-msgstr ""
+msgstr "%(count)d 个文档已从分类中移除"
 
 #: views.py:287
 msgid "Remove"
@@ -213,14 +213,14 @@ msgstr "移除"
 
 #: views.py:313
 msgid "Cabinets from which the selected documents will be removed."
-msgstr ""
+msgstr "所选文档将被从以下分类中移除。"
 
 #: views.py:340
 #, python-format
 msgid "Document: %(document)s is not in cabinet: %(cabinet)s."
-msgstr ""
+msgstr "文档: %(document)s 并不存在于分类: %(cabinet)s 中。"
 
 #: views.py:352
 #, python-format
 msgid "Document: %(document)s removed from cabinet: %(cabinet)s."
-msgstr ""
+msgstr "文档: %(document)s 已从分类: %(cabinet)s 中移除。"

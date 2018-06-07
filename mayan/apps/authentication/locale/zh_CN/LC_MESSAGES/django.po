@@ -19,7 +19,7 @@ msgstr ""
 
 #: apps.py:17 settings.py:9
 msgid "Authentication"
-msgstr ""
+msgstr "鉴权"
 
 #: forms.py:18
 msgid "Email"
@@ -31,7 +31,7 @@ msgstr "密码"
 
 #: forms.py:23 forms.py:72
 msgid "Remember me"
-msgstr ""
+msgstr "记住密码"
 
 #: forms.py:26
 msgid ""
@@ -49,19 +49,19 @@ msgstr "退出"
 
 #: links.py:16
 msgid "Change password"
-msgstr ""
+msgstr "修改密码"
 
 #: settings.py:13
 msgid ""
 "Controls the mechanism used to authenticated user. Options are: username, "
 "email"
-msgstr ""
+msgstr "控制鉴权的方式，可选项为：用户名，密码"
 
 #: settings.py:20
 msgid ""
 "Maximum time an user clicking the \"Remember me\" checkbox will remain "
 "logged in. Value is time in seconds."
-msgstr ""
+msgstr "【记住密码】功能的逾期时间。时间单位：秒。"
 
 #: views.py:59
 msgid "Current user password change"
