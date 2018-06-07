@@ -19,32 +19,32 @@ msgstr ""
 
 #: apps.py:16
 msgid "System"
-msgstr ""
+msgstr "系统"
 
 #: apps.py:26 links.py:31 links.py:35 permissions.py:7 views.py:33
 msgid "Events"
-msgstr ""
+msgstr "事件"
 
 #: apps.py:35
 msgid "Timestamp"
-msgstr ""
+msgstr "时间戳"
 
 #: apps.py:38
 msgid "Actor"
-msgstr ""
+msgstr "执行者"
 
 #: apps.py:42
 msgid "Verb"
-msgstr ""
+msgstr "动作"
 
 #: apps.py:46
 msgid "Action object"
-msgstr ""
+msgstr "被执行对象"
 
 #: classes.py:23
 #, python-brace-format
 msgid "Unknown or obsolete event type: {0}"
-msgstr ""
+msgstr "未知或失效的事件类型：{0}"
 
 #: models.py:13
 msgid "Name"
@@ -56,22 +56,22 @@ msgstr "事件类型"
 
 #: models.py:18
 msgid "Event types"
-msgstr ""
+msgstr "事件类型"
 
 #: permissions.py:9
 msgid "Access the events of an object"
-msgstr ""
+msgstr "访问某对象的事件"
 
 #: views.py:26 views.py:81
 msgid "Target"
-msgstr ""
+msgstr "目标"
 
 #: views.py:69
 #, python-format
 msgid "Events for: %s"
-msgstr ""
+msgstr "%s 的事件"
 
 #: views.py:89
 #, python-format
 msgid "Events of type: %s"
-msgstr ""
+msgstr "类型 %s 的事件"

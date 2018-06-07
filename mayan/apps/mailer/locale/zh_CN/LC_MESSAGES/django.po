@@ -19,97 +19,97 @@ msgstr ""
 
 #: apps.py:38
 msgid "Mailer"
-msgstr ""
+msgstr "邮件发送"
 
 #: apps.py:53
 msgid "Date and time"
-msgstr ""
+msgstr "日期和时间"
 
 #: apps.py:56 models.py:21 models.py:121
 msgid "Message"
-msgstr ""
+msgstr "消息"
 
 #: apps.py:59 apps.py:74 models.py:33
 msgid "Label"
-msgstr ""
+msgstr "标签"
 
 #: apps.py:62
 msgid "Default?"
-msgstr ""
+msgstr "缺省的？"
 
 #: apps.py:68
 msgid "Enabled?"
-msgstr ""
+msgstr "启用？"
 
 #: forms.py:59
 msgid ""
 "Email address of the recipient. Can be multiple addresses separated by comma"
 " or semicolon."
-msgstr ""
+msgstr "收件人邮箱地址，可使用分号或逗号分隔多个收件人。"
 
 #: forms.py:61 forms.py:118
 msgid "Email address"
-msgstr ""
+msgstr "Email地址"
 
 #: forms.py:63
 msgid "Subject"
-msgstr ""
+msgstr "主题"
 
 #: forms.py:65
 msgid "Body"
-msgstr ""
+msgstr "正文"
 
 #: forms.py:69
 msgid "The email profile that will be used to send this email."
-msgstr ""
+msgstr "用于发送此Email的预设项。"
 
 #: forms.py:70 views.py:233
 msgid "Mailing profile"
-msgstr ""
+msgstr "邮件预设项"
 
 #: forms.py:75
 msgid "Backend"
-msgstr ""
+msgstr "后台"
 
 #: links.py:16 links.py:23
 msgid "Email document"
-msgstr ""
+msgstr "邮件文档"
 
 #: links.py:20 links.py:26
 msgid "Email link"
-msgstr ""
+msgstr "邮件链接"
 
 #: links.py:30
 msgid "System mailer error log"
-msgstr ""
+msgstr "系统邮件发送错误日志"
 
 #: links.py:34
 msgid "User mailer create"
-msgstr ""
+msgstr "用户邮件发送创建"
 
 #: links.py:38
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 #: links.py:42
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 #: links.py:46
 msgid "Log"
-msgstr ""
+msgstr "日志"
 
 #: links.py:50
 msgid "Mailing profiles list"
-msgstr ""
+msgstr "邮件预设项列表"
 
 #: links.py:54
 msgid "Mailing profiles"
-msgstr ""
+msgstr "邮件预设项"
 
 #: links.py:58 views.py:254
 msgid "Test"
-msgstr ""
+msgstr "测试"
 
 #: literals.py:7
 #, python-format
@@ -119,6 +119,10 @@ msgid ""
 " --------\n"
 " This email has been sent from %(project_title)s (%(project_website)s)"
 msgstr ""
+"此文档: {{ document }} 被附加到本邮件。\n"
+"\n"
+" --------\n"
+" 本邮件由 %(project_title)s (%(project_website)s) 生成并发送"
 
 #: literals.py:13
 #, python-format
@@ -128,36 +132,42 @@ msgid ""
 "--------\n"
 " This email has been sent from %(project_title)s (%(project_website)s)"
 msgstr ""
+"点击以下链接访问文档: {{ link }}\n"
+"\n"
+"--------\n"
+" 本邮件由 %(project_title)s (%(project_website)s) 生成并发送"
 
 #: mailers.py:14
 msgid "Host"
-msgstr ""
+msgstr "主机"
 
 #: mailers.py:16
 msgid "The host to use for sending email."
-msgstr ""
+msgstr "用于发送邮件的主机"
 
 #: mailers.py:21
 msgid "Port"
-msgstr ""
+msgstr "端口"
 
 #: mailers.py:23
 msgid "Port to use for the SMTP server."
-msgstr ""
+msgstr "SMTP服务器的端口"
 
 #: mailers.py:26
 msgid "Use TLS"
-msgstr ""
+msgstr "使用TLS加密"
 
 #: mailers.py:29
 msgid ""
 "Whether to use a TLS (secure) connection when talking to the SMTP server. "
 "This is used for explicit TLS connections, generally on port 587."
 msgstr ""
+"是否使用TLS加密链接到SMTP服务器。"
+"用于指定使用TLS加密方式，通常为端口587。"
 
 #: mailers.py:34
 msgid "Use SSL"
-msgstr ""
+msgstr "使用SSL加密"
 
 #: mailers.py:37
 msgid ""
@@ -168,16 +178,19 @@ msgid ""
 "and \"Use SSL\" are mutually exclusive, so only set one of those settings to"
 " True."
 msgstr ""
+"是否使用SSL加密链接到SMTP服务器。"
+"在大多数邮件文档里这种加密类型的端口缺省为465。"
+"如果SSL有问题，请尝试使用TLS。这两种方式是互斥的。只能设置其中一种为真。"
 
 #: mailers.py:46
 msgid "Username"
-msgstr ""
+msgstr "用户名"
 
 #: mailers.py:49
 msgid ""
 "Username to use for the SMTP server. If empty, authentication won't "
 "attempted."
-msgstr ""
+msgstr "用于登录SMTP服务器的用户名。如果为空，则不会启用鉴权机制。"
 
 #: mailers.py:55
 msgid "Password"
@@ -189,194 +202,195 @@ msgid ""
 "with the username when authenticating to the SMTP server. If either of these"
 " settings is empty, authentication won't be attempted."
 msgstr ""
+"用于SMTP服务器的密码，结合用户名一同使用。二者任何一项为空都不会触发鉴权机制。"
 
 #: mailers.py:76
 msgid "Django SMTP backend"
-msgstr ""
+msgstr "Django的SMTP后台"
 
 #: mailers.py:83
 msgid "File path"
-msgstr ""
+msgstr "文件路径"
 
 #: mailers.py:89
 msgid "Django file based backend"
-msgstr ""
+msgstr "Django基于文件的后台"
 
 #: models.py:18 models.py:118
 msgid "Date time"
-msgstr ""
+msgstr "日期和时间"
 
 #: models.py:27
 msgid "Log entry"
-msgstr ""
+msgstr "日志入口"
 
 #: models.py:28
 msgid "Log entries"
-msgstr ""
+msgstr "日志入口"
 
 #: models.py:37
 msgid ""
 "If default, this mailing profile will be pre-selected on the document "
 "mailing form."
-msgstr ""
+msgstr "缺省情况下，此邮件预设项在文档邮件发送表单里会被预先选中。"
 
 #: models.py:39
 msgid "Default"
-msgstr ""
+msgstr "缺省项"
 
 #: models.py:41
 msgid "Enabled"
-msgstr ""
+msgstr "已启用"
 
 #: models.py:44
 msgid "The dotted Python path to the backend class."
-msgstr ""
+msgstr "后台Python类以点分隔的路径"
 
 #: models.py:45
 msgid "Backend path"
-msgstr ""
+msgstr "后台路径"
 
 #: models.py:48
 msgid "Backend data"
-msgstr ""
+msgstr "后台数据"
 
 #: models.py:53 models.py:115
 msgid "User mailer"
-msgstr ""
+msgstr "用户邮件发送"
 
 #: models.py:54
 msgid "User mailers"
-msgstr ""
+msgstr "用户邮件发送"
 
 #: models.py:109
 msgid "Test email from Mayan EDMS"
-msgstr ""
+msgstr "从知识库发送的测试邮件"
 
 #: models.py:127
 msgid "User mailer log entry"
-msgstr ""
+msgstr "用户邮件发送日志入口"
 
 #: models.py:128
 msgid "User mailer log entries"
-msgstr ""
+msgstr "用户邮件发送日志入口"
 
 #: permissions.py:7 queues.py:8 settings.py:11
 msgid "Mailing"
-msgstr ""
+msgstr "邮件发送"
 
 #: permissions.py:10
 msgid "Send document link via email"
-msgstr ""
+msgstr "以邮件发送文档链接"
 
 #: permissions.py:13
 msgid "Send document via email"
-msgstr ""
+msgstr "以邮件发送文档"
 
 #: permissions.py:16
 msgid "View system mailing error log"
-msgstr ""
+msgstr "查看系统邮件发送错误日志"
 
 #: permissions.py:19
 msgid "Create a mailing profile"
-msgstr ""
+msgstr "创建邮件发送预设项"
 
 #: permissions.py:22
 msgid "Delete a mailing profile"
-msgstr ""
+msgstr "删除邮件发送预设项"
 
 #: permissions.py:25
 msgid "Edit a mailing profile"
-msgstr ""
+msgstr "编辑邮件发送预设项"
 
 #: permissions.py:28
 msgid "View a mailing profile"
-msgstr ""
+msgstr "查看邮件发送预设项"
 
 #: permissions.py:31
 msgid "Use a mailing profile"
-msgstr ""
+msgstr "使用邮件发送预设项"
 
 #: queues.py:12
 msgid "Send document"
-msgstr ""
+msgstr "发送文档"
 
 #: settings.py:14
 msgid "Link for document: {{ document }}"
-msgstr ""
+msgstr "文档链接：{{ document }}"
 
 #: settings.py:15
 msgid "Template for the document link email form subject line."
-msgstr ""
+msgstr "文档链接邮件标题行的模板"
 
 #: settings.py:20
 msgid "Template for the document link email form body line."
-msgstr ""
+msgstr "文档链接邮件正文的模板"
 
 #: settings.py:24
 msgid "Document: {{ document }}"
-msgstr ""
+msgstr "文档：{{ document }}"
 
 #: settings.py:25
 msgid "Template for the document email form subject line."
-msgstr ""
+msgstr "文档邮件标题行的模板"
 
 #: settings.py:30
 msgid "Template for the document email form body line."
-msgstr ""
+msgstr "文档邮件正文的模板"
 
 #: views.py:37
 msgid "Document mailing error log"
-msgstr ""
+msgstr "文档邮件发送出错日志"
 
 #: views.py:49
 #, python-format
 msgid "%(count)d document queued for email delivery"
-msgstr ""
+msgstr "%(count)d 份文档已排队等待发送"
 
 #: views.py:51
 #, python-format
 msgid "%(count)d documents queued for email delivery"
-msgstr ""
+msgstr "%(count)d 份文档已排队等待发送"
 
 #: views.py:62
 msgid "Send"
-msgstr ""
+msgstr "发送"
 
 #: views.py:121
 #, python-format
 msgid "%(count)d document link queued for email delivery"
-msgstr ""
+msgstr "%(count)d 份文档链接已排队等待发送"
 
 #: views.py:123
 #, python-format
 msgid "%(count)d document links queued for email delivery"
-msgstr ""
+msgstr "%(count)d 份文档链接已排队等待发送"
 
 #: views.py:132
 msgid "New mailing profile backend selection"
-msgstr ""
+msgstr "新邮件发送预设项后台选项"
 
 #: views.py:160
 #, python-format
 msgid "Create a \"%s\" mailing profile"
-msgstr ""
+msgstr "创建一个 \"%s\" 邮件发送预设项"
 
 #: views.py:186
 #, python-format
 msgid "Delete mailing profile: %s"
-msgstr ""
+msgstr "删除邮件发送预设项：%s"
 
 #: views.py:197
 #, python-format
 msgid "Edit mailing profile: %s"
-msgstr ""
+msgstr "编辑邮件发送预设项：%s"
 
 #: views.py:220
 #, python-format
 msgid "%s error log"
-msgstr ""
+msgstr "%s 错误日志"
 
 #: views.py:255
 #, python-format
 msgid "Test mailing profile: %s"
-msgstr ""
+msgstr "测试邮件发送预设项：%s"

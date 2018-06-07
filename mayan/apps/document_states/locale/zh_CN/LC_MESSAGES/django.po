@@ -19,33 +19,33 @@ msgstr ""
 
 #: apps.py:53 queues.py:8
 msgid "Document states"
-msgstr ""
+msgstr "文档状态"
 
 #: apps.py:89 apps.py:96
 msgid "Current state of a workflow"
-msgstr ""
+msgstr "工作流中的当前状态"
 
 #: apps.py:90
 msgid "Return the current state of the selected workflow"
-msgstr ""
+msgstr "返回所选工作流的当前状态"
 
 #: apps.py:97
 msgid ""
 "Return the completion value of the current state of the selected workflow"
-msgstr ""
+msgstr "返回所选工作流中当前状态的完成值"
 
 #: apps.py:112 apps.py:175 forms.py:117 models.py:47 models.py:147
 #: models.py:216 models.py:276
 msgid "Label"
-msgstr ""
+msgstr "标签"
 
 #: apps.py:115 models.py:44
 msgid "Internal name"
-msgstr ""
+msgstr "内部名称"
 
 #: apps.py:119
 msgid "Initial state"
-msgstr ""
+msgstr "初始状态"
 
 #: apps.py:120 apps.py:130 apps.py:140 apps.py:146
 msgid "None"
@@ -53,7 +53,7 @@ msgstr "无"
 
 #: apps.py:124
 msgid "Current state"
-msgstr ""
+msgstr "当前状态"
 
 #: apps.py:128 apps.py:155 models.py:446
 msgid "User"
@@ -61,19 +61,19 @@ msgstr "用户"
 
 #: apps.py:134
 msgid "Last transition"
-msgstr ""
+msgstr "最后一次变更"
 
 #: apps.py:138 apps.py:151
 msgid "Date and time"
-msgstr ""
+msgstr "日期和时间"
 
 #: apps.py:144 apps.py:171 models.py:159
 msgid "Completion"
-msgstr ""
+msgstr "完成"
 
 #: apps.py:158 forms.py:173 links.py:109 models.py:303 models.py:442
 msgid "Transition"
-msgstr ""
+msgstr "变更"
 
 #: apps.py:162 forms.py:176 models.py:448
 msgid "Comment"
@@ -81,39 +81,39 @@ msgstr "评论"
 
 #: apps.py:167
 msgid "Is initial state?"
-msgstr ""
+msgstr "是初始状态？"
 
 #: apps.py:178
 msgid "Enabled?"
-msgstr ""
+msgstr "已启用？"
 
 #: apps.py:182
 msgid "When?"
-msgstr ""
+msgstr "何时？"
 
 #: apps.py:186
 msgid "Action type"
-msgstr ""
+msgstr "操作类型"
 
 #: apps.py:191 models.py:279
 msgid "Origin state"
-msgstr ""
+msgstr "起始状态"
 
 #: apps.py:195 models.py:284
 msgid "Destination state"
-msgstr ""
+msgstr "目的状态"
 
 #: apps.py:199
 msgid "Triggers"
-msgstr ""
+msgstr "触发"
 
 #: forms.py:22
 msgid "Action"
-msgstr ""
+msgstr "操作"
 
 #: forms.py:121 models.py:217
 msgid "Enabled"
-msgstr ""
+msgstr "启用"
 
 #: forms.py:123
 msgid "No"
@@ -126,28 +126,28 @@ msgstr "是"
 #: handlers.py:45
 #, python-format
 msgid "Event trigger: %s"
-msgstr ""
+msgstr "事件触发：%s"
 
 #: links.py:15 links.py:39 links.py:119 models.py:128 views.py:141
 #: views.py:576
 msgid "Workflows"
-msgstr ""
+msgstr "工作流"
 
 #: links.py:20
 msgid "Create workflow"
-msgstr ""
+msgstr "创建工作流"
 
 #: links.py:25 links.py:43 links.py:67 links.py:85
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 #: links.py:29 models.py:51
 msgid "Document types"
-msgstr ""
+msgstr "文档类型"
 
 #: links.py:34 links.py:48 links.py:71 links.py:89
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 #: links.py:52
 msgid "Actions"
@@ -155,125 +155,125 @@ msgstr "操作"
 
 #: links.py:57
 msgid "Create action"
-msgstr ""
+msgstr "创建操作"
 
 #: links.py:61
 msgid "Create state"
-msgstr ""
+msgstr "创建状态"
 
 #: links.py:75 links.py:129
 msgid "States"
-msgstr ""
+msgstr "状态"
 
 #: links.py:79
 msgid "Create transition"
-msgstr ""
+msgstr "创建状态变更"
 
 #: links.py:94
 msgid "Transitions"
-msgstr ""
+msgstr "状态变更"
 
 #: links.py:101 queues.py:12
 msgid "Launch all workflows"
-msgstr ""
+msgstr "启用所有工作流"
 
 #: links.py:105
 msgid "Detail"
-msgstr ""
+msgstr "详情"
 
 #: links.py:114
 msgid "Workflow documents"
-msgstr ""
+msgstr "工作流文档"
 
 #: links.py:123
 msgid "State documents"
-msgstr ""
+msgstr "状态文档"
 
 #: links.py:134
 msgid "Transition triggers"
-msgstr ""
+msgstr "状态变更触发器"
 
 #: links.py:139
 msgid "Preview"
-msgstr ""
+msgstr "预览"
 
 #: literals.py:9
 msgid "On entry"
-msgstr ""
+msgstr "进入时"
 
 #: literals.py:10
 msgid "On exit"
-msgstr ""
+msgstr "离开时"
 
 #: models.py:41
 msgid ""
 "This value will be used by other apps to reference this workflow. Can only "
 "contain letters, numbers, and underscores."
-msgstr ""
+msgstr "这个值将被其它程序用于引用本工作流。只能使用字母、数字和下划线。"
 
 #: models.py:127 models.py:145 models.py:274 models.py:321
 msgid "Workflow"
-msgstr ""
+msgstr "工作流"
 
 #: models.py:151
 msgid ""
 "Select if this will be the state with which you want the workflow to start "
 "in. Only one state can be the initial state."
-msgstr ""
+msgstr "请选择工作流开始的状态。初始状态只能有一个。"
 
 #: models.py:153
 msgid "Initial"
-msgstr ""
+msgstr "初始"
 
 #: models.py:157
 msgid ""
 "Enter the percent of completion that this state represents in relation to "
 "the workflow. Use numbers without the percent sign."
-msgstr ""
+msgstr "输入此状态代表的工作流进度，输入纯数字，别带百分号。"
 
 #: models.py:165 models.py:214
 msgid "Workflow state"
-msgstr ""
+msgstr "工作流状态"
 
 #: models.py:166
 msgid "Workflow states"
-msgstr ""
+msgstr "工作流状态"
 
 #: models.py:221
 msgid "At which moment of the state this action will execute"
-msgstr ""
+msgstr "在状态的什么时间执行此操作"
 
 #: models.py:222
 msgid "When"
-msgstr ""
+msgstr "何时"
 
 #: models.py:226
 msgid "The dotted Python path to the workflow action class to execute."
-msgstr ""
+msgstr "以点分割的需执行操作的Python类名"
 
 #: models.py:227
 msgid "Entry action path"
-msgstr ""
+msgstr "输入操作路径"
 
 #: models.py:230
 msgid "Entry action data"
-msgstr ""
+msgstr "输入操作数据"
 
 #: models.py:239
 msgid "Workflow state action"
-msgstr ""
+msgstr "工作流状态操作"
 
 #: models.py:240
 msgid "Workflow state actions"
-msgstr ""
+msgstr "工作流状态操作"
 
 #: models.py:295
 msgid "Workflow transition"
-msgstr ""
+msgstr "工作流中的状态变更"
 
 #: models.py:296
 msgid "Workflow transitions"
-msgstr ""
+msgstr "工作流中的状态变更"
 
 #: models.py:306
 msgid "Event type"
@@ -281,136 +281,136 @@ msgstr "事件类型"
 
 #: models.py:310
 msgid "Workflow transition trigger event"
-msgstr ""
+msgstr "工作流状态变更触发事件"
 
 #: models.py:311
 msgid "Workflow transitions trigger events"
-msgstr ""
+msgstr "工作流状态变更触发事件"
 
 #: models.py:325
 msgid "Document"
-msgstr ""
+msgstr "文档"
 
 #: models.py:420 models.py:435
 msgid "Workflow instance"
-msgstr ""
+msgstr "工作流实例"
 
 #: models.py:421
 msgid "Workflow instances"
-msgstr ""
+msgstr "工作流实例"
 
 #: models.py:438
 msgid "Datetime"
-msgstr ""
+msgstr "日期时间"
 
 #: models.py:454
 msgid "Workflow instance log entry"
-msgstr ""
+msgstr "工作流实例日志入口"
 
 #: models.py:455
 msgid "Workflow instance log entries"
-msgstr ""
+msgstr "工作流实例日志入口"
 
 #: models.py:459
 msgid "Not a valid transition choice."
-msgstr ""
+msgstr "不是有效的状态变更"
 
 #: models.py:476
 msgid "Workflow runtime proxy"
-msgstr ""
+msgstr "工作流运行时代理"
 
 #: models.py:477
 msgid "Workflow runtime proxies"
-msgstr ""
+msgstr "工作流运行时代理"
 
 #: models.py:483
 msgid "Workflow state runtime proxy"
-msgstr ""
+msgstr "工作流状态运行时代理"
 
 #: models.py:484
 msgid "Workflow state runtime proxies"
-msgstr ""
+msgstr "工作流状态运行时代理"
 
 #: permissions.py:7
 msgid "Document workflows"
-msgstr ""
+msgstr "文档工作流"
 
 #: permissions.py:10
 msgid "Create workflows"
-msgstr ""
+msgstr "创建工作流"
 
 #: permissions.py:13
 msgid "Delete workflows"
-msgstr ""
+msgstr "删除工作流"
 
 #: permissions.py:16
 msgid "Edit workflows"
-msgstr ""
+msgstr "编辑工作流"
 
 #: permissions.py:19
 msgid "View workflows"
-msgstr ""
+msgstr "查看工作流"
 
 #: permissions.py:25
 msgid "Transition workflows"
-msgstr ""
+msgstr "变更工作流"
 
 #: permissions.py:28
 msgid "Execute workflow tools"
-msgstr ""
+msgstr "工作流执行工具"
 
 #: serializers.py:22
 msgid "Primary key of the document type to be added."
-msgstr ""
+msgstr "待加入文档类型的主键"
 
 #: serializers.py:37
 msgid ""
 "API URL pointing to a document type in relation to the workflow to which it "
 "is attached. This URL is different than the canonical document type URL."
-msgstr ""
+msgstr "附加到相关工作流的文档类型的API URL。与标准文档类型URL不同。"
 
 #: serializers.py:116
 msgid "Primary key of the destination state to be added."
-msgstr ""
+msgstr "待加入的目标状态的主键。"
 
 #: serializers.py:120
 msgid "Primary key of the origin state to be added."
-msgstr ""
+msgstr "待加入的起始状态的主键。"
 
 #: serializers.py:218
 msgid ""
 "API URL pointing to a workflow in relation to the document to which it is "
 "attached. This URL is different than the canonical workflow URL."
-msgstr ""
+msgstr "附加到相关文档的工作流的API URL。与标准工作流URL不同。"
 
 #: serializers.py:227
 msgid "A link to the entire history of this workflow."
-msgstr ""
+msgstr "查看本工作流全部历史的链接"
 
 #: serializers.py:259
 msgid ""
 "Comma separated list of document type primary keys to which this workflow "
 "will be attached."
-msgstr ""
+msgstr "本工作流即将作用的文档类型主键列表，以逗号分隔。"
 
 #: serializers.py:319
 msgid "Primary key of the transition to be added."
-msgstr ""
+msgstr "将要增加状态变更的主键"
 
 #: views.py:60
 #, python-format
 msgid "Workflows for document: %s"
-msgstr ""
+msgstr "工作流，用于文档：%s"
 
 #: views.py:84
 #, python-format
 msgid "Detail of workflow: %(workflow)s"
-msgstr ""
+msgstr "工作流详情：%(workflow)s"
 
 #: views.py:108
 #, python-format
 msgid "Document \"%s\" transitioned successfully"
-msgstr ""
+msgstr "文档 \"%s\" 状态已成功变更"
 
 #: views.py:117
 msgid "Submit"
@@ -419,109 +419,109 @@ msgstr "提交"
 #: views.py:119
 #, python-format
 msgid "Do transition for workflow: %s"
-msgstr ""
+msgstr "变更以下文档的状态：%s"
 
 #: views.py:171
 msgid "Available document types"
-msgstr ""
+msgstr "可用文档类型"
 
 #: views.py:172
 msgid "Document types assigned this workflow"
-msgstr ""
+msgstr "指派到本工作流的文档类型"
 
 #: views.py:182
 #, python-format
 msgid "Document types assigned the workflow: %s"
-msgstr ""
+msgstr "指派到本工作流的文档类型：%s"
 
 #: views.py:221 views.py:664
 #, python-format
 msgid "States of workflow: %s"
-msgstr ""
+msgstr "工作流状态：%s"
 
 #: views.py:248
 #, python-format
 msgid "Create a \"%s\" workflow action"
-msgstr ""
+msgstr "创建 \"%s\" 工作流操作"
 
 #: views.py:288
 #, python-format
 msgid "Delete workflow state action: %s"
-msgstr ""
+msgstr "删除工作流状态操作：%s"
 
 #: views.py:311
 #, python-format
 msgid "Edit workflow state action: %s"
-msgstr ""
+msgstr "编辑工作流状态操作：%s"
 
 #: views.py:334 views.py:683
 msgid "This is a feature preview. Things might not work as expect."
-msgstr ""
+msgstr "这是一个功能预览，实际情况有可能不同。"
 
 #: views.py:348
 #, python-format
 msgid "Actions for workflow state: %s"
-msgstr ""
+msgstr "工作流状态的操作：%s"
 
 #: views.py:382
 msgid "New workflow state action selection"
-msgstr ""
+msgstr "新工作流状态操作的选项"
 
 #: views.py:398
 #, python-format
 msgid "Create states for workflow: %s"
-msgstr ""
+msgstr "创建状态，用于工作流：%s"
 
 #: views.py:468
 #, python-format
 msgid "Transitions of workflow: %s"
-msgstr ""
+msgstr "工作流变更：%s"
 
 #: views.py:490
 msgid "Unable to save transition; integrity error."
-msgstr ""
+msgstr "无法保存工作流变更；一致性出错。"
 
 #: views.py:502
 #, python-format
 msgid "Create transitions for workflow: %s"
-msgstr ""
+msgstr "创建变更，用于工作流：%s"
 
 #: views.py:606
 #, python-format
 msgid "Documents with the workflow: %s"
-msgstr ""
+msgstr "以下工作流的文档：%s"
 
 #: views.py:627
 #, python-format
 msgid "Documents in the workflow \"%s\", state \"%s\""
-msgstr ""
+msgstr "工作流 \"%s\" 中的文档，状态 \"%s\""
 
 #: views.py:705
 #, python-format
 msgid "Error updating workflow transition trigger events; %s"
-msgstr ""
+msgstr "更新工作流变更触发事件时出错；%s"
 
 #: views.py:711
 msgid "Workflow transition trigger events updated successfully"
-msgstr ""
+msgstr "工作流变更触发事件更新成功"
 
 #: views.py:728
 #, python-format
 msgid "Workflow transition trigger events for: %s"
-msgstr ""
+msgstr "工作流变更触发时间，用于：%s"
 
 #: views.py:757
 msgid "Launch all workflows?"
-msgstr ""
+msgstr "启动所有工作流？"
 
 #: views.py:764
 msgid "Workflow launch queued successfully."
-msgstr ""
+msgstr "工作流启动已排队成功。"
 
 #: views.py:789
 #, python-format
 msgid "Preview of: %s"
-msgstr ""
+msgstr "预览：%s"
 
 #: workflow_actions.py:22
 msgid "URL"
@@ -534,18 +534,21 @@ msgid ""
 " The \"entry_log\" in turn provides the \"workflow_instance\", \"datetime\","
 " \"transition\", \"user\", and \"comment\" attributes."
 msgstr ""
+"可以是IP地址、域名、或模板。模板的内容中可以使用工作流日志入口实例的变量\"entry_log\"，"
+"它可以提供：\"workflow_instance\", \"datetime\","
+" \"transition\", \"user\", 和 \"comment\"等属性标签。"
 
 #: workflow_actions.py:35
 msgid "Timeout"
-msgstr ""
+msgstr "超时"
 
 #: workflow_actions.py:37
 msgid "Time in seconds to wait for a response."
-msgstr ""
+msgstr "等待返回值的时间，以秒计。"
 
 #: workflow_actions.py:41
 msgid "Payload"
-msgstr ""
+msgstr "负载"
 
 #: workflow_actions.py:44
 msgid ""
@@ -555,22 +558,25 @@ msgid ""
 "turn provides the \"workflow_instance\", \"datetime\", \"transition\", "
 "\"user\", and \"comment\" attributes."
 msgstr ""
+"请求中包含了一个JSON文档。 或者是一个会返回JSON文档的模板。模板的内容中可以使用"
+"工作流日志入口实例的变量\"entry_log\"，它可以提供：\"workflow_instance\", \"datetime\","
+" \"transition\", \"user\", 和 \"comment\"等属性标签。"
 
 #: workflow_actions.py:57
 msgid "Perform a POST request"
-msgstr ""
+msgstr "执行POST请求"
 
 #: workflow_actions.py:76
 #, python-format
 msgid "URL template error: %s"
-msgstr ""
+msgstr "URL模板错误：%s"
 
 #: workflow_actions.py:87
 #, python-format
 msgid "Payload template error: %s"
-msgstr ""
+msgstr "负载模板错误：%s"
 
 #: workflow_actions.py:96
 #, python-format
 msgid "Payload JSON error: %s"
-msgstr ""
+msgstr "负载JSON错误：%s"

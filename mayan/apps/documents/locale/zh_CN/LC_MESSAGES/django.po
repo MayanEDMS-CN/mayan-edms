@@ -24,22 +24,22 @@ msgstr "文档"
 
 #: apps.py:126
 msgid "Create a document type"
-msgstr ""
+msgstr "创建文档类型"
 
 #: apps.py:128
 msgid ""
 "Every uploaded document must be assigned a document type, it is the basic "
 "way Mayan EDMS categorizes documents."
-msgstr ""
+msgstr "每份上传的文档必须指定一种文档类型，这是本知识库系统进行文档分类的基本方式。"
 
 #: apps.py:135 models.py:68 models.py:160 models.py:678 search.py:21
 #: search.py:42
 msgid "Label"
-msgstr ""
+msgstr "标签"
 
 #: apps.py:140
 msgid "The MIME type of any of the versions of a document"
-msgstr ""
+msgstr "任何文档版本的MIME类型"
 
 #: apps.py:141 apps.py:254 search.py:19 search.py:39
 msgid "MIME type"
@@ -47,27 +47,27 @@ msgstr "MIME类型"
 
 #: apps.py:190 apps.py:201 apps.py:208 apps.py:234 apps.py:266 apps.py:274
 msgid "Thumbnail"
-msgstr ""
+msgstr "缩略图"
 
 #: apps.py:196 apps.py:215 apps.py:241
 msgid "Type"
-msgstr ""
+msgstr "类型"
 
 #: apps.py:228 models.py:680
 msgid "Enabled"
-msgstr ""
+msgstr "已启用"
 
 #: apps.py:244
 msgid "Date time trashed"
-msgstr ""
+msgstr "删除的日期时间"
 
 #: apps.py:250
 msgid "Time and date"
-msgstr ""
+msgstr "时间和日期"
 
 #: apps.py:258
 msgid "Encoding"
-msgstr ""
+msgstr "编码"
 
 #: apps.py:262 models.py:375
 msgid "Comment"
@@ -75,80 +75,80 @@ msgstr "评论"
 
 #: apps.py:280 links.py:310 views/document_views.py:790
 msgid "Duplicates"
-msgstr ""
+msgstr "重复"
 
 #: apps.py:500
 msgid "New documents per month"
-msgstr ""
+msgstr "每月新增文档"
 
 #: apps.py:507
 msgid "New document versions per month"
-msgstr ""
+msgstr "每月新增版本"
 
 #: apps.py:514
 msgid "New document pages per month"
-msgstr ""
+msgstr "每月新增文档页面"
 
 #: apps.py:521
 msgid "Total documents at each month"
-msgstr ""
+msgstr "每月的文档总计"
 
 #: apps.py:528
 msgid "Total document versions at each month"
-msgstr ""
+msgstr "每月的文档版本总计"
 
 #: apps.py:535
 msgid "Total document pages at each month"
-msgstr ""
+msgstr "每月的文档页面总计"
 
 #: dashboard_widgets.py:37
 msgid "New pages this month"
-msgstr ""
+msgstr "本月新页面"
 
 #: dashboard_widgets.py:46
 msgid "New documents this month"
-msgstr ""
+msgstr "本月新文档"
 
 #: dashboard_widgets.py:55
 msgid "Total documents"
-msgstr ""
+msgstr "文档总计"
 
 #: dashboard_widgets.py:62 links.py:297 links.py:302 permissions.py:56
 #: views/document_type_views.py:52
 msgid "Document types"
-msgstr ""
+msgstr "文档类型"
 
 #: dashboard_widgets.py:69 views/document_views.py:84
 msgid "Documents in trash"
-msgstr ""
+msgstr "已删除文档"
 
 #: events.py:8
 msgid "Document created"
-msgstr ""
+msgstr "新建文档"
 
 #: events.py:12
 msgid "Document downloaded"
-msgstr ""
+msgstr "已下载文档"
 
 #: events.py:15
 msgid "Document properties edited"
-msgstr ""
+msgstr "属性被编辑过的文档"
 
 #: events.py:18
 msgid "Document type changed"
-msgstr ""
+msgstr "类型改变过的文档"
 
 #: events.py:21
 msgid "New version uploaded"
-msgstr ""
+msgstr "上传过新版本的文档"
 
 #: events.py:25
 msgid "Document version reverted"
-msgstr ""
+msgstr "版本回退过的文档"
 
 #: events.py:29
 msgid "Document viewed"
-msgstr ""
+msgstr "查看过的文档"
 
 #: forms.py:39 links.py:236
 msgid "Page image"
@@ -162,7 +162,7 @@ msgstr "文档页(%d)"
 #: forms.py:70
 #, python-format
 msgid "Document version pages (%d)"
-msgstr ""
+msgstr "文档版本页 (%d)"
 
 #: forms.py:108
 msgid "Quick document rename"
@@ -178,11 +178,11 @@ msgstr "UUID"
 
 #: forms.py:136 models.py:170
 msgid "Language"
-msgstr ""
+msgstr "语言"
 
 #: forms.py:138
 msgid "Unknown"
-msgstr ""
+msgstr "未知"
 
 #: forms.py:146
 msgid "File mimetype"
@@ -194,7 +194,7 @@ msgstr "无"
 
 #: forms.py:150
 msgid "File encoding"
-msgstr ""
+msgstr "文件编码"
 
 #: forms.py:156
 msgid "File size"
@@ -230,7 +230,7 @@ msgid ""
 "Download the document in the original format or in a compressed manner. This"
 " option is selectable only when downloading one document, for multiple "
 "documents, the bundle will always be downloads as a compressed file."
-msgstr ""
+msgstr "下载源文件还是压缩包。此选项只对单个文件下载有效，多文件下载必然是压缩包。"
 
 #: forms.py:220
 msgid "Compressed filename"
@@ -240,18 +240,18 @@ msgstr "压缩的文件名"
 msgid ""
 "The filename of the compressed file that will contain the documents to be "
 "downloaded, if the previous option is selected."
-msgstr "如果选择了前面选项，压缩文件的文件名将包含要下载的文档"
+msgstr "如果选择了前面选项，将包含要下载文档的压缩文件的文件名"
 
 #: forms.py:238
 msgid "Preserve extension"
-msgstr ""
+msgstr "保留扩展"
 
 #: forms.py:240
 msgid ""
 "Takes the file extension and moves it to the end of the filename allowing "
 "operating systems that rely on file extensions to open the downloaded "
 "document version correctly."
-msgstr ""
+msgstr "把文件扩展名追加到下载文件名的末尾，使得操作系统能正确打开它。"
 
 #: forms.py:252 literals.py:23
 msgid "Page range"
@@ -261,43 +261,43 @@ msgstr "页范围"
 msgid ""
 "Page number from which all the transformation will be cloned. Existing "
 "transformations will be lost."
-msgstr ""
+msgstr "指定页面号，从该页复制所有变换。当前变换将被替换掉。"
 
 #: links.py:53
 msgid "Preview"
-msgstr ""
+msgstr "预览"
 
 #: links.py:58
 msgid "Properties"
-msgstr ""
+msgstr "属性"
 
 #: links.py:63 links.py:158
 msgid "Versions"
-msgstr ""
+msgstr "版本"
 
 #: links.py:74 links.py:120
 msgid "Clear transformations"
-msgstr ""
+msgstr "清除变换"
 
 #: links.py:79
 msgid "Clone transformations"
-msgstr ""
+msgstr "复制变换"
 
 #: links.py:84 links.py:128 links.py:271 links.py:285
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 #: links.py:89 links.py:124
 msgid "Move to trash"
-msgstr ""
+msgstr "移到废件箱"
 
 #: links.py:94
 msgid "Edit properties"
-msgstr ""
+msgstr "编辑属性"
 
 #: links.py:98 links.py:132
 msgid "Change type"
-msgstr ""
+msgstr "改变类型"
 
 #: links.py:102 links.py:136 views/document_views.py:433
 msgid "Download"
@@ -305,162 +305,162 @@ msgstr "下载"
 
 #: links.py:106
 msgid "Print"
-msgstr ""
+msgstr "打印"
 
 #: links.py:111 links.py:139
 msgid "Recalculate page count"
-msgstr ""
+msgstr "重新计算页面数量"
 
 #: links.py:115 links.py:143
 msgid "Restore"
-msgstr ""
+msgstr "恢复"
 
 #: links.py:149
 msgid "Download version"
-msgstr ""
+msgstr "下载版本"
 
 #: links.py:153 links.py:222 models.py:231 models.py:369 models.py:905
 #: models.py:930
 msgid "Document"
-msgstr ""
+msgstr "文档"
 
 #: links.py:163
 msgid "Details"
-msgstr "细节"
+msgstr "详情"
 
 #: links.py:168 views/document_views.py:64
 msgid "All documents"
-msgstr ""
+msgstr "全部文档"
 
 #: links.py:171 models.py:923 views/document_views.py:394
 msgid "Recent documents"
-msgstr ""
+msgstr "最近的文档"
 
 #: links.py:175
 msgid "Trash can"
-msgstr ""
+msgstr "废件箱"
 
 #: links.py:183
 msgid ""
 "Clear the graphics representations used to speed up the documents' display "
 "and interactive transformations results."
-msgstr "清除图像信息有助于加速文档显示和变换结果交互。"
+msgstr "清除图像信息有助于加速文档显示和交互变换的效果。"
 
 #: links.py:186
 msgid "Clear document image cache"
-msgstr ""
+msgstr "清楚文档图像缓存"
 
 #: links.py:190 permissions.py:51
 msgid "Empty trash"
-msgstr ""
+msgstr "清空废件箱"
 
 #: links.py:198
 msgid "First page"
-msgstr ""
+msgstr "首页"
 
 #: links.py:203
 msgid "Last page"
-msgstr ""
+msgstr "尾页"
 
 #: links.py:210
 msgid "Previous page"
-msgstr ""
+msgstr "前页"
 
 #: links.py:216
 msgid "Next page"
-msgstr ""
+msgstr "后页"
 
 #: links.py:227
 msgid "Rotate left"
-msgstr ""
+msgstr "逆时针旋转"
 
 #: links.py:232
 msgid "Rotate right"
-msgstr ""
+msgstr "顺时针旋转"
 
 #: links.py:240
 msgid "Reset view"
-msgstr ""
+msgstr "重置视图"
 
 #: links.py:245
 msgid "Zoom in"
-msgstr ""
+msgstr "放大"
 
 #: links.py:251
 msgid "Zoom out"
-msgstr ""
+msgstr "缩小"
 
 #: links.py:260
 msgid "Revert"
-msgstr ""
+msgstr "恢复"
 
 #: links.py:267 views/document_type_views.py:67
 msgid "Create document type"
-msgstr ""
+msgstr "创建文档类型"
 
 #: links.py:275 links.py:289
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 #: links.py:280
 msgid "Add quick label to document type"
-msgstr ""
+msgstr "为文档类型增加快速标签"
 
 #: links.py:293 models.py:686
 msgid "Quick labels"
-msgstr ""
+msgstr "快速标签"
 
 #: links.py:305 models.py:933 models.py:946 views/document_views.py:798
 msgid "Duplicated documents"
-msgstr ""
+msgstr "重复的文档"
 
 #: links.py:314
 msgid "Duplicated document scan"
-msgstr ""
+msgstr "扫描重复文档"
 
 #: literals.py:14
 msgid "Default"
-msgstr ""
+msgstr "缺省"
 
 #: literals.py:23
 msgid "All pages"
-msgstr ""
+msgstr "所有页面"
 
 #: models.py:72
 msgid ""
 "Amount of time after which documents of this type will be moved to the "
 "trash."
-msgstr ""
+msgstr "此时间后本类型的文档会被移到废件箱。"
 
 #: models.py:74
 msgid "Trash time period"
-msgstr ""
+msgstr "回收时间周期"
 
 #: models.py:78
 msgid "Trash time unit"
-msgstr ""
+msgstr "回收时间单位"
 
 #: models.py:82
 msgid ""
 "Amount of time after which documents of this type in the trash will be "
 "deleted."
-msgstr ""
+msgstr "此时间后本类型文档将被彻底删除。"
 
 #: models.py:84
 msgid "Delete time period"
-msgstr ""
+msgstr "删除时间周期"
 
 #: models.py:89
 msgid "Delete time unit"
-msgstr ""
+msgstr "删除时间单位"
 
 #: models.py:109
 msgid "Documents types"
-msgstr ""
+msgstr "文档类型"
 
 #: models.py:160
 msgid "The name of the document"
-msgstr ""
+msgstr "文档名称"
 
 #: models.py:163 search.py:22 search.py:45
 msgid "Description"
@@ -468,35 +468,35 @@ msgstr "描述"
 
 #: models.py:166 models.py:936
 msgid "Added"
-msgstr ""
+msgstr "已增加"
 
 #: models.py:174
 msgid "In trash?"
-msgstr ""
+msgstr "已标为废件？"
 
 #: models.py:179
 msgid "Date and time trashed"
-msgstr ""
+msgstr "标为废件的日期和时间"
 
 #: models.py:183
 msgid ""
 "A document stub is a document with an entry on the database but no file "
 "uploaded. This could be an interrupted upload or a deferred upload via the "
 "API."
-msgstr ""
+msgstr "文档存根是在数据库里有记录但缺乏实体文件的文档。可能是上传失败的后果，或调用API延迟上传中的文件。"
 
 #: models.py:186
 msgid "Is stub?"
-msgstr ""
+msgstr "仅有存根？"
 
 #: models.py:194
 #, python-format
 msgid "Document stub, id: %d"
-msgstr ""
+msgstr "文档存根，ID：%d"
 
 #: models.py:372
 msgid "Timestamp"
-msgstr ""
+msgstr "时间戳"
 
 #: models.py:381
 msgid "File"
@@ -504,15 +504,15 @@ msgstr "文件"
 
 #: models.py:396 models.py:397 models.py:699
 msgid "Document version"
-msgstr ""
+msgstr "文档版本"
 
 #: models.py:685
 msgid "Quick label"
-msgstr ""
+msgstr "快速标签"
 
 #: models.py:703
 msgid "Page number"
-msgstr ""
+msgstr "页面号"
 
 #: models.py:708
 #, python-format
@@ -521,11 +521,11 @@ msgstr "文档%(document)s页%(page_num)d超出%(total_pages)d"
 
 #: models.py:724 models.py:872 models.py:889
 msgid "Document page"
-msgstr ""
+msgstr "文档页面"
 
 #: models.py:725 models.py:890
 msgid "Document pages"
-msgstr ""
+msgstr "文档页面"
 
 #: models.py:874
 msgid "Filename"
@@ -533,11 +533,11 @@ msgstr "文件名"
 
 #: models.py:877
 msgid "Document page cached image"
-msgstr ""
+msgstr "文档页面缓存图像"
 
 #: models.py:878
 msgid "Document page cached images"
-msgstr ""
+msgstr "文档页面缓存图像"
 
 #: models.py:901
 msgid "User"
@@ -545,15 +545,15 @@ msgstr "用户"
 
 #: models.py:908
 msgid "Accessed"
-msgstr ""
+msgstr "已访问"
 
 #: models.py:922
 msgid "Recent document"
-msgstr ""
+msgstr "最近的文档"
 
 #: models.py:945
 msgid "Duplicated document"
-msgstr ""
+msgstr "重复的文档"
 
 #: permissions.py:10
 msgid "Create documents"
@@ -565,7 +565,7 @@ msgstr "删除文档"
 
 #: permissions.py:16
 msgid "Trash documents"
-msgstr ""
+msgstr "废件箱中的文档"
 
 #: permissions.py:19 views/document_views.py:435
 msgid "Download documents"
@@ -585,11 +585,11 @@ msgstr "编辑文档属性"
 
 #: permissions.py:31
 msgid "Print documents"
-msgstr ""
+msgstr "打印文档"
 
 #: permissions.py:34
 msgid "Restore trashed document"
-msgstr ""
+msgstr "恢复废件箱中的文档"
 
 #: permissions.py:37
 msgid "Execute document modifying tools"
@@ -601,7 +601,7 @@ msgstr "恢复文档到前一版本"
 
 #: permissions.py:45
 msgid "View documents' versions list"
-msgstr ""
+msgstr "查看文档版本列表"
 
 #: permissions.py:48
 msgid "View documents"
@@ -625,47 +625,47 @@ msgstr "查看文档类型"
 
 #: queues.py:9
 msgid "Converter"
-msgstr ""
+msgstr "转换器"
 
 #: queues.py:12
 msgid "Documents periodic"
-msgstr ""
+msgstr "定期文档"
 
 #: queues.py:15
 msgid "Uploads"
-msgstr ""
+msgstr "上传"
 
 #: queues.py:23
 msgid "Check document type delete periods"
-msgstr ""
+msgstr "检查文档类型删除周期"
 
 #: queues.py:27
 msgid "Check document type trash periods"
-msgstr ""
+msgstr "检查文档类型移入废件箱周期"
 
 #: queues.py:31
 msgid "Delete document stubs"
-msgstr ""
+msgstr "删除文档存根"
 
 #: queues.py:36
 msgid "Clear image cache"
-msgstr ""
+msgstr "清楚图像缓存"
 
 #: queues.py:41
 msgid "Generate document page image"
-msgstr ""
+msgstr "生成文档页面图像"
 
 #: queues.py:46
 msgid "Update document page count"
-msgstr ""
+msgstr "更新文档页面数量"
 
 #: queues.py:50
 msgid "Upload new document version"
-msgstr ""
+msgstr "上传新文档版本"
 
 #: queues.py:54
 msgid "Delete a document"
-msgstr ""
+msgstr "删除文档"
 
 #: settings.py:29
 msgid ""
@@ -695,32 +695,32 @@ msgstr "每个交互用户中文档页的旋转度数"
 
 #: settings.py:70
 msgid "Default documents language (in ISO639-2 format)."
-msgstr ""
+msgstr "缺省文档语言（按ISO639-2格式）。"
 
 #: settings.py:74
 msgid "List of supported document languages."
-msgstr ""
+msgstr "支持的文档语言列表"
 
 #: settings.py:79
 msgid ""
 "Disables the first cache tier which stores high resolution, non transformed "
 "versions of documents's pages."
-msgstr ""
+msgstr "禁用一级缓存，存放的未经压缩的高品质文档页面图像。"
 
 #: settings.py:86
 msgid ""
 "Disables the second cache tier which stores medium to low resolution, "
 "transformed (rotated, zoomed, etc) versions of documents' pages."
-msgstr ""
+msgstr "禁用二级缓存，存放的压缩和变形过后的文档页面图像。"
 
 #: views/document_page_views.py:48
 #, python-format
 msgid "Pages for document: %s"
-msgstr ""
+msgstr "文档页面：%s"
 
 #: views/document_page_views.py:103
 msgid "Unknown view keyword argument schema, unable to redirect."
-msgstr ""
+msgstr "未知的查看关键字模式，无法跳转。"
 
 #: views/document_page_views.py:135
 msgid "There are no more pages in this document"
@@ -733,52 +733,52 @@ msgstr "你已经在此文档的第一页了"
 #: views/document_page_views.py:180
 #, python-format
 msgid "Image of: %s"
-msgstr ""
+msgstr "%s 的图像"
 
 #: views/document_type_views.py:39
 #, python-format
 msgid "Documents of type: %s"
-msgstr ""
+msgstr "文档，类型为：%s"
 
 #: views/document_type_views.py:78
 msgid "All documents of this type will be deleted too."
-msgstr ""
+msgstr "此类型的所有文档也将被删除。"
 
 #: views/document_type_views.py:80
 #, python-format
 msgid "Delete the document type: %s?"
-msgstr ""
+msgstr "删除文档类型：%s？"
 
 #: views/document_type_views.py:96
 #, python-format
 msgid "Edit document type: %s"
-msgstr ""
+msgstr "编辑文档类型：%s"
 
 #: views/document_type_views.py:121
 #, python-format
 msgid "Create quick label for document type: %s"
-msgstr ""
+msgstr "为此文档类型创建快速标签：%s"
 
 #: views/document_type_views.py:142
 #, python-format
 msgid "Edit quick label \"%(filename)s\" from document type \"%(document_type)s\""
-msgstr ""
+msgstr "编辑快速标签 \"%(filename)s\" ，适用于文档类型：\"%(document_type)s\""
 
 #: views/document_type_views.py:167
 #, python-format
 msgid ""
 "Delete the quick label: %(label)s, from document type \"%(document_type)s\"?"
-msgstr ""
+msgstr "删除快速标签 \"%(filename)s\" ，适用于文档类型：\"%(document_type)s\"？"
 
 #: views/document_type_views.py:195
 #, python-format
 msgid "Quick labels for document type: %s"
-msgstr ""
+msgstr "快速标签，适用于文档类型：%s"
 
 #: views/document_version_views.py:47
 #, python-format
 msgid "Versions of document: %s"
-msgstr ""
+msgstr "文档版本：%s"
 
 #: views/document_version_views.py:61
 msgid "All later version after this one will be deleted too."
@@ -786,7 +786,7 @@ msgstr "此版本以后的所有版本将被删除"
 
 #: views/document_version_views.py:64
 msgid "Revert to this version?"
-msgstr ""
+msgstr "恢复到此版本？"
 
 #: views/document_version_views.py:74
 msgid "Document version reverted successfully"
@@ -799,160 +799,160 @@ msgstr "恢复文档版本失败%s"
 
 #: views/document_version_views.py:97
 msgid "Download document version"
-msgstr ""
+msgstr "下载文档版本"
 
 #: views/document_version_views.py:162
 #, python-format
 msgid "Preview of document version: %s"
-msgstr ""
+msgstr "预览文档版本：%s"
 
 #: views/document_views.py:92
 msgid "Delete the selected document?"
-msgstr ""
+msgstr "删除所选文档？"
 
 #: views/document_views.py:113
 #, python-format
 msgid "Document: %(document)s deleted."
-msgstr ""
+msgstr "文档 %(document)s 已删除。"
 
 #: views/document_views.py:121
 msgid "Delete the selected documents?"
-msgstr ""
+msgstr "删除所选文档？"
 
 #: views/document_views.py:133
 #, python-format
 msgid "Document type change request performed on %(count)d document"
-msgstr ""
+msgstr "已对 %(count)d 份文档执行了文档类型变更请求。"
 
 #: views/document_views.py:136
 #, python-format
 msgid "Document type change request performed on %(count)d documents"
-msgstr ""
+msgstr "已对 %(count)d 份文档执行了文档类型变更请求。"
 
 #: views/document_views.py:143
 msgid "Change"
-msgstr ""
+msgstr "变更"
 
 #: views/document_views.py:145
 msgid "Change the type of the selected document"
 msgid_plural "Change the type of the selected documents"
-msgstr[0] ""
+msgstr[0] "改变所选文档的类型"
 
 #: views/document_views.py:156
 #, python-format
 msgid "Change the type of the document: %s"
-msgstr ""
+msgstr "改变此文档的类型：%s"
 
 #: views/document_views.py:177
 #, python-format
 msgid "Document type for \"%s\" changed successfully."
-msgstr ""
+msgstr "\"%s\" 的文档类型已成功改变。"
 
 #: views/document_views.py:201
 #, python-format
 msgid "Duplicates for document: %s"
-msgstr ""
+msgstr "与此文档重复：%s"
 
 #: views/document_views.py:230
 #, python-format
 msgid "Edit properties of document: %s"
-msgstr ""
+msgstr "编辑此文档的属性：%s"
 
 #: views/document_views.py:246
 msgid "Restore the selected document?"
-msgstr ""
+msgstr "恢复所选文档？"
 
 #: views/document_views.py:267
 #, python-format
 msgid "Document: %(document)s restored."
-msgstr ""
+msgstr "文档：%(document)s 已恢复。"
 
 #: views/document_views.py:275
 msgid "Restore the selected documents?"
-msgstr ""
+msgstr "恢复所选文档？"
 
 #: views/document_views.py:302
 #, python-format
 msgid "Preview of document: %s"
-msgstr ""
+msgstr "预览此文档：%s"
 
 #: views/document_views.py:310
 #, python-format
 msgid "Move \"%s\" to the trash?"
-msgstr ""
+msgstr "把 \"%s\" 移到废件箱？"
 
 #: views/document_views.py:333
 #, python-format
 msgid "Document: %(document)s moved to trash successfully."
-msgstr ""
+msgstr "文档：%(document)s 已成功移到废件箱。"
 
 #: views/document_views.py:346
 msgid "Move the selected documents to the trash?"
-msgstr ""
+msgstr "把所选文档移到废件箱？"
 
 #: views/document_views.py:364
 #, python-format
 msgid "Properties for document: %s"
-msgstr ""
+msgstr "文档属性：%s"
 
 #: views/document_views.py:370
 msgid "Empty trash?"
-msgstr ""
+msgstr "清空废件箱？"
 
 #: views/document_views.py:383
 msgid "Trash emptied successfully"
-msgstr ""
+msgstr "废件箱已成功清空"
 
 #: views/document_views.py:569
 #, python-format
 msgid "%(count)d document queued for page count recalculation"
-msgstr ""
+msgstr "%(count)d 份文档排队等待重新计算页数"
 
 #: views/document_views.py:572
 #, python-format
 msgid "%(count)d documents queued for page count recalculation"
-msgstr ""
+msgstr "%(count)d 份文档排队等待重新计算页数"
 
 #: views/document_views.py:580
 msgid "Recalculate the page count of the selected document?"
 msgid_plural "Recalculate the page count of the selected documents?"
-msgstr[0] ""
+msgstr[0] "重新计算所选文档的页数？"
 
 #: views/document_views.py:591
 #, python-format
 msgid "Recalculate the page count of the document: %s?"
-msgstr ""
+msgstr "重新计算此文档的页数：%s？"
 
 #: views/document_views.py:608
 #, python-format
 msgid "Transformation clear request processed for %(count)d document"
-msgstr ""
+msgstr "%(count)d 份文档的变换清除请求已处理"
 
 #: views/document_views.py:611
 #, python-format
 msgid "Transformation clear request processed for %(count)d documents"
-msgstr ""
+msgstr "%(count)d 份文档的变换清除请求已处理"
 
 #: views/document_views.py:619
 msgid "Clear all the page transformations for the selected document?"
 msgid_plural "Clear all the page transformations for the selected document?"
-msgstr[0] ""
+msgstr[0] "清除所选文档的页面变换？"
 
 #: views/document_views.py:630
 #, python-format
 msgid "Clear all the page transformations for the document: %s?"
-msgstr ""
+msgstr "清除此文档所有页面变换：%s"
 
 #: views/document_views.py:645 views/document_views.py:673
 #, python-format
 msgid ""
 "Error deleting the page transformations for document: %(document)s; "
 "%(error)s."
-msgstr "删除文档: %(document)s变换页数失败%(error)s"
+msgstr "删除文档: %(document)s页面变换失败，错误：%(error)s"
 
 #: views/document_views.py:681
 msgid "Transformations cloned successfully."
-msgstr ""
+msgstr "变换复制成功"
 
 #: views/document_views.py:696 views/document_views.py:751
 msgid "Submit"
@@ -961,38 +961,38 @@ msgstr "提交"
 #: views/document_views.py:698
 #, python-format
 msgid "Clone page transformations for document: %s"
-msgstr ""
+msgstr "对此文档复制变换：%s"
 
 #: views/document_views.py:752
 #, python-format
 msgid "Print: %s"
-msgstr ""
+msgstr "打印：%s"
 
 #: views/misc_views.py:18
 msgid "Clear the document image cache?"
-msgstr ""
+msgstr "清除文档图像缓存？"
 
 #: views/misc_views.py:25
 msgid "Document cache clearing queued successfully."
-msgstr ""
+msgstr "文档缓存清除已成功排队。"
 
 #: views/misc_views.py:31
 msgid "Scan for duplicated documents?"
-msgstr ""
+msgstr "扫描重复文档？"
 
 #: views/misc_views.py:38
 msgid "Duplicated document scan queued successfully."
-msgstr ""
+msgstr "重复文档扫描已成功排队。"
 
 #: widgets.py:67
 #, python-format
 msgid "Page %(page_number)d of %(total_pages)d"
-msgstr ""
+msgstr "第%(page_number)d 页，共 %(total_pages)d 页"
 
 #: widgets.py:90
 msgid "Clickable image"
-msgstr ""
+msgstr "可点击图像"
 
 #: widgets.py:253
 msgid "Document page image"
-msgstr ""
+msgstr "文档页面图像"

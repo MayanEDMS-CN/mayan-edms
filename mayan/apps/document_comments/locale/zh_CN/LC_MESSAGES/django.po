@@ -19,7 +19,7 @@ msgstr ""
 
 #: apps.py:26
 msgid "Document comments"
-msgstr ""
+msgstr "文档评论"
 
 #: apps.py:46
 msgid "Date"
@@ -40,27 +40,27 @@ msgstr "评论"
 
 #: events.py:9
 msgid "Document comment created"
-msgstr ""
+msgstr "已创建文档评论"
 
 #: events.py:13
 msgid "Document comment deleted"
-msgstr ""
+msgstr "已删除文档评论"
 
 #: links.py:13
 msgid "Add comment"
-msgstr ""
+msgstr "增加评论"
 
 #: links.py:18
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 #: models.py:23
 msgid "Document"
-msgstr ""
+msgstr "文档"
 
 #: models.py:33
 msgid "Date time submitted"
-msgstr ""
+msgstr "已提交日期时间"
 
 #: permissions.py:10
 msgid "Create new comments"
@@ -82,9 +82,9 @@ msgstr "添加评论到文档：%s"
 #: views.py:79
 #, python-format
 msgid "Delete comment: %s?"
-msgstr ""
+msgstr "删除评论：%s？"
 
 #: views.py:98
 #, python-format
 msgid "Comments for document: %s"
-msgstr ""
+msgstr "文档 %s 的评论"

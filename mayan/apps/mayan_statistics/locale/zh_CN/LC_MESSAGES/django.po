@@ -26,78 +26,78 @@ msgstr "统计"
 #. statistic will be updated
 #: apps.py:34
 msgid "Schedule"
-msgstr ""
+msgstr "排期"
 
 #: links.py:11
 msgid "Queue"
-msgstr ""
+msgstr "队列"
 
 #: links.py:15
 msgid "View"
-msgstr ""
+msgstr "查看"
 
 #: links.py:19
 msgid "Namespace details"
-msgstr ""
+msgstr "命名空间详情"
 
 #: links.py:23
 msgid "Namespace list"
-msgstr ""
+msgstr "命名空间列表"
 
 #. Translators: 'Slug' refers to the URL valid ID of the statistic
 #. More info: https://docs.djangoproject.com/en/1.7/glossary/#term-slug
 #: models.py:14
 msgid "Slug"
-msgstr ""
+msgstr "Slug"
 
 #: models.py:16
 msgid "Date time"
-msgstr ""
+msgstr "日期时间"
 
 #: models.py:18
 msgid "Data"
-msgstr ""
+msgstr "数据"
 
 #: models.py:31
 msgid "Statistics result"
-msgstr ""
+msgstr "统计结果"
 
 #: models.py:32
 msgid "Statistics results"
-msgstr ""
+msgstr "统计结果"
 
 #: permissions.py:10
 msgid "View statistics"
-msgstr ""
+msgstr "查看统计"
 
 #: queues.py:13
 msgid "Execute statistic"
-msgstr ""
+msgstr "执行统计"
 
 #: templates/statistics/backends/chartjs/line.html:19
 msgid "No data available yet"
-msgstr ""
+msgstr "暂无可用数据"
 
 #: views.py:17
 msgid "Statistics namespaces"
-msgstr ""
+msgstr "统计命名空间"
 
 #: views.py:33
 #, python-format
 msgid "Namespace details for: %s"
-msgstr ""
+msgstr "命名空间详情，用于：%s"
 
 #: views.py:53
 #, python-format
 msgid "Results for: %s"
-msgstr ""
+msgstr "结果，用于：%s"
 
 #: views.py:60 views.py:85
 #, python-format
 msgid "Statistic \"%s\" not found."
-msgstr ""
+msgstr "统计 \"%s\" 未找到。"
 
 #: views.py:77
 #, python-format
 msgid "Queue statistic \"%s\" to be updated?"
-msgstr ""
+msgstr "把统计 \"%s\" 放入更新队列？"

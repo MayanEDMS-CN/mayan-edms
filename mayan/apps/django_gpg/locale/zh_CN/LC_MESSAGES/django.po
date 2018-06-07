@@ -28,27 +28,27 @@ msgstr "密钥ID"
 
 #: apps.py:48 apps.py:61 forms.py:19 models.py:52
 msgid "User ID"
-msgstr ""
+msgstr "用户ID"
 
 #: apps.py:51 forms.py:34 models.py:55
 msgid "Type"
-msgstr ""
+msgstr "类型"
 
 #: apps.py:53 forms.py:23 models.py:36
 msgid "Creation date"
-msgstr ""
+msgstr "创建日期"
 
 #: apps.py:56 forms.py:27 models.py:40
 msgid "Expiration date"
-msgstr ""
+msgstr "逾期日期"
 
 #: apps.py:57
 msgid "No expiration"
-msgstr ""
+msgstr "永不逾期"
 
 #: apps.py:59 forms.py:32 models.py:47
 msgid "Length"
-msgstr ""
+msgstr "长度"
 
 #: forms.py:28
 msgid "None"
@@ -56,11 +56,11 @@ msgstr "无"
 
 #: forms.py:31 models.py:44
 msgid "Fingerprint"
-msgstr ""
+msgstr "指纹"
 
 #: forms.py:33 models.py:50
 msgid "Algorithm"
-msgstr ""
+msgstr "算法"
 
 #: forms.py:47
 msgid "Term"
@@ -72,7 +72,7 @@ msgstr "要查找的名称，邮件，密钥ID或者密钥指纹"
 
 #: links.py:13
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 #: links.py:17
 msgid "Details"
@@ -88,7 +88,7 @@ msgstr "查询密钥服务器"
 
 #: links.py:29
 msgid "Import"
-msgstr ""
+msgstr "导入"
 
 #: links.py:34 permissions.py:7
 msgid "Key management"
@@ -96,15 +96,15 @@ msgstr "密钥管理"
 
 #: links.py:37
 msgid "Upload key"
-msgstr ""
+msgstr "上传密钥"
 
 #: links.py:41 views.py:160
 msgid "Private keys"
-msgstr ""
+msgstr "私钥"
 
 #: links.py:45 views.py:149
 msgid "Public keys"
-msgstr ""
+msgstr "公钥"
 
 #: literals.py:6 literals.py:14
 msgid "Public"
@@ -152,27 +152,27 @@ msgstr "文档使用有效签名进行签名"
 
 #: models.py:32
 msgid "ASCII armored version of the key."
-msgstr ""
+msgstr "ASCII格式的密钥"
 
 #: models.py:33
 msgid "Key data"
-msgstr ""
+msgstr "密钥数据"
 
 #: models.py:61
 msgid "Key"
-msgstr ""
+msgstr "密钥"
 
 #: models.py:62
 msgid "Keys"
-msgstr ""
+msgstr "密钥"
 
 #: models.py:68
 msgid "Invalid key data"
-msgstr ""
+msgstr "无效的密钥数据"
 
 #: models.py:71
 msgid "Key already exists."
-msgstr ""
+msgstr "密钥已存在"
 
 #: permissions.py:10
 msgid "Delete keys"
@@ -180,7 +180,7 @@ msgstr "删除密钥"
 
 #: permissions.py:13
 msgid "Download keys"
-msgstr ""
+msgstr "下载密钥"
 
 #: permissions.py:16
 msgid "Import keys from keyservers"
@@ -188,11 +188,11 @@ msgstr "从密钥服务器倒入密钥"
 
 #: permissions.py:19
 msgid "Use keys to sign content"
-msgstr ""
+msgstr "用密钥对内容进行签名"
 
 #: permissions.py:22
 msgid "Upload keys"
-msgstr ""
+msgstr "上传密钥"
 
 #: permissions.py:25
 msgid "View keys"
@@ -200,7 +200,7 @@ msgstr "查看密钥"
 
 #: settings.py:10
 msgid "Signatures"
-msgstr ""
+msgstr "签名"
 
 #: settings.py:15
 msgid "Home directory used to store keys as well as configuration files."
@@ -208,26 +208,26 @@ msgstr "存储密钥和配置文件的用户目录。"
 
 #: settings.py:21
 msgid "Path to the GPG binary."
-msgstr ""
+msgstr "GPG可执行文件的路径"
 
 #: settings.py:25
 msgid "Keyserver used to query for keys."
-msgstr ""
+msgstr "用于查询密钥的服务器"
 
 #: views.py:38
 #, python-format
 msgid "Delete key: %s"
-msgstr ""
+msgstr "删除密钥：%s"
 
 #: views.py:48
 #, python-format
 msgid "Details for key: %s"
-msgstr ""
+msgstr "密钥详情：%s"
 
 #: views.py:68
 #, python-format
 msgid "Import key ID: %s?"
-msgstr ""
+msgstr "导入密钥ID：%s ？"
 
 #: views.py:69
 msgid "Import key"
@@ -236,12 +236,12 @@ msgstr "导入密钥"
 #: views.py:78
 #, python-format
 msgid "Unable to import key: %(key_id)s; %(error)s"
-msgstr ""
+msgstr "无法导入密钥： %(key_id)s；错误：%(error)s"
 
 #: views.py:85
 #, python-format
 msgid "Successfully received key: %(key_id)s"
-msgstr ""
+msgstr "成功接收密钥：%(key_id)s"
 
 #: views.py:107
 msgid "Search"
@@ -253,8 +253,8 @@ msgstr "查询密钥服务器"
 
 #: views.py:119
 msgid "Key query results"
-msgstr ""
+msgstr "密钥查询结果"
 
 #: views.py:138
 msgid "Upload new key"
-msgstr ""
+msgstr "上传新密钥"

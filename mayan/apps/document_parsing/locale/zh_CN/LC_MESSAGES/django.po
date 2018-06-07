@@ -20,19 +20,19 @@ msgstr ""
 
 #: apps.py:61 permissions.py:7 settings.py:7
 msgid "Document parsing"
-msgstr ""
+msgstr "文档分析"
 
 #: apps.py:91
 msgid "Document"
-msgstr ""
+msgstr "文档"
 
 #: apps.py:95
 msgid "Added"
-msgstr ""
+msgstr "已增加"
 
 #: apps.py:99 models.py:39
 msgid "Result"
-msgstr ""
+msgstr "结果"
 
 #: apps.py:116 apps.py:120 links.py:11 models.py:18
 msgid "Content"
@@ -40,16 +40,16 @@ msgstr "内容"
 
 #: events.py:9
 msgid "Document version submitted for parsing"
-msgstr ""
+msgstr "提交分析文档版本"
 
 #: events.py:13
 msgid "Document version parsing finished"
-msgstr ""
+msgstr "文档版本分析结束"
 
 #: forms.py:42
 #, python-format
 msgid "Page %(page_number)d"
-msgstr ""
+msgstr "第 %(page_number)d 页"
 
 #: forms.py:50
 msgid "Contents"
@@ -57,73 +57,73 @@ msgstr "内容"
 
 #: links.py:16 links.py:38 views.py:149
 msgid "Parsing errors"
-msgstr ""
+msgstr "分析错误"
 
 #: links.py:21
 msgid "Download content"
-msgstr ""
+msgstr "下载内容"
 
 #: links.py:25 links.py:30
 msgid "Submit for parsing"
-msgstr ""
+msgstr "提交分析"
 
 #: links.py:33
 msgid "Parse documents per type"
-msgstr ""
+msgstr "按类型分析文档"
 
 #: models.py:16
 msgid "Document page"
-msgstr ""
+msgstr "文档页面"
 
 #: models.py:26
 msgid "Document page content"
-msgstr ""
+msgstr "文档页面内容"
 
 #: models.py:27
 msgid "Document pages contents"
-msgstr ""
+msgstr "文档页面内容"
 
 #: models.py:34
 msgid "Document version"
-msgstr ""
+msgstr "文档版本"
 
 #: models.py:37
 msgid "Date time submitted"
-msgstr ""
+msgstr "提交的日期时间"
 
 #: models.py:46
 msgid "Document version parse error"
-msgstr ""
+msgstr "文档版本分析错误"
 
 #: models.py:47
 msgid "Document version parse errors"
-msgstr ""
+msgstr "文档版本分析错误"
 
 #: parsers.py:91
 #, python-format
 msgid "Exception parsing page; %s"
-msgstr ""
+msgstr "页面分析错误；%s"
 
 #: parsers.py:118
 #, python-format
 msgid "Cannot find pdftotext executable at: %s"
-msgstr ""
+msgstr "无法找到pdftotext可执行文件，位置：%s"
 
 #: permissions.py:10
 msgid "View the content of a document"
-msgstr ""
+msgstr "查看文档内容"
 
 #: permissions.py:14
 msgid "Parse the content of a document"
-msgstr ""
+msgstr "分析文档内容"
 
 #: queues.py:7
 msgid "Parsing"
-msgstr ""
+msgstr "分析"
 
 #: queues.py:10
 msgid "Document version parsing"
-msgstr ""
+msgstr "文档版本分析"
 
 #: settings.py:13
 msgid ""
@@ -134,41 +134,41 @@ msgstr "程序pdftotext文件路径，用以从PDF文件中提取文本。"
 #: views.py:38
 #, python-format
 msgid "Content for document: %s"
-msgstr ""
+msgstr "文档内容：%s"
 
 #: views.py:66
 #, python-format
 msgid "Parsing errors for document: %s"
-msgstr ""
+msgstr "文档分析错误：%s"
 
 #: views.py:78
 #, python-format
 msgid "%(count)d document added to the parsing queue"
-msgstr ""
+msgstr "%(count)d 个文档已增加到分析队列"
 
 #: views.py:81
 #, python-format
 msgid "%(count)d documents added to the parsing queue"
-msgstr ""
+msgstr "%(count)d 个文档已增加到分析队列"
 
 #: views.py:89
 #, python-format
 msgid "Submit %(count)d document to the parsing queue?"
 msgid_plural "Submit %(count)d documents to the parsing queue"
-msgstr[0] ""
+msgstr[0] "提交  %(count)d 个文档到分析队列？"
 
 #: views.py:102
 #, python-format
 msgid "Submit document \"%s\" to the parsing queue"
-msgstr ""
+msgstr "提交文档 \"%s\" 到分析队列"
 
 #: views.py:116
 msgid "Submit all documents of a type for parsing"
-msgstr ""
+msgstr "提交一个类型的所有文档去做分析"
 
 #: views.py:135
 #, python-format
 msgid ""
 "%(count)d documents of type \"%(document_type)s\" added to the parsing "
 "queue."
-msgstr ""
+msgstr "%(count)d 个 \"%(document_type)s\" 类型的文档已被加入分析队列"

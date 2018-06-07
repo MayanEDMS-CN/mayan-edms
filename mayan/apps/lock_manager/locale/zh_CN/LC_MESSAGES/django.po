@@ -19,15 +19,15 @@ msgstr ""
 
 #: apps.py:10 settings.py:10
 msgid "Lock manager"
-msgstr ""
+msgstr "锁管理者"
 
 #: models.py:14
 msgid "Creation datetime"
-msgstr ""
+msgstr "创建日期时间"
 
 #: models.py:17
 msgid "Timeout"
-msgstr ""
+msgstr "过期"
 
 #: models.py:20
 msgid "Name"
@@ -35,8 +35,8 @@ msgstr "名称"
 
 #: models.py:46
 msgid "Lock"
-msgstr ""
+msgstr "锁"
 
 #: models.py:47
 msgid "Locks"
-msgstr ""
+msgstr "锁"
