@@ -25,28 +25,28 @@ msgstr "扫描输入"
 
 #: apps.py:102
 msgid "Document"
-msgstr ""
+msgstr "文档"
 
 #: apps.py:106
 msgid "Added"
-msgstr ""
+msgstr "已增加"
 
 #: apps.py:110 models.py:57
 msgid "Result"
-msgstr ""
+msgstr "结果"
 
 #: events.py:9
 msgid "Document version submitted for OCR"
-msgstr ""
+msgstr "提交到OCR的文档版本"
 
 #: events.py:13
 msgid "Document version OCR finished"
-msgstr ""
+msgstr "已完成OCR的文档版本"
 
 #: forms.py:40
 #, python-format
 msgid "Page %(page_number)d"
-msgstr ""
+msgstr "第 %(page_number)d 页"
 
 #: forms.py:48
 msgid "Contents"
@@ -54,23 +54,23 @@ msgstr "内容"
 
 #: links.py:18 links.py:21
 msgid "Submit for OCR"
-msgstr ""
+msgstr "提交到OCR"
 
 #: links.py:24
 msgid "Setup OCR"
-msgstr ""
+msgstr "设置OCR"
 
 #: links.py:29
 msgid "OCR documents per type"
-msgstr ""
+msgstr "按文档类型OCR"
 
 #: links.py:33 links.py:37 views.py:138
 msgid "OCR errors"
-msgstr ""
+msgstr "OCR错误"
 
 #: links.py:42
 msgid "Download OCR text"
-msgstr ""
+msgstr "下载OCR文本"
 
 #: models.py:18
 msgid "Document type"
@@ -78,19 +78,19 @@ msgstr "文档类型"
 
 #: models.py:22
 msgid "Automatically queue newly created documents for OCR."
-msgstr "Automatically queue newly created documents for OCR."
+msgstr "新建文档自动进入OCR队列。"
 
 #: models.py:26
 msgid "Document type settings"
-msgstr ""
+msgstr "文档类型设定"
 
 #: models.py:27
 msgid "Document types settings"
-msgstr ""
+msgstr "文档类型设定"
 
 #: models.py:34
 msgid "Document page"
-msgstr ""
+msgstr "文档页面"
 
 #: models.py:36
 msgid "Content"
@@ -98,43 +98,43 @@ msgstr "内容"
 
 #: models.py:44
 msgid "Document page OCR content"
-msgstr ""
+msgstr "文档页面OCR内容"
 
 #: models.py:45
 msgid "Document pages OCR contents"
-msgstr ""
+msgstr "文档页面OCR内容"
 
 #: models.py:52
 msgid "Document version"
-msgstr ""
+msgstr "文档版本"
 
 #: models.py:55
 msgid "Date time submitted"
-msgstr ""
+msgstr "提交的日期时间"
 
 #: models.py:64
 msgid "Document version OCR error"
-msgstr ""
+msgstr "文档版本OCR错误"
 
 #: models.py:65
 msgid "Document version OCR errors"
-msgstr ""
+msgstr "文档版本OCR错误"
 
 #: permissions.py:10
 msgid "Submit documents for OCR"
-msgstr "提交扫描输入的文档"
+msgstr "提交文档到OCR"
 
 #: permissions.py:14
 msgid "View the transcribed text from document"
-msgstr ""
+msgstr "查看文档转换出的文字"
 
 #: permissions.py:18
 msgid "Change document type OCR settings"
-msgstr ""
+msgstr "改变文档类型OCR设定"
 
 #: queues.py:9
 msgid "Document version OCR"
-msgstr ""
+msgstr "文档版本OCR"
 
 #: settings.py:12
 msgid ""
@@ -148,42 +148,42 @@ msgstr "用于执行OCR后台应用的全路径。"
 
 #: settings.py:24
 msgid "Set new document types to perform OCR automatically by default."
-msgstr ""
+msgstr "设定需要自动执行OCR的新文档类型"
 
 #: views.py:43
 #, python-format
 msgid "OCR result for document: %s"
-msgstr ""
+msgstr "OCR结果，针对文档：%s"
 
 #: views.py:51
 #, python-format
 msgid "Submit \"%s\" to the OCR queue?"
-msgstr ""
+msgstr "把 \"%s\" 提交到OCR队列？"
 
 #: views.py:72
 #, python-format
 msgid "Document: %(document)s was added to the OCR queue."
-msgstr ""
+msgstr "文档： %(document)s 已加入OCR队列。"
 
 #: views.py:86
 msgid "Submit the selected documents to the OCR queue?"
-msgstr ""
+msgstr "把指定文档提交到OCR队列？"
 
 #: views.py:93
 msgid "Submit all documents of a type for OCR"
-msgstr ""
+msgstr "把此类型所有文档提交到OCR"
 
 #: views.py:107
 #, python-format
 msgid "%(count)d documents of type \"%(document_type)s\" added to the OCR queue."
-msgstr ""
+msgstr "%(count)d 份类型为 \"%(document_type)s\" 的文档已加入OCR队列。"
 
 #: views.py:130
 #, python-format
 msgid "Edit OCR settings for document type: %s"
-msgstr ""
+msgstr "编辑OCR设定，针对文档类型：%s"
 
 #: views.py:156
 #, python-format
 msgid "OCR errors for document: %s"
-msgstr ""
+msgstr "OCR 错误，正对文档：%s"

@@ -19,12 +19,12 @@ msgstr ""
 
 #: apps.py:9 settings.py:7
 msgid "Mirroring"
-msgstr ""
+msgstr "镜像"
 
 #: settings.py:11
 msgid "Time in seconds to cache the path lookup to a document."
-msgstr ""
+msgstr "对文档路径查询的缓存时间，以秒记。"
 
 #: settings.py:15
 msgid "Time in seconds to cache the path lookup to an index node."
-msgstr ""
+msgstr "对索引节点路径查询的缓存时间，以秒记。"

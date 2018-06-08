@@ -36,15 +36,15 @@ msgstr "撤销"
 
 #: links.py:22
 msgid "Create new role"
-msgstr ""
+msgstr "创建新角色"
 
 #: links.py:26
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 #: links.py:30
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 #: links.py:35 models.py:99 views.py:137
 msgid "Roles"
@@ -52,15 +52,15 @@ msgstr "角色"
 
 #: links.py:38
 msgid "Members"
-msgstr ""
+msgstr "会员"
 
 #: links.py:43
 msgid "Role permissions"
-msgstr ""
+msgstr "角色权限"
 
 #: models.py:19
 msgid "Namespace"
-msgstr ""
+msgstr "命名空间"
 
 #: models.py:20
 msgid "Name"
@@ -72,7 +72,7 @@ msgstr "许可"
 
 #: models.py:75 search.py:16
 msgid "Label"
-msgstr ""
+msgstr "标签"
 
 #: models.py:81
 msgid "Groups"
@@ -80,7 +80,7 @@ msgstr "用户组"
 
 #: models.py:98
 msgid "Role"
-msgstr ""
+msgstr "角色"
 
 #: permissions.py:10
 msgid "View roles"
@@ -108,45 +108,45 @@ msgstr "撤销权限"
 
 #: search.py:20
 msgid "Group name"
-msgstr ""
+msgstr "用户组名称"
 
 #: serializers.py:46
 msgid ""
 "Comma separated list of groups primary keys to add to, or replace in this "
 "role."
-msgstr ""
+msgstr "待增加或替换到此角色的用户组的主键，多项则以逗号分隔"
 
 #: serializers.py:53
 msgid "Comma separated list of permission primary keys to grant to this role."
-msgstr ""
+msgstr "待分配到此角色的权限主键，多项则以逗号分隔"
 
 #: serializers.py:90
 #, python-format
 msgid "No such permission: %s"
-msgstr ""
+msgstr "无此权限：%s"
 
 #: views.py:46
 msgid "Available groups"
-msgstr ""
+msgstr "可用用户组"
 
 #: views.py:47
 msgid "Role groups"
-msgstr ""
+msgstr "角色组"
 
 #: views.py:57
 #, python-format
 msgid "Groups of role: %s"
-msgstr ""
+msgstr "用户组，针对角色：%s"
 
 #: views.py:80
 msgid "Available permissions"
-msgstr ""
+msgstr "可用权限"
 
 #: views.py:81
 msgid "Granted permissions"
-msgstr ""
+msgstr "已授予权限"
 
 #: views.py:94
 #, python-format
 msgid "Permissions for role: %s"
-msgstr ""
+msgstr "权限，针对角色：%s"

@@ -24,19 +24,19 @@ msgstr "用户管理"
 
 #: apps.py:59
 msgid "All the groups."
-msgstr ""
+msgstr "所有用户组"
 
 #: apps.py:63
 msgid "All the users."
-msgstr ""
+msgstr "所有用户"
 
 #: apps.py:68 links.py:30
 msgid "Members"
-msgstr ""
+msgstr "成员"
 
 #: apps.py:72
 msgid "Full name"
-msgstr ""
+msgstr "全名"
 
 #: apps.py:75 search.py:22
 msgid "Email"
@@ -44,11 +44,11 @@ msgstr "电子邮件"
 
 #: apps.py:78
 msgid "Active"
-msgstr ""
+msgstr "活跃"
 
 #: apps.py:84
 msgid "Has usable password?"
-msgstr ""
+msgstr "设置了可用密码？"
 
 #: forms.py:18
 msgid "New password"
@@ -60,15 +60,15 @@ msgstr "确认密码"
 
 #: links.py:14 views.py:27
 msgid "Create new group"
-msgstr ""
+msgstr "创建新用户组"
 
 #: links.py:18 links.py:42 links.py:58
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 #: links.py:22 links.py:46
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 #: links.py:26 links.py:34 links.py:50 search.py:25 views.py:50
 msgid "Groups"
@@ -76,7 +76,7 @@ msgstr "用户组"
 
 #: links.py:38 views.py:116
 msgid "Create new user"
-msgstr ""
+msgstr "创建新用户"
 
 #: links.py:54 links.py:70 views.py:240
 msgid "Users"
@@ -84,7 +84,7 @@ msgstr "用户"
 
 #: links.py:62 links.py:66
 msgid "Set password"
-msgstr ""
+msgstr "设置密码"
 
 #: permissions.py:10
 msgid "Create new groups"
@@ -120,15 +120,15 @@ msgstr "查看现有用户"
 
 #: search.py:19
 msgid "First name"
-msgstr ""
+msgstr "名"
 
 #: search.py:28
 msgid "Last name"
-msgstr ""
+msgstr "姓"
 
 #: search.py:31
 msgid "username"
-msgstr ""
+msgstr "用户名"
 
 #: search.py:41
 msgid "Name"
@@ -136,34 +136,34 @@ msgstr "名称"
 
 #: serializers.py:29
 msgid "Comma separated list of group primary keys to assign this user to."
-msgstr ""
+msgstr "为此用户指定用户组的主键，多项则以逗号分隔。"
 
 #: serializers.py:51
 msgid "List of group primary keys to which to add the user."
-msgstr ""
+msgstr "待增加给此用户的用户组主键列表。"
 
 #: views.py:43
 #, python-format
 msgid "Edit group: %s"
-msgstr ""
+msgstr "编辑用户组：%s"
 
 #: views.py:64
 #, python-format
 msgid "Delete the group: %s?"
-msgstr ""
+msgstr "删除用户组：%s？"
 
 #: views.py:70
 msgid "Available users"
-msgstr ""
+msgstr "可选用户"
 
 #: views.py:71
 msgid "Members of groups"
-msgstr ""
+msgstr "用户组成员"
 
 #: views.py:92
 #, python-format
 msgid "Members of group: %s"
-msgstr ""
+msgstr "成员，属于用户组：%s"
 
 #: views.py:126
 #, python-format
@@ -173,22 +173,22 @@ msgstr "创建用户\"%s\"成功"
 #: views.py:135
 #, python-format
 msgid "User delete request performed on %(count)d user"
-msgstr ""
+msgstr "对 %(count)d 个用户执行了删除请求"
 
 #: views.py:137
 #, python-format
 msgid "User delete request performed on %(count)d users"
-msgstr ""
+msgstr "对 %(count)d 个用户执行了删除请求"
 
 #: views.py:146
 msgid "Delete user"
 msgid_plural "Delete users"
-msgstr[0] ""
+msgstr[0] "删除用户"
 
 #: views.py:156
 #, python-format
 msgid "Delete user: %s"
-msgstr ""
+msgstr "删除用户：%s"
 
 #: views.py:168
 msgid ""
@@ -209,30 +209,30 @@ msgstr "删除用户： \"%(user)s\": %(error)s出错。"
 #: views.py:198
 #, python-format
 msgid "Edit user: %s"
-msgstr ""
+msgstr "编辑用户：%s"
 
 #: views.py:204
 msgid "Available groups"
-msgstr ""
+msgstr "可用用户组"
 
 #: views.py:205
 msgid "Groups joined"
-msgstr ""
+msgstr "合并后的用户组"
 
 #: views.py:214
 #, python-format
 msgid "Groups of user: %s"
-msgstr ""
+msgstr "用户组，适用于用户：%s"
 
 #: views.py:252
 #, python-format
 msgid "Password change request performed on %(count)d user"
-msgstr ""
+msgstr "对 %(count)d 个用户执行了密码变更请求"
 
 #: views.py:254
 #, python-format
 msgid "Password change request performed on %(count)d users"
-msgstr ""
+msgstr "对 %(count)d 个用户执行了密码变更请求"
 
 #: views.py:262
 msgid "Submit"
@@ -241,12 +241,12 @@ msgstr "提交"
 #: views.py:264
 msgid "Change user password"
 msgid_plural "Change users passwords"
-msgstr[0] ""
+msgstr[0] "改变用户密码"
 
 #: views.py:274
 #, python-format
 msgid "Change password for user: %s"
-msgstr ""
+msgstr "改变用户密码，针对用户：%s"
 
 #: views.py:294
 msgid ""

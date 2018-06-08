@@ -19,15 +19,15 @@ msgstr ""
 
 #: apps.py:22 links.py:25 permissions.py:7
 msgid "Message of the day"
-msgstr ""
+msgstr "本日消息"
 
 #: apps.py:32 models.py:20
 msgid "Enabled"
-msgstr ""
+msgstr "已启用"
 
 #: apps.py:35 models.py:24
 msgid "Start date time"
-msgstr ""
+msgstr "开始日期时间"
 
 #: apps.py:36 apps.py:40
 msgid "None"
@@ -35,74 +35,74 @@ msgstr "无"
 
 #: apps.py:39 models.py:29
 msgid "End date time"
-msgstr ""
+msgstr "结束日期时间"
 
 #: links.py:13 views.py:29
 msgid "Create message"
-msgstr ""
+msgstr "创建消息"
 
 #: links.py:18
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 #: links.py:21
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 #: models.py:13
 msgid "Short description of this message."
-msgstr ""
+msgstr "消息简要描述"
 
 #: models.py:14
 msgid "Label"
-msgstr ""
+msgstr "标签"
 
 #: models.py:17
 msgid "The actual message to be displayed."
-msgstr ""
+msgstr "实际展示的消息。"
 
 #: models.py:18 models.py:35
 msgid "Message"
-msgstr ""
+msgstr "消息"
 
 #: models.py:23
 msgid "Date and time after which this message will be displayed."
-msgstr ""
+msgstr "在此日期和时间后，此消息将被展示。"
 
 #: models.py:28
 msgid "Date and time until when this message is to be displayed."
-msgstr ""
+msgstr "在此日期和时间前，此消息将被展示。"
 
 #: models.py:36 views.py:66
 msgid "Messages"
-msgstr ""
+msgstr "消息"
 
 #: permissions.py:10
 msgid "Create messages"
-msgstr ""
+msgstr "创建消息"
 
 #: permissions.py:13
 msgid "Delete messages"
-msgstr ""
+msgstr "删除消息"
 
 #: permissions.py:16
 msgid "Edit messages"
-msgstr ""
+msgstr "编辑消息"
 
 #: permissions.py:19
 msgid "View messages"
-msgstr ""
+msgstr "查看消息"
 
 #: templates/motd/messages.html:8
 msgid "Messages of the day"
-msgstr ""
+msgstr "本日消息"
 
 #: views.py:42
 #, python-format
 msgid "Delete the message: %s?"
-msgstr ""
+msgstr "删除消息：%s ？"
 
 #: views.py:55
 #, python-format
 msgid "Edit message: %s"
-msgstr ""
+msgstr "编辑消息：%s"

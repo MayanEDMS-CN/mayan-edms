@@ -24,8 +24,8 @@ msgstr ""
 #: fields.py:30
 #, python-format
 msgid "Unable to find serializer class for: %s"
-msgstr ""
+msgstr "无法找到序列化类，用于：%s"
 
 #: links.py:12
 msgid "API Documentation"
-msgstr ""
+msgstr "API文档"

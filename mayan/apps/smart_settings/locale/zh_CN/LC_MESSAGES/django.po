@@ -19,11 +19,11 @@ msgstr ""
 
 #: apps.py:18 permissions.py:7
 msgid "Smart settings"
-msgstr ""
+msgstr "智能设置"
 
 #: apps.py:26
 msgid "Setting count"
-msgstr ""
+msgstr "设置数量"
 
 #: apps.py:30
 msgid "Name"
@@ -35,22 +35,22 @@ msgstr "值"
 
 #: links.py:11 links.py:14
 msgid "Settings"
-msgstr ""
+msgstr "设置"
 
 #: permissions.py:10
 msgid "View settings"
-msgstr ""
+msgstr "查看设置"
 
 #: views.py:15
 msgid "Setting namespaces"
-msgstr ""
+msgstr "设置命名空间"
 
 #: views.py:29
 #, python-format
 msgid "Settings in namespace: %s"
-msgstr ""
+msgstr "以下命名空间的设置：%s"
 
 #: views.py:37
 #, python-format
 msgid "Namespace: %s, not found"
-msgstr ""
+msgstr "命名空间：%s 未找到"

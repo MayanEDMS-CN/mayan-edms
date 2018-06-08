@@ -19,4 +19,4 @@ msgstr ""
 
 #: apps.py:9 settings.py:10
 msgid "Storage"
-msgstr ""
+msgstr "存储"

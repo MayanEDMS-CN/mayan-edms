@@ -20,11 +20,11 @@ msgstr ""
 
 #: apps.py:23 links.py:11 permissions.py:7
 msgid "Task manager"
-msgstr ""
+msgstr "任务管理者"
 
 #: apps.py:29
 msgid "Label"
-msgstr ""
+msgstr "标签"
 
 #: apps.py:32
 msgid "Name"
@@ -32,76 +32,76 @@ msgstr "名称"
 
 #: apps.py:35
 msgid "Default queue?"
-msgstr ""
+msgstr "缺省队列？"
 
 #: apps.py:41
 msgid "Is transient?"
-msgstr ""
+msgstr "一次性？"
 
 #: apps.py:47
 msgid "Type"
-msgstr ""
+msgstr "类型"
 
 #: apps.py:50
 msgid "Start time"
-msgstr ""
+msgstr "起始时间"
 
 #: apps.py:53
 msgid "Host"
-msgstr ""
+msgstr "主机"
 
 #: apps.py:57
 msgid "Acknowledged"
-msgstr ""
+msgstr "通知"
 
 #: apps.py:63
 msgid "Arguments"
-msgstr ""
+msgstr "参数"
 
 #: apps.py:67
 msgid "Keyword arguments"
-msgstr ""
+msgstr "关键字参数"
 
 #: apps.py:71
 msgid "Worker process ID"
-msgstr ""
+msgstr "工作线程ID"
 
 #: links.py:15 views.py:15
 msgid "Background task queues"
-msgstr ""
+msgstr "后台任务队列"
 
 #: links.py:19
 msgid "Active tasks"
-msgstr ""
+msgstr "活跃任务"
 
 #: links.py:23
 msgid "Reserved tasks"
-msgstr ""
+msgstr "保留任务"
 
 #: links.py:27
 msgid "Scheduled tasks"
-msgstr ""
+msgstr "已排期任务"
 
 #: permissions.py:10
 msgid "View tasks"
-msgstr ""
+msgstr "查看任务"
 
 #: views.py:30
 #, python-format
 msgid "Active tasks in queue: %s"
-msgstr ""
+msgstr "活跃任务，于队列：%s"
 
 #: views.py:45
 #, python-format
 msgid "Unable to retrieve task list; %s"
-msgstr ""
+msgstr "无法获取任务列表；%s"
 
 #: views.py:55
 #, python-format
 msgid "Scheduled tasks in queue: %s"
-msgstr ""
+msgstr "已排期任务，于队列：%s"
 
 #: views.py:67
 #, python-format
 msgid "Reserved tasks in queue: %s"
-msgstr ""
+msgstr "保留任务，于队列：%s"

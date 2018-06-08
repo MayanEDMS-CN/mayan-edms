@@ -21,11 +21,11 @@ msgstr ""
 
 #: apps.py:11
 msgid "Navigation"
-msgstr ""
+msgstr "导航"
 
 #: forms.py:14
 msgid "Actions"
-msgstr ""
+msgstr "操作"
 
 #~ msgid "Multi item action"
 #~ msgstr "Multi item action"
