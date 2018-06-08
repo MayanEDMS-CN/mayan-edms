@@ -766,9 +766,8 @@ msgstr "编辑快速标签 \"%(filename)s\" ，适用于文档类型：\"%(docum
 
 #: views/document_type_views.py:167
 #, python-format
-msgid ""
-"Delete the quick label: %(label)s, from document type \"%(document_type)s\"?"
-msgstr "删除快速标签 \"%(filename)s\" ，适用于文档类型：\"%(document_type)s\"？"
+msgid "Delete the quick label: %(label)s, from document type \"%(document_type)s\"?"
+msgstr "删除快速标签 %(label)s ，适用于文档类型：\"%(document_type)s\"？"
 
 #: views/document_type_views.py:195
 #, python-format
