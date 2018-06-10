@@ -203,7 +203,7 @@ STATIC_URL = '/static/'
 # PROJECT_COPYRIGHT = mayan.__copyright__
 # PROJECT_LICENSE = mayan.__license__
 PROJECT_TITLE = "奇瑞400坐席知识库"
-PROJECT_WEBSITE = 'http://kb.tu2e.com'
+PROJECT_WEBSITE = 'http://kb.c4csap.com'
 PROJECT_COPYRIGHT = "诺码科技版权所有 &copy; 2017~2018"
 PROJECT_LICENSE = "GPL"
 
@@ -261,7 +261,7 @@ CELERY_QUEUES = []
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_ROUTES = {}
 CELERY_TASK_SERIALIZER = 'json'
-CELERY_TIMEZONE = 'UTC'
+CELERY_TIMEZONE = 'Asia/Shanghai'
 CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
 # ------------ CORS ------------
 CORS_ORIGIN_ALLOW_ALL = True
@@ -282,3 +282,5 @@ TIMEZONE_COOKIE_NAME = 'django_timezone'
 TIMEZONE_SESSION_KEY = 'django_timezone'
 # ----- Stronghold -------
 STRONGHOLD_PUBLIC_URLS = (r'^/docs/.+$',)
+DOCUMENTS_LANGUAGE = 'cmn'
+DOCUMENTS_LANGUAGE_CHOICES = """- [cmn, 'Chinese, Mandarin']"""
