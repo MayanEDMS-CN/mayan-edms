@@ -283,4 +283,3 @@ TIMEZONE_SESSION_KEY = 'django_timezone'
 # ----- Stronghold -------
 STRONGHOLD_PUBLIC_URLS = (r'^/docs/.+$',)
 DOCUMENTS_LANGUAGE = 'cmn'
-DOCUMENTS_LANGUAGE_CHOICES = """- [cmn, 'Chinese, Mandarin']"""
