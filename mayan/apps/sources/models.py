@@ -8,6 +8,7 @@ import logging
 import os
 import poplib
 import subprocess
+import codecs
 
 import sh
 import yaml
@@ -759,7 +760,7 @@ class WatchFolderSource(IntervalBaseModel):
         for file_name in os.listdir(force_text(self.folder_path)):
             full_path = os.path.join(self.folder_path, file_name)
             if os.path.isfile(full_path):
-                with File(file=open(full_path, mode='rb')) as file_object:
+                with File(file=codecs.open(full_path, mode='rb', encoding="utf-8", errors="ignore")) as file_object:
                     self.handle_upload(
                         file_object=file_object,
                         expand=(self.uncompress == SOURCE_UNCOMPRESS_CHOICE_Y),
