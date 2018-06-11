@@ -99,7 +99,9 @@ class DocumentIndexingApp(MayanAppConfig):
                 'object'
             ].instance_root.get_descendants_document_count(
                 user=context['request'].user
-            )
+            ) if context[
+                'object'
+            ].instance_root is not None else '0'
         )
         SourceColumn(
             source=IndexInstance, label=_('Document types'),
