@@ -77,7 +77,10 @@ class Index(models.Model):
 
     @property
     def instance_root(self):
-        return self.template_root.index_instance_nodes.get()
+        try:
+            return self.template_root.index_instance_nodes.get()
+        except IndexInstanceNode.DoesNotExist:
+            return None
 
     @property
     def template_root(self):
