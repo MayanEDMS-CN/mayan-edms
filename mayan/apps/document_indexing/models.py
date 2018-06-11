@@ -60,6 +60,8 @@ class Index(models.Model):
         return self.label
 
     def get_absolute_url(self):
+        if self.instance_root is None:
+            return '#'
         try:
             return reverse(
                 'indexing:index_instance_node_view',
