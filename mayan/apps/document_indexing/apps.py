@@ -89,7 +89,9 @@ class DocumentIndexingApp(MayanAppConfig):
             source=IndexInstance, label=_('Total levels'),
             func=lambda context: context[
                 'object'
-            ].instance_root.get_descendants_count()
+            ].instance_root.get_descendants_count() if context[
+                'object'
+            ].instance_root is not None else '0'
         )
         SourceColumn(
             source=IndexInstance, label=_('Total documents'),
