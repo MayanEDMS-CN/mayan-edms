@@ -108,11 +108,12 @@ class Index(models.Model):
         # Delete all index instance nodes by deleting the root index
         # instance node. All child index instance nodes will be cascade
         # deleted.
-        try:
-            self.instance_root.delete()
-        except IndexInstanceNode.DoesNotExist:
-            # Empty index, ignore this exception
-            pass
+        if self.instance_root is not None:
+            try:
+                self.instance_root.delete()
+            except IndexInstanceNode.DoesNotExist:
+                # Empty index, ignore this exception
+                pass
 
         # Create the new root index instance node
         self.template_root.index_instance_nodes.create()
