@@ -8,6 +8,7 @@ import os
 from PIL import Image, ImageFilter
 import sh
 import yaml
+import codecs
 
 from django.utils.six import text_type
 from django.utils.translation import string_concat, ugettext_lazy as _
@@ -170,7 +171,7 @@ class ConverterBase(object):
         )
         logger.debug('converted_output: %s', converted_output)
 
-        with open(converted_output) as converted_file_object:
+        with codecs.open(converted_output, encoding="utf-8") as converted_file_object:
             while True:
                 data = converted_file_object.read(CHUNK_SIZE)
                 if not data:
