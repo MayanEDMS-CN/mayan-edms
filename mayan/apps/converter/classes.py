@@ -172,11 +172,14 @@ class ConverterBase(object):
         logger.debug('converted_output: %s', converted_output)
 
         with codecs.open(converted_output, encoding="utf-8") as converted_file_object:
+            logger.debug('successfully opened : %s', converted_output)
             while True:
                 data = converted_file_object.read(CHUNK_SIZE)
                 if not data:
                     break
                 yield data
+
+        logger.debug('converted_output finished.')
 
         fs_cleanup(input_filepath)
         fs_cleanup(converted_output)
