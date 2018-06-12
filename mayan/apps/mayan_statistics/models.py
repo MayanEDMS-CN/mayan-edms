@@ -18,6 +18,8 @@ class StatisticResult(models.Model):
     serialize_data = models.TextField(blank=True, verbose_name=_('Data'))
 
     def get_data(self):
+        if len(self.serialize_data) == 0:
+            return {'series': {}}
         return json.loads(self.serialize_data)
 
     def store_data(self, data):
