@@ -441,14 +441,24 @@ class DocumentVersion(models.Model):
 
         try:
             with transaction.atomic():
+
+                logger.info('Begin super save for document: %s', self.document)
+
                 super(DocumentVersion, self).save(*args, **kwargs)
+
+                logger.info('Finished super save for document: %s', self.document)
 
                 for key in sorted(DocumentVersion._post_save_hooks):
                     DocumentVersion._post_save_hooks[key](
                         document_version=self
                     )
 
+                logger.info('Finished post hooking for document: %s', self.document)
+
                 if new_document_version:
+
+                    logger.info('Update checksum and mimetype for document: %s', self.document)
+
                     # Only do this for new documents
                     self.update_checksum(save=False)
                     self.update_mimetype(save=False)
