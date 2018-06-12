@@ -106,6 +106,7 @@ INSTALLED_APPS = (
     'task_manager',
     # Placed after rest_api to allow template overriding
     'rest_framework_swagger',
+    'c4csap',
 )
 
 MIDDLEWARE_CLASSES = (
