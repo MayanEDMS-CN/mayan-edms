@@ -17,10 +17,10 @@ def new_documents_per_month():
 
     return {
         'series': {
-            'Documents': map(
+            'Documents': list(map(
                 lambda x: {x[0].month: x[1]},
                 qss.time_series(start=this_year, end=today, interval='months')
-            )
+            ))
         }
     }
 
@@ -39,10 +39,10 @@ def new_document_pages_per_month():
 
     return {
         'series': {
-            'Pages': map(
+            'Pages': list(map(
                 lambda x: {x[0].month: x[1]},
                 qss.time_series(start=this_year, end=today, interval='months')
-            )
+            ))
         }
     }
 
@@ -68,10 +68,10 @@ def new_document_versions_per_month():
 
     return {
         'series': {
-            'Versions': map(
+            'Versions': list(map(
                 lambda x: {x[0].month: x[1]},
                 qss.time_series(start=this_year, end=today, interval='months')
-            )
+            ))
         }
     }
 
