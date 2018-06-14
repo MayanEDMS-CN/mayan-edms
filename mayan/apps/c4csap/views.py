@@ -4,13 +4,14 @@ from django.utils.translation import ugettext_lazy as _
 from django.views.generic import RedirectView, TemplateView
 import logging
 from django.template import RequestContext
+from stronghold.views import StrongholdPublicMixin
 
 
-class TabMashupView(TemplateView):
+class TabMashupView(StrongholdPublicMixin, TemplateView):
     template_name = 'appearance/home.html'
 
 
-class RelatedItemListView(TemplateView):
+class RelatedItemListView(StrongholdPublicMixin, TemplateView):
     template_name = 'c4csap/related_items.html'
 
     def get_context_data(self, **kwargs):
@@ -23,7 +24,7 @@ class RelatedItemListView(TemplateView):
         return data
 
 
-class RedirectToHomeView(RedirectView):
+class RedirectToHomeView(StrongholdPublicMixin, RedirectView):
     permanent = False
 
     def get_redirect_url(self, *args, **kwargs):
