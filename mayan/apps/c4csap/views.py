@@ -30,7 +30,10 @@ class C4CSAPTokenLoginMixin(AccessMixin):
                     login(request, user)
                     return super(C4CSAPTokenLoginMixin, self).dispatch(request, *args, **kwargs)
 
-        return self.no_permissions_fail(request)
+            return self.no_permissions_fail(request)
+        else:
+            return super(C4CSAPTokenLoginMixin, self).dispatch(request, *args, **kwargs)
+
 
 
 
