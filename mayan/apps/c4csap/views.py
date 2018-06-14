@@ -28,7 +28,7 @@ class C4CSAPTokenLoginMixin(AccessMixin):
                 user = authenticate(username="testkb", password="Welcome1")
                 if user is not None:
                     login(request, user)
-                    return super(C4CSAPTokenLoginMixin, self).dispatch(*args, **kwargs)
+                    return super(C4CSAPTokenLoginMixin, self).dispatch(request, *args, **kwargs)
 
         return self.no_permissions_fail(request)
 
