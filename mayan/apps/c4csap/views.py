@@ -38,7 +38,7 @@ class C4CSAPTokenLoginMixin(AccessMixin):
 
 
 class TabMashupView(C4CSAPTokenLoginMixin, TemplateView):
-    template_name = 'appearance/home.html'
+    template_name = 'c4csap/ticket_tab.html'
 
 
 class RelatedItemListView(C4CSAPTokenLoginMixin, TemplateView):
