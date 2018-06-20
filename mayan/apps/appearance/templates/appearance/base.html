@@ -63,11 +63,11 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="" id="c4csap_ticket_tab_home">
-                                <a class="    " href="{% url 'c4csap:c4csap_ticket_tab' %}">
-                                    <i class="hidden-xs hidden-sm hidden-md fa fa-home"></i> 首页
-                                </a>
-                            </li>
+                            <!--<li class="" id="c4csap_ticket_tab_home">-->
+                                <!--<a class="    " href="{% url 'c4csap:c4csap_ticket_tab' %}">-->
+                                    <!--<i class="hidden-xs hidden-sm hidden-md fa fa-home"></i> 首页-->
+                                <!--</a>-->
+                            <!--</li>-->
                             {% get_menu_links 'main menu' as menu_links %}
                             {% for link_set in menu_links %}
                                 {% for link in link_set %}
@@ -89,7 +89,7 @@
                 </div>
             </nav>
 
-            <div class="container-fluid">
+            <div id="main_div" class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12">
                         {% block messages %}{% endblock %}
@@ -188,10 +188,11 @@
         ];
         $(function(){
            if(self!=top){
-               $("a#common_home_anchor").attr("target", "_blank");
-               $("li#c4csap_ticket_tab_home").show();
+               $("nav.navbar").hide();
+               $("div#main_div").css("position", "absolute");
+               $("div#main_div").css("top", "0");
+               // $("a#common_home_anchor").attr("target", "_blank");
            }else{
-               $("li#c4csap_ticket_tab_home").hide();
            }
         });
         </script>

@@ -20,6 +20,8 @@ class C4CSAPTokenLoginMixin(AccessMixin):
 
     @method_decorator(public)
     def dispatch(self, request, *args, **kwargs):
+        if "ticketid" in request.GET:
+            request.session["ticketid"] = request.GET["ticketid"]
         if not _is_authenticated(request.user):
             c4c_username = request.GET.get("username", "")
             c4c_token = request.GET.get("token", "")
@@ -33,8 +35,6 @@ class C4CSAPTokenLoginMixin(AccessMixin):
             return self.no_permissions_fail(request)
         else:
             return super(C4CSAPTokenLoginMixin, self).dispatch(request, *args, **kwargs)
-
-
 
 
 class TabMashupView(C4CSAPTokenLoginMixin, TemplateView):
