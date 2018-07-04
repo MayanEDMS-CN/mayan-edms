@@ -56,8 +56,20 @@ class RelatedItemListView(C4CSAPTokenLoginMixin, TemplateView):
         return data
 
 
-class RedirectToPageView(C4CSAPTokenLoginMixin, RedirectView):
+class KBHomeView(C4CSAPTokenLoginMixin, RedirectView):
     permanent = False
+
+    def get_redirect_url(self, *args, **kwargs):
+        """
+        Hide the static tag import to avoid errors with static file
+        processors
+        """
+        return "/"
+
+
+class RedirectToPageView(RedirectView):
+    permanent = False
+    query_string = True
 
     def get_redirect_host(self, *args, **kwargs):
         host = ""
@@ -73,7 +85,7 @@ class RedirectToHomeView(RedirectToPageView):
         Hide the static tag import to avoid errors with static file
         processors
         """
-        url = "/"
+        url = reverse("c4csap:c4csap_kb_home")
         return "%s%s" % (self.get_redirect_host(*args, **kwargs), url)
 
 
