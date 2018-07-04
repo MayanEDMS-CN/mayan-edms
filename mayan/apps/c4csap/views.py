@@ -21,6 +21,7 @@ class C4CSAPTokenLoginMixin(AccessMixin):
 
     @method_decorator(public)
     def dispatch(self, request, *args, **kwargs):
+        self.request = request
         if "ticketid" in request.GET:
             request.session["ticketid"] = request.GET["ticketid"]
         if not _is_authenticated(request.user):
@@ -60,8 +61,8 @@ class RedirectToPageView(C4CSAPTokenLoginMixin, RedirectView):
 
     def get_redirect_host(self, *args, **kwargs):
         host = ""
-        if "system" in kwargs:
-            host = "https://%s.c4csap.com" % kwargs["system"]
+        if self.request is not None and "system" in self.request.GET:
+            host = "https://%s.c4csap.com" % self.request.GET["system"]
         return host
 
 
