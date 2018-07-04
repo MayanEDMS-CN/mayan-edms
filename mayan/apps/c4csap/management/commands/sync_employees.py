@@ -24,15 +24,16 @@ class Command(BaseCommand):
             lastname = item["LastName"]
             userid = item["UserID"]
             token = item["ObjectID"]
-            user = User.objects.filter(username=userid).first()
-            if user is not None:
-                if not user.check_password(token):
-                    user.set_password(token)
-                    print("user [%s] password updated." % user.username)
-            else:
-                user  = User.objects.create_user(userid, password=token)
-                user.first_name = firstname
-                user.last_name = lastname
-                user.is_staff = True
-                user.save()
-                print("user [%s] created." % userid)
+            if len(userid) > 0:
+                userid = userid.upper()
+                user = User.objects.filter(username=userid).first()
+                if user is not None:
+                    if not user.check_password(token):
+                        user.set_password(token)
+                        print("user [%s] password updated." % user.username)
+                else:
+                    user  = User.objects.create_user(userid, password=token)
+                    user.first_name = firstname
+                    user.last_name = lastname
+                    user.save()
+                    print("user [%s] created." % userid)
