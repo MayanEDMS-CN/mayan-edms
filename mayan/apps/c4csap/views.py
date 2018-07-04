@@ -69,7 +69,6 @@ class KBHomeView(C4CSAPTokenLoginMixin, RedirectView):
 
 class RedirectToPageView(RedirectView):
     permanent = False
-    query_string = True
 
     @method_decorator(public)
     def dispatch(self, request, *args, **kwargs):
@@ -91,7 +90,7 @@ class RedirectToHomeView(RedirectToPageView):
         processors
         """
         url = reverse("c4csap:c4csap_kb_home")
-        return "%s%s" % (self.get_redirect_host(*args, **kwargs), url)
+        return "%s%s?%s" % (self.get_redirect_host(*args, **kwargs), url, self.request.META["QUERY_STRING "])
 
 
 class RedirectToServiceTabView(RedirectToPageView):
@@ -102,7 +101,7 @@ class RedirectToServiceTabView(RedirectToPageView):
         processors
         """
         url = reverse("c4csap:c4csap_ticket_tab")
-        return "%s%s" % (self.get_redirect_host(*args, **kwargs), url)
+        return "%s%s?%s" % (self.get_redirect_host(*args, **kwargs), url, self.request.META["QUERY_STRING "])
 
 
 class RedirectToServiceItemsView(RedirectToPageView):
@@ -113,6 +112,6 @@ class RedirectToServiceItemsView(RedirectToPageView):
         processors
         """
         url = reverse("c4csap:c4csap_ticket_kb_items")
-        return "%s%s" % (self.get_redirect_host(*args, **kwargs), url)
+        return "%s%s?%s" % (self.get_redirect_host(*args, **kwargs), url, self.request.META["QUERY_STRING "])
 
 
