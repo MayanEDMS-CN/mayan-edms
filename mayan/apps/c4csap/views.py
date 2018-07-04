@@ -71,6 +71,11 @@ class RedirectToPageView(RedirectView):
     permanent = False
     query_string = True
 
+    @method_decorator(public)
+    def dispatch(self, request, *args, **kwargs):
+        self.request = request
+        return super(RedirectToPageView, self).dispatch(request, *args, **kwargs)
+
     def get_redirect_host(self, *args, **kwargs):
         host = ""
         if self.request is not None and "system" in self.request.GET:
