@@ -7,9 +7,9 @@ class Command(BaseCommand):
     help = "与C4C同步用户"
 
     def add_arguments(self, parser):
-        parser.add_argument("host", type=str)
-        parser.add_argument("username", type=str)
-        parser.add_argument("password", type=str)
+        parser.add_argument("host", type=str)               # my500248
+        parser.add_argument("username", type=str)           # ZSKZSK7000055
+        parser.add_argument("password", type=str)           # Welcome1
 
     def handle(self, *args, **options):
         host = options["host"]
@@ -24,13 +24,15 @@ class Command(BaseCommand):
             lastname = item["LastName"]
             userid = item["UserID"]
             token = item["ObjectID"]
-            try:
-                user = User.objects.get(username=userid)
+            user = User.objects.filter(username=userid).first()
+            if user is not None:
                 if not user.check_password(token):
                     user.set_password(token)
-            except User.DoesNotExist:
+                    print("user [%s] password updated." % user.username)
+            else:
                 user  = User.objects.create_user(userid, password=token)
                 user.first_name = firstname
                 user.last_name = lastname
                 user.is_staff = True
                 user.save()
+                print("user [%s] created." % userid)
