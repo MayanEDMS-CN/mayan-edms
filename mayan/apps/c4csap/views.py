@@ -5,6 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.views.generic import RedirectView, TemplateView
 import logging
 from django.template import RequestContext
+from django.urls import reverse
 from django.utils.decorators import method_decorator
 from stronghold.decorators import public
 from braces.views._access import AccessMixin
@@ -54,12 +55,46 @@ class RelatedItemListView(C4CSAPTokenLoginMixin, TemplateView):
         return data
 
 
-class RedirectToHomeView(C4CSAPTokenLoginMixin, RedirectView):
+class RedirectToPageView(C4CSAPTokenLoginMixin, RedirectView):
     permanent = False
+
+    def get_redirect_host(self, *args, **kwargs):
+        host = ""
+        if "system" in kwargs:
+            host = "https://%s.c4csap.com" % kwargs["system"]
+        return host
+
+
+class RedirectToHomeView(RedirectToPageView):
 
     def get_redirect_url(self, *args, **kwargs):
         """
         Hide the static tag import to avoid errors with static file
         processors
         """
-        return '/'
+        url = "/"
+        return "%s%s" % (self.get_redirect_host(*args, **kwargs), url)
+
+
+class RedirectToServiceTabView(RedirectToPageView):
+
+    def get_redirect_url(self, *args, **kwargs):
+        """
+        Hide the static tag import to avoid errors with static file
+        processors
+        """
+        url = reverse("c4csap:c4csap_ticket_tab")
+        return "%s%s" % (self.get_redirect_host(*args, **kwargs), url)
+
+
+class RedirectToServiceItemsView(RedirectToPageView):
+
+    def get_redirect_url(self, *args, **kwargs):
+        """
+        Hide the static tag import to avoid errors with static file
+        processors
+        """
+        url = reverse("c4csap:c4csap_ticket_kb_items")
+        return "%s%s" % (self.get_redirect_host(*args, **kwargs), url)
+
+
