@@ -6,7 +6,11 @@ import os
 
 from PIL import Image
 import PyPDF2
-import sh
+try:
+    import sh
+except:
+    import pbs as sh
+
 import yaml
 
 from django.utils.encoding import force_text

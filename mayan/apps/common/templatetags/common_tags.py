@@ -2,7 +2,10 @@ from __future__ import unicode_literals
 
 from json import dumps
 
-import sh
+try:
+    import sh
+except:
+    import pbs as sh
 
 from django.conf import settings
 from django.template import Context, Library

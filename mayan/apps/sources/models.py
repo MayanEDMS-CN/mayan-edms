@@ -9,8 +9,11 @@ import os
 import poplib
 import subprocess
 import codecs
+try:
+    import sh
+except:
+    import pbs as sh
 
-import sh
 import yaml
 
 try:

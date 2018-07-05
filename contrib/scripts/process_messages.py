@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 import os
 import optparse
-
-import sh
+try:
+    import sh
+except:
+    import pbs as sh
 
 
 APP_LIST = (

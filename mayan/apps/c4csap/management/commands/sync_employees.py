@@ -32,7 +32,7 @@ class Command(BaseCommand):
                         user.set_password(token)
                         print("user [%s] password updated." % user.username)
                 else:
-                    user  = User.objects.create_user(userid, password=token)
+                    user = User.objects.create_user(userid, password=token)
                     user.first_name = firstname
                     user.last_name = lastname
                     user.save()

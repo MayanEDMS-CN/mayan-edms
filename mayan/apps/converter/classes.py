@@ -6,7 +6,12 @@ import logging
 import os
 
 from PIL import Image, ImageFilter
-import sh
+
+try:
+    import sh
+except:
+    import pbs as sh
+
 import yaml
 
 from django.utils.six import text_type

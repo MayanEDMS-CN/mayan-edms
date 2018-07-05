@@ -17,7 +17,7 @@ import sys
 
 from django.utils.translation import ugettext_lazy as _
 
-import mayan
+# import mayan
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 
