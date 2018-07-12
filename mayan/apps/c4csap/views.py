@@ -1,7 +1,7 @@
 from __future__ import absolute_import, unicode_literals
 
 from django import VERSION as DJANGO_VERSION
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import RedirectView, TemplateView, View
 import logging
@@ -12,6 +12,10 @@ from stronghold.decorators import public
 from braces.views._access import AccessMixin
 from django.contrib.auth import authenticate, login
 from documents.models import DocumentVersion
+from storage.settings import setting_filestorage_location
+from django.conf import settings
+from urllib import parse
+
 
 if DJANGO_VERSION >= (1, 10, 0):
     _is_authenticated = lambda user: user.is_authenticated  # noqa
@@ -126,8 +130,13 @@ class DocumentVersionRawView(View):
     def get(self, request, *args, **kwargs):
         pk = kwargs["pk"]
         vers = DocumentVersion.objects.get(pk=pk)
-        data = vers.file.read()
-        res = HttpResponse(data, content_type=vers.mimetype)
-        # res["Content-Disposition"] = "attachment; filename=\"%s\"" % vers.document.label
-        return res
+        prefix = setting_filestorage_location.value[len(settings.MEDIA_ROOT):]
+        media_url = "/media"
+        host = request.META["HTTP_HOST"]
+        target_url = "http://%s%s%s/%s" % (
+            host, media_url, prefix, vers.file.name
+        )
+        redirect_url = "https://view.officeapps.live.com/op/view.aspx?src=%s" % parse.quote(target_url)
+        logging.debug(redirect_url)
+        return HttpResponseRedirect(redirect_url)
 
