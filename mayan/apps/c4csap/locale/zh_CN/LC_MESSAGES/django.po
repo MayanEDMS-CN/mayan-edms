@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-12 18:09+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\apps.py:18
+msgid "C4C SAP"
+msgstr ""
+
+#: .\links.py:9 .\links.py:14
+msgid "Raw"
+msgstr "原文件"
+
+#: .\templates\c4csap\base.html:56
+msgid "Toggle navigation"
+msgstr "导航开关"
+
+#: .\templates\c4csap\base.html:119
+msgid "Actions"
+msgstr "操作"
+
+#: .\templates\c4csap\base.html:121
+msgid "Toggle Dropdown"
+msgstr "下拉开关"
+
+#: .\templates\c4csap\ticket_tab.html:9
+msgid "Dashboard"
+msgstr "仪表盘"
+
+#: .\templates\c4csap\ticket_tab.html:26
+msgid "Getting started"
+msgstr "开始"
+
+#: .\templates\c4csap\ticket_tab.html:29
+msgid "Before you can fully use Mayan EDMS you need the following:"
+msgstr "在正式使用梅雁知识库前，你需要："
+
+#: .\templates\c4csap\ticket_tab.html:50
+msgid "Search pages"
+msgstr "搜索页面"
+
+#: .\templates\c4csap\ticket_tab.html:52 .\templates\c4csap\ticket_tab.html:62
+msgid "Search"
+msgstr "搜索"
+
+#: .\templates\c4csap\ticket_tab.html:53 .\templates\c4csap\ticket_tab.html:63
+msgid "Advanced"
+msgstr "高级"
+
+#: .\templates\c4csap\ticket_tab.html:60
+msgid "Search documents"
+msgstr "搜索文档"
+
+#: .\views.py:58
+msgid "Setup items"
+msgstr "设置项"
