@@ -37,10 +37,10 @@ class C4CSapApp(MayanAppConfig):
             links=(link_document_version_online_viewer,), sources=(DocumentVersion,)
         )
 
-        menu_secondary.bind_links(
+        menu_facet.bind_links(
             links=(link_document_online_viewer,), sources=(Document,)
         )
 
-        menu_secondary.bind_links(
+        menu_facet.bind_links(
             links=(link_document_version_online_viewer,), sources=(DocumentVersion,)
         )
