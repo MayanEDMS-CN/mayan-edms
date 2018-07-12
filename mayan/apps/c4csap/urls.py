@@ -13,5 +13,6 @@ urlpatterns = [
     url(r'^tab/$', RedirectToServiceTabView.as_view(), name='c4csap_redirect_service_tab'),
     url(r'^items/$', RedirectToServiceItemsView.as_view(), name='c4csap_redirect_service_items'),
     url(r'^document/version/(?P<pk>\d+)/raw/', DocumentVersionRawView.as_view(), name='document_version_raw'),
-    url(r'^document/version/(?P<pk>\d+)/viewer/', DocumentVersionRawView.as_view(), name='document_version_online_viewer'),
+    url(r'^document/version/(?P<pk>\d+)/viewer/', DocumentVersionOnlineViewerRedirect.as_view(),
+        name='document_version_online_viewer'),
 ]
