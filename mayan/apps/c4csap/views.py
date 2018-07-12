@@ -1,8 +1,9 @@
 from __future__ import absolute_import, unicode_literals
 
 from django import VERSION as DJANGO_VERSION
+from django.http import HttpResponse
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic import RedirectView, TemplateView
+from django.views.generic import RedirectView, TemplateView, View
 import logging
 from django.template import RequestContext
 from django.urls import reverse
@@ -10,6 +11,7 @@ from django.utils.decorators import method_decorator
 from stronghold.decorators import public
 from braces.views._access import AccessMixin
 from django.contrib.auth import authenticate, login
+from documents.models import DocumentVersion
 
 if DJANGO_VERSION >= (1, 10, 0):
     _is_authenticated = lambda user: user.is_authenticated  # noqa
@@ -114,4 +116,16 @@ class RedirectToServiceItemsView(RedirectToPageView):
         url = reverse("c4csap:c4csap_ticket_kb_items")
         return "%s%s?%s" % (self.get_redirect_host(*args, **kwargs), url, self.request.META["QUERY_STRING"])
 
+
+class DocumentVersionRawView(View):
+
+    def get(self, request, *args, **kwargs):
+        pk = kwargs["pk"]
+        vers = DocumentVersion.objects.get(pk=pk)
+        with vers.file.open("rb") as f:
+            data = f.read()
+            f.close()
+        res = HttpResponse(data, content_type=vers.mimetype)
+        res["Content-Disposition"] = "attachment; filename=\"%s\"" % vers.document.label
+        return res
 
