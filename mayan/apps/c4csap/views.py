@@ -1,7 +1,7 @@
 from __future__ import absolute_import, unicode_literals
 
 from django import VERSION as DJANGO_VERSION
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import RedirectView, TemplateView, View
 import logging
@@ -11,9 +11,7 @@ from django.utils.decorators import method_decorator
 from stronghold.decorators import public
 from braces.views._access import AccessMixin
 from django.contrib.auth import authenticate, login
-from documents.models import DocumentVersion
-from storage.settings import setting_filestorage_location
-from django.conf import settings
+from documents.models import DocumentVersion, Document
 from urllib import parse
 
 
@@ -135,14 +133,7 @@ class DocumentVersionRawView(View):
         return res
 
 
-class DocumentVersionOnlineViewerRedirect(RedirectView):
-    permanent = False
-
-    @method_decorator(public)
-    def dispatch(self, request, *args, **kwargs):
-        self.request = request
-        return super(DocumentVersionOnlineViewerRedirect, self).dispatch(request, *args, **kwargs)
-
+class DocumentVersionOnlineViewerRedirect(RedirectToPageView):
 
     def get_redirect_url(self, *args, **kwargs):
         """
@@ -155,4 +146,19 @@ class DocumentVersionOnlineViewerRedirect(RedirectView):
             host, reverse("c4csap:document_version_raw", kwargs={"pk":pk})
         )
         redirect_url = "https://view.officeapps.live.com/op/view.aspx?src=%s" % parse.quote(target_url)
+        return redirect_url
+
+
+class DocumentOnlineViewerRedirect(RedirectToPageView):
+
+    def get_redirect_url(self, *args, **kwargs):
+        """
+        Hide the static tag import to avoid errors with static file
+        processors
+        """
+        pk = kwargs["pk"]
+        doc = Document.objects.get(pk=pk)
+        if doc.latest_version is None:
+            return Http404()
+        redirect_url = reverse("c4csap:document_version_raw", kwargs={"pk":doc.latest_version.id})
         return redirect_url

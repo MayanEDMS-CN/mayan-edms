@@ -3,7 +3,8 @@ from __future__ import unicode_literals
 from django.conf.urls import url
 from .views import RedirectToHomeView, RelatedItemListView, TabMashupView, \
     RedirectToServiceItemsView, RedirectToServiceTabView, KBHomeView, \
-    DocumentVersionRawView, DocumentVersionOnlineViewerRedirect
+    DocumentVersionRawView, DocumentVersionOnlineViewerRedirect, \
+    DocumentOnlineViewerRedirect
 
 urlpatterns = [
     url(r'^service/ticket/tab/$', TabMashupView.as_view(), name='c4csap_ticket_tab'),
@@ -15,4 +16,6 @@ urlpatterns = [
     url(r'^document/version/(?P<pk>\d+)/raw/', DocumentVersionRawView.as_view(), name='document_version_raw'),
     url(r'^document/version/(?P<pk>\d+)/viewer/', DocumentVersionOnlineViewerRedirect.as_view(),
         name='document_version_online_viewer'),
+    url(r'^document/(?P<pk>\d+)/viewer/', DocumentOnlineViewerRedirect.as_view(),
+        name='document_online_viewer'),
 ]

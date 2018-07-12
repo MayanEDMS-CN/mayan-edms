@@ -9,6 +9,8 @@ from common import (
     MayanAppConfig, menu_facet, menu_main, menu_multi_item, menu_object,
     menu_sidebar
 )
+from documents.models import Document, DocumentVersion
+from .links import link_document_online_viewer, link_document_version_online_viewer
 
 
 class C4CSapApp(MayanAppConfig):
@@ -18,3 +20,9 @@ class C4CSapApp(MayanAppConfig):
 
     def ready(self):
         super(C4CSapApp, self).ready()
+        menu_object.bind_links(
+            links=(link_document_online_viewer,), sources=(Document,)
+        )
+        menu_object.bind_links(
+            links=(link_document_version_online_viewer,), sources=(DocumentVersion,)
+        )
