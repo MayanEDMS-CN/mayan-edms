@@ -119,6 +119,10 @@ class RedirectToServiceItemsView(RedirectToPageView):
 
 class DocumentVersionRawView(View):
 
+    @method_decorator(public)
+    def dispatch(self, request, *args, **kwargs):
+        return super(DocumentVersionRawView, self).dispatch(request, *args, **kwargs)
+
     def get(self, request, *args, **kwargs):
         pk = kwargs["pk"]
         vers = DocumentVersion.objects.get(pk=pk)
