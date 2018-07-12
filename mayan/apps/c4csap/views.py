@@ -145,7 +145,22 @@ class DocumentVersionOnlineViewerRedirect(RedirectToPageView):
         target_url = "http://%s/%s" % (
             host, reverse("c4csap:document_version_raw", kwargs={"pk":pk})
         )
-        redirect_url = "https://view.officeapps.live.com/op/view.aspx?src=%s" % parse.quote(target_url)
+        vers = DocumentVersion.objects.get(pk=pk)
+        if vers.mimetype in [
+            'application/pdf',
+            'application/xml',
+            'text/x-c',
+            'text/x-c++',
+            'text/x-pascal',
+            'text/x-msdos-batch',
+            'text/x-python',
+            'text/x-shellscript',
+            'text/plain',
+            'text/rtf',
+        ]:
+            redirect_url = target_url
+        else:
+            redirect_url = "https://view.officeapps.live.com/op/view.aspx?src=%s" % parse.quote(target_url)
         return redirect_url
 
 
