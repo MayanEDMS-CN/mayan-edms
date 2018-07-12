@@ -7,7 +7,7 @@ from acls import ModelPermission
 from acls.permissions import permission_acl_edit, permission_acl_view
 from common import (
     MayanAppConfig, menu_facet, menu_main, menu_multi_item, menu_object,
-    menu_sidebar
+    menu_sidebar, menu_secondary
 )
 from .links import link_document_online_viewer, link_document_version_online_viewer
 
@@ -37,10 +37,10 @@ class C4CSapApp(MayanAppConfig):
             links=(link_document_version_online_viewer,), sources=(DocumentVersion,)
         )
 
-        menu_sidebar.bind_links(
+        menu_secondary.bind_links(
             links=(link_document_online_viewer,), sources=(Document,)
         )
 
-        menu_sidebar.bind_links(
+        menu_secondary.bind_links(
             links=(link_document_version_online_viewer,), sources=(DocumentVersion,)
         )
