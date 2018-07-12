@@ -122,7 +122,7 @@ class DocumentVersionRawView(View):
     def get(self, request, *args, **kwargs):
         pk = kwargs["pk"]
         vers = DocumentVersion.objects.get(pk=pk)
-        with vers.file.open("rb") as f:
+        with vers.file.open() as f:
             data = f.read()
             f.close()
         res = HttpResponse(data, content_type=vers.mimetype)
