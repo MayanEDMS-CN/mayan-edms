@@ -122,9 +122,7 @@ class DocumentVersionRawView(View):
     def get(self, request, *args, **kwargs):
         pk = kwargs["pk"]
         vers = DocumentVersion.objects.get(pk=pk)
-        with vers.file.open() as f:
-            data = f.read()
-            f.close()
+        data = vers.file.read()
         res = HttpResponse(data, content_type=vers.mimetype)
         res["Content-Disposition"] = "attachment; filename=\"%s\"" % vers.document.label
         return res
