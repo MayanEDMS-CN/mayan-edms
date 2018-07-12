@@ -160,5 +160,5 @@ class DocumentOnlineViewerRedirect(RedirectToPageView):
         doc = Document.objects.get(pk=pk)
         if doc.latest_version is None:
             return Http404()
-        redirect_url = reverse("c4csap:document_version_raw", kwargs={"pk":doc.latest_version.id})
+        redirect_url = reverse("c4csap:document_version_online_viewer", kwargs={"pk":doc.latest_version.id})
         return redirect_url
