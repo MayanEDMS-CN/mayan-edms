@@ -130,13 +130,29 @@ class DocumentVersionRawView(View):
     def get(self, request, *args, **kwargs):
         pk = kwargs["pk"]
         vers = DocumentVersion.objects.get(pk=pk)
-        prefix = setting_filestorage_location.value[len(settings.MEDIA_ROOT):]
-        media_url = "/media"
-        host = request.META["HTTP_HOST"]
-        target_url = "http://%s%s%s/%s" % (
-            host, media_url, prefix, vers.file.name
+        data = vers.file.read()
+        res = HttpResponse(data, content_type=vers.mimetype)
+        return res
+
+
+class DocumentVersionOnlineViewerRedirect(RedirectView):
+    permanent = False
+
+    @method_decorator(public)
+    def dispatch(self, request, *args, **kwargs):
+        self.request = request
+        return super(DocumentVersionOnlineViewerRedirect, self).dispatch(request, *args, **kwargs)
+
+
+    def get_redirect_url(self, *args, **kwargs):
+        """
+        Hide the static tag import to avoid errors with static file
+        processors
+        """
+        pk = kwargs["pk"]
+        host = self.request.META["HTTP_HOST"]
+        target_url = "http://%s/%s" % (
+            host, reverse("c4csap:document_version_raw")
         )
         redirect_url = "https://view.officeapps.live.com/op/view.aspx?src=%s" % parse.quote(target_url)
-        logging.debug(redirect_url)
-        return HttpResponseRedirect(redirect_url)
-
+        return redirect_url
