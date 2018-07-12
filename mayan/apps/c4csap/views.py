@@ -124,6 +124,6 @@ class DocumentVersionRawView(View):
         vers = DocumentVersion.objects.get(pk=pk)
         data = vers.file.read()
         res = HttpResponse(data, content_type=vers.mimetype)
-        res["Content-Disposition"] = "attachment; filename=\"%s\"" % vers.document.label
+        # res["Content-Disposition"] = "attachment; filename=\"%s\"" % vers.document.label
         return res
 
