@@ -152,7 +152,7 @@ class DocumentVersionOnlineViewerRedirect(RedirectView):
         pk = kwargs["pk"]
         host = self.request.META["HTTP_HOST"]
         target_url = "http://%s/%s" % (
-            host, reverse("c4csap:document_version_raw")
+            host, reverse("c4csap:document_version_raw", kwargs={"pk":pk})
         )
         redirect_url = "https://view.officeapps.live.com/op/view.aspx?src=%s" % parse.quote(target_url)
         return redirect_url
