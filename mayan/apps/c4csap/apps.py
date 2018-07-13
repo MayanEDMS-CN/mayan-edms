@@ -10,7 +10,8 @@ from common import (
     menu_sidebar, menu_secondary
 )
 from .links import link_document_online_viewer, link_document_version_online_viewer
-
+from document_parsing.parsers import Parser, PopplerParser
+from converter.classes import CONVERTER_OFFICE_FILE_MIMETYPES
 
 class C4CSapApp(MayanAppConfig):
     has_tests = True
@@ -44,3 +45,5 @@ class C4CSapApp(MayanAppConfig):
         menu_facet.bind_links(
             links=(link_document_version_online_viewer,), sources=(DocumentVersion,)
         )
+
+        Parser.register(CONVERTER_OFFICE_FILE_MIMETYPES, (PopplerParser,))
