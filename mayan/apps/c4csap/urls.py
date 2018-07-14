@@ -4,7 +4,7 @@ from django.conf.urls import url
 from .views import RedirectToHomeView, RelatedItemListView, TabMashupView, \
     RedirectToServiceItemsView, RedirectToServiceTabView, KBHomeView, \
     DocumentVersionRawView, DocumentVersionOnlineViewerRedirect, \
-    DocumentOnlineViewerRedirect
+    DocumentOnlineViewerRedirect, DocumentC4CTicketEditView
 
 urlpatterns = [
     url(r'^service/ticket/tab/$', TabMashupView.as_view(), name='c4csap_ticket_tab'),
@@ -18,4 +18,9 @@ urlpatterns = [
         name='document_version_online_viewer'),
     url(r'^document/(?P<pk>\d+)/viewer/', DocumentOnlineViewerRedirect.as_view(),
         name='document_online_viewer'),
+    url(
+        r'^document/(?P<pk>\d+)/ticket/relationship/$',
+        DocumentC4CTicketEditView.as_view(),
+        name='document_c4c_ticket_relationship'
+    ),
 ]

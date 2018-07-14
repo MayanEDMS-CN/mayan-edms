@@ -14,3 +14,8 @@ link_document_version_online_viewer = Link(
     text = _("Raw"), tags=('new_window',),
     view="c4csap:document_version_online_viewer", args="object.pk"
 )
+
+link_document_c4c_relationship_settings = Link(
+    text=_('C4C Ticket Relationship'),
+    view='c4csap:document_c4c_ticket_relationship', args='resolved_object.id'
+)

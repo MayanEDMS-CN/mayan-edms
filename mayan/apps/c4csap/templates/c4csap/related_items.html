@@ -1,3 +1,7 @@
+{% load i18n %}
+{% load static %}
+
+{% load common_tags %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
@@ -36,8 +40,11 @@
         <tr align="right">
             <td align="right">已采用的知识库文章:</td>
             <td align="left">
-                <a class="normal" href="http://kb.c4csap.com/" target="_blank">关联知识库文章001</a>，&nbsp;
-                <a class="normal" href="http://kb.c4csap.com/" target="_blank">关联知识库文章002</a>
+                {% for related in relationships %}
+                <a class="normal" href="{% url 'c4csap:document_online_viewer' related.document.id %}" target="_blank">{{related.document}}</a>{% if not forloop.last %}，{% endif %}&nbsp;
+                {% empty %}
+                【无】
+                {% endfor %}
             </td>
         </tr>
     </table>

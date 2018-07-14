@@ -11,9 +11,11 @@ from django.utils.decorators import method_decorator
 from stronghold.decorators import public
 from braces.views._access import AccessMixin
 from django.contrib.auth import authenticate, login
+
+from common.generics import SingleObjectEditView
 from documents.models import DocumentVersion, Document
 from urllib import parse
-
+from .models import C4CServiceTicket, DocumentServiceTicketRelatedSettings
 
 if DJANGO_VERSION >= (1, 10, 0):
     _is_authenticated = lambda user: user.is_authenticated  # noqa
@@ -54,6 +56,12 @@ class RelatedItemListView(C4CSAPTokenLoginMixin, TemplateView):
         data = super(RelatedItemListView, self).get_context_data(**kwargs)
         context = RequestContext(self.request)
         context['request'] = self.request
+        ticket_id = self.request.session.get("ticketid", None)
+        if ticket_id is not None:
+            ticket, created = C4CServiceTicket.objects.get_or_create(ticket_id=ticket_id)
+            data.update({
+                "relationships": ticket.document_relationships.all()
+            })
         data.update({
             'title': _('Setup items'),
         })
@@ -177,3 +185,25 @@ class DocumentOnlineViewerRedirect(RedirectToPageView):
             return Http404()
         redirect_url = reverse("c4csap:document_version_online_viewer", kwargs={"pk":doc.latest_version.id})
         return redirect_url
+
+
+class DocumentC4CTicketEditView(SingleObjectEditView):
+    fields = ('related',)
+
+    def get_object(self, queryset=None):
+        ticketid = self.request.session.get("ticketid", None)
+        if ticketid is None:
+            return Http404()
+        ticket, created = C4CServiceTicket.objects.get_or_create(ticket_id=ticketid)
+        pk = self.kwargs["pk"]
+        doc = Document.objects.get(pk=pk)
+        obj, created = ticket.document_relationships.get_or_create(document=doc)
+        print(obj)
+        return obj
+
+    def get_extra_context(self):
+        return {
+            'title': _(
+                'Edit relationship for document : %s'
+            ) % self.get_object().document
+        }
