@@ -150,7 +150,7 @@ class DocumentVersionOnlineViewerRedirect(RedirectToPageView):
         """
         pk = kwargs["pk"]
         host = self.request.META["HTTP_HOST"]
-        target_url = "http://%s/%s" % (
+        target_url = "http://%s%s" % (
             host, reverse("c4csap:document_version_raw", kwargs={"pk":pk})
         )
         vers = DocumentVersion.objects.get(pk=pk)

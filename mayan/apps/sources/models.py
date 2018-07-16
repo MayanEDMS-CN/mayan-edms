@@ -9,6 +9,8 @@ import os
 import poplib
 import subprocess
 import codecs
+from io import BytesIO
+
 try:
     import sh
 except:
@@ -57,6 +59,8 @@ from .literals import (
     SOURCE_CHOICE_EMAIL_POP3, SOURCE_CHOICE_SANE_SCANNER,
 )
 from .settings import setting_scanimage_path
+from openpyxl import load_workbook
+
 
 logger = logging.getLogger(__name__)
 
@@ -133,6 +137,36 @@ class Source(models.Model):
                 document.delete(to_trash=False)
                 raise
 
+    def handle_chery_excel_package(self, file_object, **kwargs):
+        wb = load_workbook(file_object, read_only=True)
+        ws = wb.active
+        temp = ws.rows.__next__()
+        for id, cat1, cat2, title, content in ws.rows:
+            f = PseudoFile(
+                file=BytesIO(content.value),
+                name=title.value
+            )
+            kwargs.update({
+                "label": title.value,
+                "description": title.value
+            })
+            self.upload_document(f, **kwargs)
+
+    def is_chery_excel_package(self, file_object, label=None):
+        if label is None:
+            return False
+        if not label.strip().lower().endswith(".xlsx"):
+            return False
+        result = False
+        try:
+            wb = load_workbook(file_object, read_only=True)
+            ws = wb.active
+            result = '序号,话术类别,二级分类,问题,内容' == ",".join(cell.value.strip() for cell in ws.rows.__next__())
+            wb.close()
+        except:
+            pass
+        return result
+
     def handle_upload(self, file_object, description=None, document_type=None, expand=False, label=None, language=None, metadata_dict_list=None, metadata_dictionary=None, tag_ids=None, user=None):
         """
         Handle an upload request from a file object which may be an individual
@@ -162,7 +196,11 @@ class Source(models.Model):
             except NotACompressedFile:
                 logging.debug('Exception: NotACompressedFile')
                 self.upload_document(file_object=file_object, **kwargs)
+        elif self.is_chery_excel_package(file_object, label):
+            print(10)
+            self.handle_chery_excel_package(file_object, **kwargs)
         else:
+            print(11)
             self.upload_document(file_object=file_object, **kwargs)
 
     def get_upload_file_object(self, form_data):
