@@ -137,7 +137,7 @@ class DocumentVersionRawView(View):
         pk = kwargs["pk"]
         vers = DocumentVersion.objects.get(pk=pk)
         data = vers.file.read()
-        res = HttpResponse(data, content_type=vers.mimetype)
+        res = HttpResponse(data, content_type="%s; %s" % (vers.mimetype, "charset=UTF-8"))
         return res
 
 
