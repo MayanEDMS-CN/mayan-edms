@@ -60,7 +60,7 @@ class RelatedItemListView(C4CSAPTokenLoginMixin, TemplateView):
         if ticket_id is not None:
             ticket, created = C4CServiceTicket.objects.get_or_create(ticket_id=ticket_id)
             data.update({
-                "relationships": ticket.document_relationships.all()
+                "relationships": ticket.document_relationships.filter(related=True).all()
             })
         data.update({
             'title': _('Setup items'),
