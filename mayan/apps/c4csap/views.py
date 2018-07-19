@@ -75,7 +75,7 @@ class KBHomeView(C4CSAPTokenLoginMixin, RedirectView):
         """
         Hide the static tag import to avoid errors with static file
         processors
-        """
+        """  
         return "/"
 
 

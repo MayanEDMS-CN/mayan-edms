@@ -197,10 +197,8 @@ class Source(models.Model):
                 logging.debug('Exception: NotACompressedFile')
                 self.upload_document(file_object=file_object, **kwargs)
         elif self.is_chery_excel_package(file_object, label):
-            print(10)
             self.handle_chery_excel_package(file_object, **kwargs)
         else:
-            print(11)
             self.upload_document(file_object=file_object, **kwargs)
 
     def get_upload_file_object(self, form_data):
