@@ -9,7 +9,7 @@ from documents.models import DocumentPage, DocumentType, DocumentVersion, Docume
 @python_2_unicode_compatible
 class C4CServiceTicket(models.Model):
 
-    ticket_id = models.PositiveIntegerField(_("Ticket ID"))
+    ticket_id = models.PositiveIntegerField(_("Ticket ID"), unique=True)
     title = models.CharField(_("工单标题"), blank=True, max_length=128)
 
     class Meta:
