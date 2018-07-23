@@ -28,16 +28,16 @@ class C4CSAPTokenLoginMixin(AccessMixin):
     @method_decorator(public)
     def dispatch(self, request, *args, **kwargs):
         self.request = request
-        if "ticketid" in request.GET:
+        if "ticketid" in request.GET and len(request.GET["ticketid"])>0:
             request.session["ticketid"] = request.GET["ticketid"]
-        if _is_authenticated(request.user):
-            logout(request)
         c4c_username = request.GET.get("username", "")
         c4c_token = request.GET.get("token", "")
         if len(c4c_username)>0 and len(c4c_token)>0:
             user = authenticate(username=c4c_username, password=c4c_token)
             # user = authenticate(username="testkb", password="Welcome1")
             if user is not None:
+                if _is_authenticated(request.user) and request.user != user:
+                    logout(request)
                 login(request, user)
                 return super(C4CSAPTokenLoginMixin, self).dispatch(request, *args, **kwargs)
 
