@@ -10,7 +10,7 @@ class Command(BaseCommand):
         parser.add_argument("host", type=str)               # my500248
         parser.add_argument("username", type=str)           # ZSKZSK7000055
         parser.add_argument("password", type=str)           # Welcome1
-        parser.add_argument("c4c_version", type=int, default=1808)           # Welcome1
+        parser.add_argument("--c4c_version", type=int, default=1808)           # 1808
 
     def handle(self, *args, **options):
         host = options["host"]
