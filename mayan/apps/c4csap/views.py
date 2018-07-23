@@ -10,7 +10,7 @@ from django.urls import reverse
 from django.utils.decorators import method_decorator
 from stronghold.decorators import public
 from braces.views._access import AccessMixin
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 from common.generics import SingleObjectEditView
 from documents.models import DocumentVersion, Document
@@ -30,19 +30,18 @@ class C4CSAPTokenLoginMixin(AccessMixin):
         self.request = request
         if "ticketid" in request.GET:
             request.session["ticketid"] = request.GET["ticketid"]
-        if not _is_authenticated(request.user):
-            c4c_username = request.GET.get("username", "")
-            c4c_token = request.GET.get("token", "")
-            if len(c4c_username)>0 and len(c4c_token)>0:
-                #user = authenticate(username=c4c_username, password=c4c_token)
-                user = authenticate(username="testkb", password="Welcome1")
-                if user is not None:
-                    login(request, user)
-                    return super(C4CSAPTokenLoginMixin, self).dispatch(request, *args, **kwargs)
+        if _is_authenticated(request.user):
+            logout(request)
+        c4c_username = request.GET.get("username", "")
+        c4c_token = request.GET.get("token", "")
+        if len(c4c_username)>0 and len(c4c_token)>0:
+            user = authenticate(username=c4c_username, password=c4c_token)
+            # user = authenticate(username="testkb", password="Welcome1")
+            if user is not None:
+                login(request, user)
+                return super(C4CSAPTokenLoginMixin, self).dispatch(request, *args, **kwargs)
 
-            return self.no_permissions_fail(request)
-        else:
-            return super(C4CSAPTokenLoginMixin, self).dispatch(request, *args, **kwargs)
+        return self.no_permissions_fail(request)
 
 
 class TabMashupView(C4CSAPTokenLoginMixin, TemplateView):

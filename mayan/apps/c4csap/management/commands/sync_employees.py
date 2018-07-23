@@ -10,14 +10,21 @@ class Command(BaseCommand):
         parser.add_argument("host", type=str)               # my500248
         parser.add_argument("username", type=str)           # ZSKZSK7000055
         parser.add_argument("password", type=str)           # Welcome1
+        parser.add_argument("c4c_version", type=int, default=1808)           # Welcome1
 
     def handle(self, *args, **options):
         host = options["host"]
         username = options["username"]
         password = options["password"]
-        url = "https://%s:%s@%s.c4c.saphybriscloud.cn/sap/c4c/odata/v1/c4codata/EmployeeCollection?$format=json" % (
-            username, password, host
-        )
+        version = options["c4c_version"]
+        if version < 1808:
+            url = "https://%s:%s@%s.c4c.saphybriscloud.cn/sap/c4c/odata/v1/c4codata/EmployeeCollection?$format=json" % (
+                username, password, host
+            )
+        else:
+            url = "https://%s:%s@%s.c4c.saphybriscloud.cn/sap/c4c/odata/v1/c4codataapi/EmployeeCollection?$format=json" % (
+                username, password, host
+            )
         result = requests.get(url).json()
         for item in result["d"]["results"]:
             firstname = item["FirstName"]
