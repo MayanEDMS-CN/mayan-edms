@@ -44,11 +44,13 @@ class C4CSapApp(MayanAppConfig):
         )
 
         menu_facet.bind_links(
-            links=(link_document_online_viewer,), sources=(Document,)
+            links=(link_document_online_viewer,), sources=(Document,),
+            position = -10
         )
 
         menu_facet.bind_links(
-            links=(link_document_version_online_viewer,), sources=(DocumentVersion,)
+            links=(link_document_version_online_viewer,), sources=(DocumentVersion,),
+            position = -10
         )
 
         Parser.register(CONVERTER_OFFICE_FILE_MIMETYPES, (PopplerParser,))

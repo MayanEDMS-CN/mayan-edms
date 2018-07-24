@@ -427,7 +427,7 @@ class DocumentsApp(MayanAppConfig):
             sources=(Document,)
         )
         menu_facet.bind_links(
-            links=(link_document_preview,), sources=(Document,), position=0
+            links=(link_document_preview,), sources=(Document,), position=-20
         )
         menu_facet.bind_links(
             links=(link_document_properties,), sources=(Document,), position=2
