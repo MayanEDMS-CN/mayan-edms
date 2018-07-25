@@ -1,0 +1,48 @@
+{% load i18n %}
+{% load static %}
+
+{% load common_tags %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="refresh" content="60" />
+        <title>关联的知识库文章</title>
+        <style type="text/css">
+            .normal:hover, .normal:visited,
+            .normal:active, .normal:invalid {
+                color: rgb(0, 0, 0);
+                display: inline-block;
+                font-family: Arial,Helvetica,sans-serif;
+                font-size: 12px;
+                font-style: normal;
+                font-variant: normal;
+                overflow: hidden;
+            }
+            table {
+                color: rgb(0, 0, 0);
+                display: inline-block;
+                font-family: Arial,Helvetica,sans-serif;
+                font-size: 12px;
+                font-style: normal;
+                font-variant: normal;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+    <table border="0" cellpadding="10" cellspacing="0">
+        <colgroup width="160"></colgroup>
+        <colgroup width="*"></colgroup>
+        <tr align="right">
+            <td align="right">无权访问:</td>
+            <td align="left">
+                当前登录用户并没有知识库的访问权限，请联系系统管理员。
+            </td>
+        </tr>
+    </table>
+    </body>
+</html>

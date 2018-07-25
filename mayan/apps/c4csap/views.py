@@ -2,6 +2,7 @@ from __future__ import absolute_import, unicode_literals
 
 from django import VERSION as DJANGO_VERSION
 from django.http import HttpResponse, HttpResponseRedirect, Http404
+from django.shortcuts import redirect
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import RedirectView, TemplateView, View
 import logging
@@ -23,6 +24,11 @@ else:
     # Django<1.10 compatibility
     _is_authenticated = lambda user: user.is_authenticated()  # noqa
 
+
+class NoAccessView(TemplateView):
+    template_name = 'c4csap/no_access.html'
+
+
 class C4CSAPTokenLoginMixin(AccessMixin):
 
     @method_decorator(public)
@@ -41,7 +47,7 @@ class C4CSAPTokenLoginMixin(AccessMixin):
                 login(request, user)
                 return super(C4CSAPTokenLoginMixin, self).dispatch(request, *args, **kwargs)
 
-        return self.no_permissions_fail(request)
+        return redirect("c4csap:c4csap_no_access")
 
 
 class TabMashupView(C4CSAPTokenLoginMixin, TemplateView):
