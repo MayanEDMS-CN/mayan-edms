@@ -74,8 +74,15 @@ class KBHomeView(C4CSAPTokenLoginMixin, RedirectView):
         """
         Hide the static tag import to avoid errors with static file
         processors
-        """  
-        return "/"
+        """
+        url = "/"
+        if "q" in self.request.GET and len(self.request.GET["q"])>0:
+            query = self.request.GET["q"]
+            url = "%s?q=%s" % (
+                reverse("search:results", kwargs={"search_model": "documents.Document"}),
+                query
+            )
+        return url
 
 
 class RedirectToPageView(RedirectView):
