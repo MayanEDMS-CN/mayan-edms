@@ -27,6 +27,10 @@ else:
 
 class NoAccessView(TemplateView):
     template_name = 'c4csap/no_access.html'
+    
+    @method_decorator(public)
+    def dispatch(self, request, *args, **kwargs):
+        return super(NoAccessView, self).dispatch(request, *args, **kwargs)
 
 
 class C4CSAPTokenLoginMixin(AccessMixin):
