@@ -15,8 +15,10 @@ from django.contrib.auth import authenticate, login, logout
 
 from common.generics import SingleObjectEditView
 from documents.models import DocumentVersion, Document
+from documents.views import DocumentPreviewView
 from urllib import parse
 from .models import C4CServiceTicket, DocumentServiceTicketRelatedSettings
+from .forms import DocumentEmbbedViewForm
 
 if DJANGO_VERSION >= (1, 10, 0):
     _is_authenticated = lambda user: user.is_authenticated  # noqa
@@ -166,6 +168,7 @@ class DocumentVersionOnlineViewerRedirect(RedirectToPageView):
         """
         pk = kwargs["pk"]
         host = self.request.META["HTTP_HOST"]
+        embed_mode = int(self.request.GET.get("embed_mode", "0"))
         target_url = "http://%s%s" % (
             host, reverse("c4csap:document_version_raw", kwargs={"pk":pk})
         )
@@ -183,6 +186,8 @@ class DocumentVersionOnlineViewerRedirect(RedirectToPageView):
             'text/rtf',
         ]:
             redirect_url = target_url
+        elif embed_mode == 1:
+            redirect_url = "https://view.officeapps.live.com/op/embed.aspx?wdStartOn=1&wdZoomLevel=PageWidth&src=%s" % parse.quote(target_url)
         else:
             redirect_url = "https://view.officeapps.live.com/op/view.aspx?src=%s" % parse.quote(target_url)
         return redirect_url
@@ -223,3 +228,7 @@ class DocumentC4CTicketEditView(SingleObjectEditView):
                 'Edit relationship for document : %s'
             ) % self.get_object().document
         }
+
+
+class DocumentEmbbedView(DocumentPreviewView):
+    form_class = DocumentEmbbedViewForm

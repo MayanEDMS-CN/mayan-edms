@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-14 11:46+0800\n"
+"POT-Creation-Date: 2018-07-26 14:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,11 +23,15 @@ msgstr ""
 
 #: links.py:9 links.py:14
 msgid "Raw"
-msgstr "原文件"
+msgstr "云预览"
 
 #: links.py:19
 msgid "C4C Ticket Relationship"
 msgstr "C4C工单关联"
+
+#: links.py:24
+msgid "Embbed Preview"
+msgstr "本地预览"
 
 #: models.py:12
 msgid "Ticket ID"
@@ -113,11 +117,11 @@ msgstr "高级"
 msgid "Search documents"
 msgstr "搜索文档"
 
-#: views.py:60
+#: views.py:77
 msgid "Setup items"
 msgstr "设置项"
 
-#: views.py:198
+#: views.py:228
 #, python-format
 msgid "Edit relationship for document : %s"
 msgstr "编辑工单关联性，文档 %s"

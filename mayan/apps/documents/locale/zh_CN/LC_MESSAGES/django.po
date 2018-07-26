@@ -517,7 +517,7 @@ msgstr "页面号"
 #: models.py:708
 #, python-format
 msgid "Page %(page_num)d out of %(total_pages)d of %(document)s"
-msgstr "文档%(document)s页%(page_num)d超出%(total_pages)d"
+msgstr "%(document)s第%(page_num)d页，共%(total_pages)d页"
 
 #: models.py:724 models.py:872 models.py:889
 msgid "Document page"
@@ -716,7 +716,7 @@ msgstr "禁用二级缓存，存放的压缩和变形过后的文档页面图像
 #: views/document_page_views.py:48
 #, python-format
 msgid "Pages for document: %s"
-msgstr "文档页面：%s"
+msgstr "%s的页面："
 
 #: views/document_page_views.py:103
 msgid "Unknown view keyword argument schema, unable to redirect."

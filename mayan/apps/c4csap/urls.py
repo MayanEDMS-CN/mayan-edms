@@ -5,7 +5,7 @@ from .views import RedirectToHomeView, RelatedItemListView, TabMashupView, \
     RedirectToServiceItemsView, RedirectToServiceTabView, KBHomeView, \
     DocumentVersionRawView, DocumentVersionOnlineViewerRedirect, \
     DocumentOnlineViewerRedirect, DocumentC4CTicketEditView, \
-    NoAccessView
+    NoAccessView, DocumentEmbbedView
 
 urlpatterns = [
     url(r'^service/ticket/tab/$', TabMashupView.as_view(), name='c4csap_ticket_tab'),
@@ -24,5 +24,9 @@ urlpatterns = [
         r'^document/(?P<pk>\d+)/ticket/relationship/$',
         DocumentC4CTicketEditView.as_view(),
         name='document_c4c_ticket_relationship'
+    ),
+    url(
+        r'^document/(?P<pk>\d+)/embbed/$', DocumentEmbbedView.as_view(),
+        name='document_embbed_viewer'
     ),
 ]
