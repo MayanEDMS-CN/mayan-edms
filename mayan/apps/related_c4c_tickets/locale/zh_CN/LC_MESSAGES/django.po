@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-30 17:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: apps.py:19 models.py:17
+msgid "C4C Tickets"
+msgstr "C4C工单"
+
+#: apps.py:38 models.py:30
+msgid "Document"
+msgstr "文档"
+
+#: apps.py:42
+#, fuzzy
+#| msgid "C4C Tickets"
+msgid "C4C Ticket ID"
+msgstr "C4C工单号"
+
+#: apps.py:46
+msgid "Related"
+msgstr "有关联"
+
+#: apps.py:46
+msgid "True"
+msgstr "是"
+
+#: links.py:9
+msgid "Create C4C Ticket Relationship"
+msgstr "关联C4C工单"
+
+#: links.py:14
+msgid "List C4C Ticket Relationship"
+msgstr "列出关联的C4C工单"
+
+#: links.py:20
+msgid "Delete Relationship"
+msgstr "删除关联"
+
+#: models.py:12
+msgid "Ticket ID"
+msgstr "工单ID"
+
+#: models.py:13
+msgid "Ticket Title"
+msgstr "工单标题"
+
+#: models.py:16
+msgid "C4C Ticket"
+msgstr "C4C工单"
+
+#: models.py:34
+msgid "Ticket"
+msgstr "工单"
+
+#: models.py:38
+msgid "Does this article related to this ticket?"
+msgstr "此文档关联到这个工单吗？"
+
+#: models.py:42
+msgid "Document Ticket Relationship"
+msgstr "文档工单关联性"
+
+#: models.py:43
+msgid "Document Ticket Relationships"
+msgstr "文档工单关联性"
+
+#: views.py:35
+msgid "Create C4C Ticket Relation"
+msgstr "创建C4C工单关联"
+
+#: views.py:70
+msgid "Delete the selected C4C Ticket Relation?"
+msgstr "取消选中的C4C工单关联？"
+
+#: views.py:82
+#, python-format
+msgid "Relation between: %(document)s and C4C ticket %(ticket_id)s deleted."
+msgstr "%(document)s 与C4C工单 %(ticket_id)s 的关联已取消。"
+
+#: views.py:99
+#, python-format
+msgid "Edit relationship for document : %s"
+msgstr "编辑文档 %s 的工单关联性"
+
+#: views.py:106
+msgid "Related C4C Tickets"
+msgstr "关联的C4C工单"
+
+#: views.py:129
+msgid "Setup items"
+msgstr "安装项"

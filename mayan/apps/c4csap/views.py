@@ -17,7 +17,6 @@ from common.generics import SingleObjectEditView
 from documents.models import DocumentVersion, Document
 from documents.views import DocumentPreviewView
 from urllib import parse
-from .models import C4CServiceTicket, DocumentServiceTicketRelatedSettings
 from .forms import DocumentEmbbedViewForm
 
 if DJANGO_VERSION >= (1, 10, 0):
@@ -58,25 +57,6 @@ class C4CSAPTokenLoginMixin(AccessMixin):
 
 class TabMashupView(C4CSAPTokenLoginMixin, TemplateView):
     template_name = 'c4csap/ticket_tab.html'
-
-
-class RelatedItemListView(C4CSAPTokenLoginMixin, TemplateView):
-    template_name = 'c4csap/related_items.html'
-
-    def get_context_data(self, **kwargs):
-        data = super(RelatedItemListView, self).get_context_data(**kwargs)
-        context = RequestContext(self.request)
-        context['request'] = self.request
-        ticket_id = self.request.session.get("ticketid", None)
-        if ticket_id is not None:
-            ticket, created = C4CServiceTicket.objects.get_or_create(ticket_id=ticket_id)
-            data.update({
-                "relationships": ticket.document_relationships.filter(related=True).all()
-            })
-        data.update({
-            'title': _('Setup items'),
-        })
-        return data
 
 
 class KBHomeView(C4CSAPTokenLoginMixin, RedirectView):
@@ -141,7 +121,7 @@ class RedirectToServiceItemsView(RedirectToPageView):
         Hide the static tag import to avoid errors with static file
         processors
         """
-        url = reverse("c4csap:c4csap_ticket_kb_items")
+        url = reverse("related_c4c_tickets:kb_items")
         return "%s%s?%s" % (self.get_redirect_host(*args, **kwargs), url, self.request.META["QUERY_STRING"])
 
 
@@ -206,28 +186,6 @@ class DocumentOnlineViewerRedirect(RedirectToPageView):
             return Http404()
         redirect_url = reverse("c4csap:document_version_online_viewer", kwargs={"pk":doc.latest_version.id})
         return redirect_url
-
-
-class DocumentC4CTicketEditView(SingleObjectEditView):
-    fields = ('related',)
-
-    def get_object(self, queryset=None):
-        ticketid = self.request.session.get("ticketid", None)
-        if ticketid is None:
-            return Http404()
-        ticket, created = C4CServiceTicket.objects.get_or_create(ticket_id=ticketid)
-        pk = self.kwargs["pk"]
-        doc = Document.objects.get(pk=pk)
-        obj, created = ticket.document_relationships.get_or_create(document=doc)
-        print(obj)
-        return obj
-
-    def get_extra_context(self):
-        return {
-            'title': _(
-                'Edit relationship for document : %s'
-            ) % self.get_object().document
-        }
 
 
 class DocumentEmbbedView(DocumentPreviewView):

@@ -15,11 +15,6 @@ link_document_version_online_viewer = Link(
     view="c4csap:document_version_online_viewer", args="object.pk"
 )
 
-link_document_c4c_relationship_settings = Link(
-    text=_('C4C Ticket Relationship'),
-    view='c4csap:document_c4c_ticket_relationship', args='resolved_object.id'
-)
-
 link_document_embbed_viewer = Link(
     text = _("Embbed Preview"), icon='fa fa-book',
     view="c4csap:document_embbed_viewer", args="object.pk"

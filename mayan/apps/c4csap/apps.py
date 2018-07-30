@@ -10,7 +10,7 @@ from common import (
     menu_sidebar, menu_secondary
 )
 from .links import link_document_online_viewer, link_document_version_online_viewer, \
-    link_document_c4c_relationship_settings, link_document_embbed_viewer
+    link_document_embbed_viewer
 from document_parsing.parsers import Parser, PopplerParser
 from converter.classes import CONVERTER_OFFICE_FILE_MIMETYPES
 
@@ -37,10 +37,6 @@ class C4CSapApp(MayanAppConfig):
 
         menu_object.bind_links(
             links=(link_document_version_online_viewer,), sources=(DocumentVersion,)
-        )
-
-        menu_object.bind_links(
-            links=(link_document_c4c_relationship_settings,), sources=(Document,)
         )
 
         menu_facet.bind_links(

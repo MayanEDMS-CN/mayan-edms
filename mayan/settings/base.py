@@ -107,6 +107,7 @@ INSTALLED_APPS = (
     # Placed after rest_api to allow template overriding
     'rest_framework_swagger',
     'c4csap',
+    'related_c4c_tickets',
 )
 
 MIDDLEWARE_CLASSES = (
