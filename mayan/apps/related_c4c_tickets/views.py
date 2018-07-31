@@ -7,6 +7,7 @@ from django.template import RequestContext
 from django.urls import reverse, reverse_lazy
 from django.views.generic import TemplateView, RedirectView
 from django.utils.translation import ugettext_lazy as _
+from django import forms
 
 from c4csap.views import C4CSAPTokenLoginMixin
 from common.generics import SingleObjectEditView, SingleObjectCreateView, SingleObjectListView, ConfirmView
@@ -86,7 +87,6 @@ class C4CTicketDeleteConfirmView(ConfirmView):
 
 
 class C4CTicketRelationEditView(SingleObjectEditView):
-    fields = ('related',)
 
     def get_object(self, queryset=None):
         pk = self.kwargs["pk"]
@@ -99,6 +99,19 @@ class C4CTicketRelationEditView(SingleObjectEditView):
                 'Edit relationship for document : %s'
             ) % self.get_object().document
         }
+
+    def get_form_class(self):
+
+        class _RaltionEditForm(forms.ModelForm):
+
+            class Meta:
+                fields = ('related',)
+                model = DocumentServiceTicketRelatedSettings
+                labels = {
+                        'related': _("Relate current document to C4C ticket [%s] ?" % self.get_object().ticket.ticket_id)
+                    }
+
+        return _RaltionEditForm
 
 
 class C4CTicketRelationListView(SingleObjectListView):

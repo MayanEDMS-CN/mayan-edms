@@ -11,7 +11,8 @@ from common import (
 )
 from navigation import SourceColumn
 
-from .links import link_document_create_c4c_relationship, link_relation_delete, link_document_list_c4c_relationship
+from .links import link_document_create_c4c_relationship, link_relation_delete, link_document_list_c4c_relationship, \
+    link_document_edit_c4c_relationship
 
 class RelatedC4CTickets(MayanAppConfig):
     has_tests = False
@@ -48,6 +49,10 @@ class RelatedC4CTickets(MayanAppConfig):
 
         menu_object.bind_links(
             links=(link_document_create_c4c_relationship,), sources=(Document,)
+        )
+
+        menu_object.bind_links(
+            links=(link_document_edit_c4c_relationship,), sources=(Document,)
         )
 
         menu_object.bind_links(

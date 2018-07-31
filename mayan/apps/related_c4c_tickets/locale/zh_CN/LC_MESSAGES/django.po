@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-30 17:45+0800\n"
+"POT-Creation-Date: 2018-07-31 15:36+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,37 +17,39 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: apps.py:19 models.py:17
+#: apps.py:20 models.py:17
 msgid "C4C Tickets"
 msgstr "C4C工单"
 
-#: apps.py:38 models.py:30
+#: apps.py:39 models.py:30
 msgid "Document"
 msgstr "文档"
 
-#: apps.py:42
-#, fuzzy
-#| msgid "C4C Tickets"
+#: apps.py:43
 msgid "C4C Ticket ID"
 msgstr "C4C工单号"
 
-#: apps.py:46
+#: apps.py:47
 msgid "Related"
 msgstr "有关联"
 
-#: apps.py:46
+#: apps.py:47
 msgid "True"
 msgstr "是"
 
 #: links.py:9
-msgid "Create C4C Ticket Relationship"
-msgstr "关联C4C工单"
+msgid "Edit C4C Ticket Relationship"
+msgstr "关联当前C4C工单"
 
 #: links.py:14
+msgid "Create C4C Ticket Relationship"
+msgstr "关联新C4C工单"
+
+#: links.py:19
 msgid "List C4C Ticket Relationship"
 msgstr "列出关联的C4C工单"
 
-#: links.py:20
+#: links.py:25
 msgid "Delete Relationship"
 msgstr "删除关联"
 
@@ -79,15 +81,15 @@ msgstr "文档工单关联性"
 msgid "Document Ticket Relationships"
 msgstr "文档工单关联性"
 
-#: views.py:35
+#: views.py:36
 msgid "Create C4C Ticket Relation"
 msgstr "创建C4C工单关联"
 
-#: views.py:70
+#: views.py:71
 msgid "Delete the selected C4C Ticket Relation?"
 msgstr "取消选中的C4C工单关联？"
 
-#: views.py:82
+#: views.py:83
 #, python-format
 msgid "Relation between: %(document)s and C4C ticket %(ticket_id)s deleted."
 msgstr "%(document)s 与C4C工单 %(ticket_id)s 的关联已取消。"
@@ -97,10 +99,15 @@ msgstr "%(document)s 与C4C工单 %(ticket_id)s 的关联已取消。"
 msgid "Edit relationship for document : %s"
 msgstr "编辑文档 %s 的工单关联性"
 
-#: views.py:106
+#: views.py:111
+#, python-format
+msgid "Relate current document to C4C ticket [%s] ?"
+msgstr "把当前文档关联到C4C工单【%s】？"
+
+#: views.py:119
 msgid "Related C4C Tickets"
 msgstr "关联的C4C工单"
 
-#: views.py:129
+#: views.py:142
 msgid "Setup items"
 msgstr "安装项"
