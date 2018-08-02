@@ -108,7 +108,7 @@ class C4CTicketRelationEditView(SingleObjectEditView):
                 fields = ('related',)
                 model = DocumentServiceTicketRelatedSettings
                 labels = {
-                        'related': _("Relate current document to C4C ticket [%s] ?" % self.get_object().ticket.ticket_id)
+                        'related': _("把当前文档关联到【%s】号工单？" % self.get_object().ticket.ticket_id)
                     }
 
         return _RaltionEditForm

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-31 15:36+0800\n"
+"POT-Creation-Date: 2018-08-02 21:30+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -100,8 +100,7 @@ msgid "Edit relationship for document : %s"
 msgstr "编辑文档 %s 的工单关联性"
 
 #: views.py:111
-#, python-format
-msgid "Relate current document to C4C ticket [%s] ?"
+msgid "Current document is related to C4C ticket [%s] ?"
 msgstr "把当前文档关联到C4C工单【%s】？"
 
 #: views.py:119
