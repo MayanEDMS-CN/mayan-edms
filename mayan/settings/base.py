@@ -108,6 +108,7 @@ INSTALLED_APPS = (
     'rest_framework_swagger',
     'c4csap',
     'related_c4c_tickets',
+    'detailed_widgets',
 )
 
 MIDDLEWARE_CLASSES = (

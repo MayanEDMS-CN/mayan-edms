@@ -1,0 +1,14 @@
+{% load i18n %}
+{% load static %}
+
+{% load common_tags %}
+
+<ol>
+{% for doc in documents %}
+    <li class="detailed_dashboard_widget_item">
+        <a href="{{ doc.get_absolute_url }}" alt="{{ doc }}" title="{{ doc }}">{{ doc.label|truncatechars:16 }}</a>
+    </li>
+{% empty %}
+【空】
+{% endfor %}
+</ol>
