@@ -208,7 +208,7 @@ class Document(models.Model):
 
     def get_absolute_url(self):
         # return reverse('documents:document_preview', args=(self.pk,))
-        return reverse('c4csap:document_embbed_viewer', args=(self.pk,))
+        return reverse('raw_viewer:document_embbed_viewer', args=(self.pk,))
 
     def natural_key(self):
         return (self.uuid,)

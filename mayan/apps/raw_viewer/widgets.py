@@ -9,8 +9,8 @@ class DocumentEmbbedViewWidget(forms.widgets.Widget):
     """
     Display many small representations of a document pages
     """
-    def render(self, name, value, attrs=None):
 
+    def render(self, name, value, attrs=None):
         output = []
         output.append("""
         <style>
@@ -21,7 +21,7 @@ class DocumentEmbbedViewWidget(forms.widgets.Widget):
             .form-group {
                 margin-bottom: 0;
             }
-            
+
         </style>
         """)
         output.append(
@@ -30,9 +30,10 @@ class DocumentEmbbedViewWidget(forms.widgets.Widget):
         )
         document = value
         if document.latest_version is not None:
-            redirect_url = "%s?embed_mode=1" % reverse("c4csap:document_version_online_viewer", kwargs={"pk": document.latest_version.id})
+            redirect_url = "%s?embed_mode=1" % reverse("raw_viewer:document_version_online_viewer",
+                                                       kwargs={"pk": document.latest_version.id})
             output.append(
-                "<iframe src=\"" +redirect_url + "\" width=\"100%\" height=\"100%\" frameborder=\"0\"></iframe>"
+                "<iframe src=\"" + redirect_url + "\" width=\"100%\" height=\"100%\" frameborder=\"0\"></iframe>"
             )
         output.append('</div>')
 

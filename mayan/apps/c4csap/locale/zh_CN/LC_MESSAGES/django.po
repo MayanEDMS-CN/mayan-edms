@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-26 14:22+0800\n"
+"POT-Creation-Date: 2018-08-03 18:19+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,75 +17,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: apps.py:20
+#: apps.py:18
 msgid "C4C SAP"
 msgstr ""
 
-#: links.py:9 links.py:14
-msgid "Raw"
-msgstr "云预览"
-
-#: links.py:19
-msgid "C4C Ticket Relationship"
-msgstr "C4C工单关联"
-
-#: links.py:24
-msgid "Embbed Preview"
-msgstr "本地预览"
-
-#: models.py:12
-msgid "Ticket ID"
-msgstr "工单号"
-
-#: models.py:13
-msgid "工单标题"
-msgstr "工单标题"
-
-#: models.py:16
-msgid "C4C Ticket"
-msgstr "C4C工单"
-
-#: models.py:17
-msgid "C4C Tickets"
-msgstr "C4C工单"
-
-#: models.py:30
-msgid "Document"
-msgstr "文档"
-
-#: models.py:34
-msgid "Ticket"
-msgstr "工单"
-
-#: models.py:38
-msgid "Does this article related to this ticket?"
-msgstr "把此知识与本工单关联"
-
-#: models.py:42
-msgid "Document Ticket Relationship"
-msgstr "文档工单关联性"
-
-#: models.py:43
-msgid "Document Ticket Relationships"
-msgstr "文档工单关联性"
-
-#: models.py:46
-msgid "Related"
-msgstr "有关联"
-
-#: models.py:46
-msgid "Not Related"
-msgstr "无关联"
-
-#: templates/c4csap/base.html:56
+#: templates/c4csap/base.html:58
 msgid "Toggle navigation"
 msgstr "导航开关"
 
-#: templates/c4csap/base.html:119
+#: templates/c4csap/base.html:121
 msgid "Actions"
 msgstr "操作"
 
-#: templates/c4csap/base.html:121
+#: templates/c4csap/base.html:123
 msgid "Toggle Dropdown"
 msgstr "下拉开关"
 
@@ -116,12 +60,3 @@ msgstr "高级"
 #: templates/c4csap/ticket_tab.html:60
 msgid "Search documents"
 msgstr "搜索文档"
-
-#: views.py:77
-msgid "Setup items"
-msgstr "设置项"
-
-#: views.py:228
-#, python-format
-msgid "Edit relationship for document : %s"
-msgstr "编辑工单关联性，文档 %s"
