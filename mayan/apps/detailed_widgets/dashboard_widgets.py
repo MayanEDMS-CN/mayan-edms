@@ -30,7 +30,7 @@ class BaseDetailedWidgetItems(object):
     def as_string(self):
         return render_to_string(self.template_name,
                                 context={
-                                    "documents": self.get_queryset()
+                                    "documents": self.get_queryset()[:10]
                                 })
 
 # 所有知识
