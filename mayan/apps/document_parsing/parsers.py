@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 
 import logging
 import os
+import platform
 import subprocess
 
 from django.apps import apps
@@ -137,19 +138,31 @@ class PopplerParser(Parser):
         command.append(temp_filepath)
         command.append('-')
 
+        close_fds = True
+
+        if platform.system().lower() == "windows":
+            close_fds = False
+
+        logger.debug("pdftoext begin parsing ...")
+        logger.debug("using command line: %s" % command)
         proc = subprocess.Popen(
-            command, close_fds=True, stderr=subprocess.PIPE,
+            command, close_fds=close_fds, stderr=subprocess.PIPE,
             stdout=subprocess.PIPE
         )
         return_code = proc.wait()
+        logger.debug("pdftoext parsing ends...")
         if return_code != 0:
+            logger.debug("pdftoext parsing error")
             logger.error(proc.stderr.readline())
             fs_cleanup(temp_filepath, file_descriptor=destination_descriptor)
 
             raise ParserError
 
+        logger.debug("begin read pdf parsing output.")
         output = proc.stdout.read()
         fs_cleanup(temp_filepath, file_descriptor=destination_descriptor)
+
+        logger.debug("reading pdf parsing output ends.")
 
         if output == b'\x0c':
             logger.debug('Parser didn\'t return any output')

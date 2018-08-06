@@ -5,9 +5,10 @@ import os
 import shutil
 
 import gnupg
+import logging
 
 from common.utils import mkdtemp
-
+logger = logging.getLogger(__name__)
 
 class GPGBackend(object):
     def __init__(self, **kwargs):
@@ -74,11 +75,11 @@ class PythonGNUPGBackend(GPGBackend):
     def gpg_command(self, function, **kwargs):
         temporary_directory = mkdtemp()
         os.chmod(temporary_directory, 0x1C0)
-
+        logger.debug("try to get gnupg.GPG instance.")
         gpg = gnupg.GPG(
             gnupghome=temporary_directory, gpgbinary=self.kwargs['binary_path']
         )
-
+        logger.debug("gnupg.GPG instance created.")
         result = function(gpg=gpg, **kwargs)
 
         shutil.rmtree(temporary_directory)
@@ -115,6 +116,7 @@ class PythonGNUPGBackend(GPGBackend):
         )
 
     def verify_file(self, file_object, keys, data_filename=None):
+
         return self.gpg_command(
             function=PythonGNUPGBackend._verify_file, file_object=file_object,
             keys=keys, data_filename=data_filename

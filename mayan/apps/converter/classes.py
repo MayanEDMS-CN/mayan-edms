@@ -13,6 +13,7 @@ except:
     import pbs as sh
 
 import yaml
+import platform
 
 from django.utils.six import text_type
 from django.utils.translation import string_concat, ugettext_lazy as _
@@ -137,16 +138,26 @@ class ConverterBase(object):
             libreoffice_filter = 'Text (encoded):UTF8,LF,,,'
 
         libreoffice_home_directory = mkdtemp()
-        args = (
-            input_filepath, '--outdir', setting_temporary_directory.value,
-            '-env:UserInstallation=file://{}'.format(
-                os.path.join(
-                    libreoffice_home_directory, 'LibreOffice_Conversion'
-                )
-            ),
-        )
+        if platform.system().lower() == "windows":
+            os.chdir(os.path.dirname(input_filepath))
+            args = (
+                os.path.basename(input_filepath), '--outdir', setting_temporary_directory.value
+            )
+            kwargs = {
+                # '_env': {'HOME': setting_temporary_directory.value},
+                '_cwd': setting_temporary_directory.value
+            }
+        else:
+            args = (
+                input_filepath, '--outdir', setting_temporary_directory.value,
+                '-env:UserInstallation=file://{}'.format(
+                    os.path.join(
+                        libreoffice_home_directory, 'LibreOffice_Conversion'
+                    )
+                ),
+            )
 
-        kwargs = {'_env': {'HOME': libreoffice_home_directory}}
+            kwargs = {'_env': {'HOME': libreoffice_home_directory}}
 
         if libreoffice_filter:
             kwargs.update({'infilter': libreoffice_filter})
@@ -159,8 +170,9 @@ class ConverterBase(object):
             logger.error('Exception launching Libre Office; %s', exception)
             raise
         finally:
-            fs_cleanup(input_filepath)
-            fs_cleanup(libreoffice_home_directory)
+            # fs_cleanup(input_filepath)
+            # fs_cleanup(libreoffice_home_directory)
+            pass
 
         filename, extension = os.path.splitext(
             os.path.basename(input_filepath)
