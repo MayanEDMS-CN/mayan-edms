@@ -170,9 +170,8 @@ class ConverterBase(object):
             logger.error('Exception launching Libre Office; %s', exception)
             raise
         finally:
-            # fs_cleanup(input_filepath)
-            # fs_cleanup(libreoffice_home_directory)
-            pass
+            fs_cleanup(input_filepath)
+            fs_cleanup(libreoffice_home_directory)
 
         filename, extension = os.path.splitext(
             os.path.basename(input_filepath)
