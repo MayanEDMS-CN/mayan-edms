@@ -43,3 +43,4 @@ pytz==2016.7
 requests==2.18.4 
 
 sh==1.12.11
+openpyxl

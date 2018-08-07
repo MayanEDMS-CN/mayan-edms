@@ -4,7 +4,8 @@ from django.conf.urls import url
 
 from .views import (
     RecentChangedDocumentListView, RecentAddedDocumentListView, \
-    TaggedImportantDocumentRedirect, EmptyTaggedImportantDocumentListView
+    TaggedImportantDocumentRedirect, EmptyTaggedImportantDocumentListView, \
+    MessageDisplayDetail, MessageDisplayList
 )
 
 urlpatterns = [
@@ -27,5 +28,15 @@ urlpatterns = [
         r'^important/rediect/$',
         TaggedImportantDocumentRedirect.as_view(),
         name='redirect_to_important_list'
+    ),
+    url(
+        r'^motd/list/$',
+        MessageDisplayList.as_view(),
+        name='motd_list'
+    ),
+    url(
+        r'^motd/(?P<pk>\d+)/detail/$',
+        MessageDisplayDetail.as_view(),
+        name='motd_detail'
     ),
 ]

@@ -156,23 +156,23 @@ MayanImage.intialize = function () {
         titleShow   : true,
         type        : 'image',
 
-        helpers: {
-            buttons: {}
-        },
+        // 放弃内置 helper 的放大功能
+        // helpers: {
+        //     buttons: {}
+        // },
 
-        // 以下代码本为引入放大效果，但后来发现fancyBox自带的buttons helper就能提供相似功能，所以引入了上面一行代码，
-        // 放弃了以下代码
+        // 使用以下代码本引入放大效果，
 
-        // autoResize  : true,
-        // afterLoad  : function () {
-        //     $.extend(this, {
-        //         aspectRatio : false,
-        //         type    : 'html',
-        //         width   : '100%',
-        //         height  : '100%',
-        //         content : '<div class="fancybox-image" style="background-image:url(' + this.href + '); background-size: cover; background-position:50% 50%;background-repeat:no-repeat;height:100%;width:100%;" /></div>'
-        //     });
-        // }
+        autoResize  : true,
+        afterLoad  : function () {
+            $.extend(this, {
+                aspectRatio : false,
+                type    : 'html',
+                width   : '100%',
+                height  : '100%',
+                content : '<div class="fancybox-image" style="background-image:url(' + this.href + '); background-size: cover; background-position:35% 35%;background-repeat:no-repeat;height:70%;width:70%;" /></div>'
+            });
+        }
     });
 
    $('img.lazy-load').lazyload({

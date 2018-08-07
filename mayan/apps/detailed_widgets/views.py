@@ -3,9 +3,39 @@ from __future__ import absolute_import, unicode_literals
 from django.apps import apps
 from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic import RedirectView
+from django.views.generic import RedirectView, TemplateView
 
 from documents.views.document_views import DocumentListView
+from motd.models import Message
+
+
+class MessageDisplay(TemplateView):
+
+    template_name = "detailed_widgets/motd_details.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(MessageDisplay, self).get_context_data(**kwargs)
+        context["title"] = _("Message of Today")
+        return context
+
+
+class MessageDisplayList(MessageDisplay):
+
+    def get_context_data(self, **kwargs):
+        context = super(MessageDisplayList, self).get_context_data(**kwargs)
+        context["messages"] = Message.objects.get_for_now()
+        return context
+
+
+class MessageDisplayDetail(MessageDisplay):
+
+    def get_context_data(self, **kwargs):
+        context = super(MessageDisplayDetail, self).get_context_data(**kwargs)
+        pk = kwargs["pk"]
+        message = Message.objects.get_for_now().filter(pk=pk).last()
+        if message is not None:
+            context["messages"] = [message]
+        return context
 
 
 class RecentChangedDocumentListView(DocumentListView):

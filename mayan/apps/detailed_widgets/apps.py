@@ -15,7 +15,8 @@ from documents.dashboard_widgets import widget_document_types, widget_documents_
 from checkouts.dashboard_widgets import widget_checkouts
 from .dashboard_widgets import detailed_widget_total_documents, detailed_widget_recent_changed_documents, \
     detailed_widget_checkout_documents, detailed_widget_recent_added_documents, \
-    detailed_widget_recent_viewed_documents, detailed_widget_tagged_important_documents
+    detailed_widget_recent_viewed_documents, detailed_widget_tagged_important_documents, \
+    detailed_widget_message_of_today
 
 
 class DetailedWidgetApp(MayanAppConfig):
@@ -42,3 +43,4 @@ class DetailedWidgetApp(MayanAppConfig):
         dashboard_main.add_widget(detailed_widget_recent_viewed_documents)
         dashboard_main.add_widget(detailed_widget_recent_changed_documents)
         dashboard_main.add_widget(detailed_widget_tagged_important_documents)
+        dashboard_main.add_widget(detailed_widget_message_of_today)

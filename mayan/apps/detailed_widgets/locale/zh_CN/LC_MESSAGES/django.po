@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-03 16:39+0800\n"
+"POT-Creation-Date: 2018-08-07 16:16+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,30 +17,34 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: apps.py:24
+#: .\apps.py:25
 msgid "Detailed Widget"
 msgstr "详情列表组件"
 
-#: dashboard_widgets.py:44
+#: .\dashboard_widgets.py:48
 msgid "Total documents"
 msgstr "所有文档"
 
-#: dashboard_widgets.py:59 views.py:21
+#: .\dashboard_widgets.py:65 .\views.py:51
 msgid "Recent Changed Documents"
 msgstr "最近修改过的文档"
 
-#: dashboard_widgets.py:76 views.py:37
+#: .\dashboard_widgets.py:84 .\views.py:67
 msgid "Recent Added Documents"
 msgstr "最近新增的文档"
 
-#: dashboard_widgets.py:93
+#: .\dashboard_widgets.py:103
 msgid "Recent Viewed Documents"
 msgstr "最近查看过的文档"
 
-#: dashboard_widgets.py:116
+#: .\dashboard_widgets.py:126
 msgid "Checkout Documents"
 msgstr "签出的文档"
 
-#: dashboard_widgets.py:142 views.py:53
+#: .\dashboard_widgets.py:149 .\views.py:18
+msgid "Message of Today"
+msgstr "通知消息"
+
+#: .\dashboard_widgets.py:174 .\views.py:83
 msgid "Tagged Important Documents"
 msgstr "重点知识"

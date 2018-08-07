@@ -130,6 +130,28 @@ detailed_widget_checkout_documents = DashboardWidget(
 )
 
 
+# 今日消息
+
+class MesageOfTodayItems(BaseDetailedWidgetItems):
+
+    def get_queryset(self):
+        Message = apps.get_model(
+            app_label='motd', model_name='Message'
+        )
+        return Message.objects.get_for_now()
+
+
+detailed_widget_message_of_today = DashboardWidget(
+    func=lambda: MesageOfTodayItems(
+            template_name="detailed_widgets/detailed_dashboard_widget_motd.html"
+        ).as_string(),
+    icon='fa fa-bell-o',
+    label=_('Message of Today'),
+    link=reverse_lazy(
+        'detailed_widgets:motd_list',
+    )
+)
+
 # 重点知识
 
 class TaggedImportantDocumentItems(BaseDetailedWidgetItems):
@@ -141,9 +163,9 @@ class TaggedImportantDocumentItems(BaseDetailedWidgetItems):
         important = Tag.objects.filter(label='重点知识').last()
         if important is not None:
             return important.documents.defer(
-                'description', 'uuid', 'date_added', 'language', 'in_trash',
+                'description', 'uuid', 'language', 'in_trash',
                 'deleted_date_time'
-            ).filter(is_stub=False).order_by('-recentdocument__datetime_accessed')
+            ).filter(is_stub=False).order_by('-date_added')
         return self.queryset.none()
 
 

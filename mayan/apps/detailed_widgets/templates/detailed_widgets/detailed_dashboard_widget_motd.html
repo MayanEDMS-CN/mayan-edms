@@ -1,0 +1,14 @@
+{% load i18n %}
+{% load static %}
+
+{% load common_tags %}
+
+<ol>
+{% for message in documents %}
+    <li class="detailed_dashboard_widget_item">
+        <a href="{% url 'detailed_widgets:motd_detail' message.id %}" alt="{{ message.label }}" title="{{ message.label }}">{{ message.label|truncatechars:16 }}</a>
+    </li>
+{% empty %}
+【空】
+{% endfor %}
+</ol>
