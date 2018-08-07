@@ -1,0 +1,7 @@
+{% extends 'detailed_widgets/detailed_dashboard_widget_items.html' %}
+
+{% load i18n %}
+{% load static %}
+
+{% load common_tags %}
+{% block date_block %}[{{ doc.recentdocument_set.last.datetime_accessed|date:"y-m-d" }}]&nbsp;{% endblock %}

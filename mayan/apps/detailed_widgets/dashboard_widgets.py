@@ -12,10 +12,14 @@ class BaseDetailedWidgetItems(object):
 
     template_name = "detailed_widgets/detailed_dashboard_widget_items.html"
 
-    def __init__(self, queryset=None):
+    def __init__(self, queryset=None, template_name=None):
         Document = apps.get_model(
             app_label='documents', model_name='Document'
         )
+
+        if template_name is not None:
+            self.template_name = template_name
+
         if queryset is None:
             self.queryset = Document.objects.defer(
                 'description', 'uuid', 'date_added', 'language', 'in_trash',
@@ -55,7 +59,9 @@ class RecentChangedDocumentItems(BaseDetailedWidgetItems):
 
 
 detailed_widget_recent_changed_documents = DashboardWidget(
-    func=lambda :RecentChangedDocumentItems().as_string(), icon='fa fa-edit',
+    func=lambda :RecentChangedDocumentItems(
+            template_name="detailed_widgets/detailed_dashboard_widget_items_version_updated.html"
+        ).as_string(), icon='fa fa-edit',
     label=_('Recent Changed Documents'),
     link=reverse_lazy(
         'detailed_widgets:recent_changed_list',
@@ -72,7 +78,9 @@ class RecentAddedDocumentItems(BaseDetailedWidgetItems):
 
 
 detailed_widget_recent_added_documents = DashboardWidget(
-    func=lambda :RecentAddedDocumentItems().as_string(), icon='fa fa-file-o',
+    func=lambda :RecentAddedDocumentItems(
+            template_name="detailed_widgets/detailed_dashboard_widget_items_date_added.html"
+        ).as_string(), icon='fa fa-file-o',
     label=_('Recent Added Documents'),
     link=reverse_lazy(
         'detailed_widgets:recent_added_list',
@@ -89,7 +97,9 @@ class RecentViewedDocumentItems(BaseDetailedWidgetItems):
 
 
 detailed_widget_recent_viewed_documents = DashboardWidget(
-    func=lambda :RecentViewedDocumentItems().as_string(), icon='fa fa-eye',
+    func=lambda :RecentViewedDocumentItems(
+            template_name="detailed_widgets/detailed_dashboard_widget_items_recent_viewed.html"
+        ).as_string(), icon='fa fa-eye',
     label=_('Recent Viewed Documents'),
     link=reverse_lazy(
         'documents:document_list_recent',

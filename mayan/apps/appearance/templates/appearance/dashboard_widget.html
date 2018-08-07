@@ -4,10 +4,10 @@
     <div class="panel panel-secondary dashboard-widget">
         <div class="panel-heading">
             <div class="row">
-                <div class="col-xs-2">
-                    <i class="dashboard-widget-icon {{ widget.icon }}"></i>
-                </div>
-                <div class="col-xs-10 text-right">
+                <div class="col-xs-12 text-right">
+                    <div class="col-xs-2">
+                        <i class="dashboard-widget-icon {{ widget.icon }}"></i>
+                    </div>
                     <strong>{{ widget.label }}</strong>
                     <div class="huge">
                         {% if widget.func %}
