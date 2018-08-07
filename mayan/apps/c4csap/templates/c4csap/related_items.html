@@ -41,7 +41,7 @@
             <td align="right">已采用的知识库文章:</td>
             <td align="left">
                 {% for related in relationships %}
-                <a class="normal" href="{% url 'c4csap:document_online_viewer' related.document.id %}" target="_blank">{{related.document}}</a>{% if not forloop.last %}，{% endif %}&nbsp;
+                <a class="normal" href="{% url 'raw_viewer:document_online_viewer' related.document.id %}" target="_blank">{{related.document}}</a>{% if not forloop.last %}，{% endif %}&nbsp;
                 {% empty %}
                 【无】
                 {% endfor %}

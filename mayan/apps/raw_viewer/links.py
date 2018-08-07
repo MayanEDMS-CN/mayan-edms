@@ -7,15 +7,15 @@ from navigation import Link
 
 link_document_online_viewer = Link(
     text = _("Raw"), tags=('new_window',), icon='fa fa-cloud',
-    view="c4csap:document_online_viewer", args="object.pk"
+    view="raw_viewer:document_online_viewer", args="object.pk"
 )
 
 link_document_version_online_viewer = Link(
     text = _("Raw"), tags=('new_window',), icon='fa fa-cloud',
-    view="c4csap:document_version_online_viewer", args="object.pk"
+    view="raw_viewer:document_version_online_viewer", args="object.pk"
 )
 
 link_document_embbed_viewer = Link(
     text = _("Embbed Preview"), icon='fa fa-book',
-    view="c4csap:document_embbed_viewer", args="object.pk"
+    view="raw_viewer:document_embbed_viewer", args="object.pk"
 )

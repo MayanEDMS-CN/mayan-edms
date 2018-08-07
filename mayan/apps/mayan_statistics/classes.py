@@ -16,7 +16,7 @@ class StatisticNamespace(object):
 
     @classmethod
     def get_all(cls):
-        return cls._registry.values()
+        return list(cls._registry.values())
 
     @classmethod
     def get(cls, slug):

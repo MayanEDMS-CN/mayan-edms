@@ -109,6 +109,7 @@ INSTALLED_APPS = (
     'c4csap',
     'related_c4c_tickets',
     'detailed_widgets',
+    'raw_viewer',
 )
 
 MIDDLEWARE_CLASSES = (
