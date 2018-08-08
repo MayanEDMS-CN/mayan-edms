@@ -39,5 +39,5 @@ class PagesPreviewJsonForDocumentListView(View):
                         "page_number": page.page_number
                     }
                 })
-        response = HttpResponse(json.dumps(result), content_type="application/json")
-        return response
+                
+        return HttpResponse(json.dumps(result), content_type="application/json")
