@@ -155,23 +155,23 @@ MayanImage.intialize = function () {
         nextEffect  : 'none',
         titleShow   : true,
         type        : 'image',
+        autoResize  : true,
 
         // 放弃内置 helper 的放大功能
         // helpers: {
         //     buttons: {}
         // },
 
-        // 使用以下代码本引入放大效果，
-
-        autoResize  : true,
-        afterLoad  : function () {
-            $.extend(this, {
-                aspectRatio : true,
-                type    : 'html',
-                width   : '80%',
-                content : '<div class="fancybox-image" style="background-image:url(' + this.href + '); background-size: cover; background-position:50% 50%;background-repeat:no-repeat;height:100%;width:100%;" /></div>'
-            });
-        }
+        // 放弃使用以下代码本引入放大效果，
+        //
+        // afterLoad  : function () {
+        //     $.extend(this, {
+        //         aspectRatio : true,
+        //         type    : 'html',
+        //         width   : '80%',
+        //         content : '<div class="fancybox-image" style="background-image:url(' + this.href + '); background-size: cover; background-position:50% 50%;background-repeat:no-repeat;height:100%;width:100%;" /></div>'
+        //     });
+        // }
     });
 
    $('img.lazy-load').lazyload({

@@ -96,6 +96,7 @@ from .widgets import (
     DocumentVersionThumbnailWidget
 )
 
+from preview_pages.widgets import DocumentThumbnailWithPagesPreviewWidget
 
 class DocumentsApp(MayanAppConfig):
     has_tests = True
@@ -182,8 +183,11 @@ class DocumentsApp(MayanAppConfig):
 
         # Document and document page thumbnail widget
         document_page_thumbnail_widget = DocumentPageThumbnailWidget()
-        document_thumbnail_widget = DocumentThumbnailWidget()
         document_version_thumbnail_widget = DocumentVersionThumbnailWidget()
+
+        # Modified by twister, showing doc's own pages in the fancybox, not other docs' first pages.
+        # document_thumbnail_widget = DocumentThumbnailWidget()
+        document_thumbnail_widget = DocumentThumbnailWithPagesPreviewWidget()
 
         # Document
         SourceColumn(
