@@ -166,11 +166,10 @@ MayanImage.intialize = function () {
         autoResize  : true,
         afterLoad  : function () {
             $.extend(this, {
-                aspectRatio : false,
+                aspectRatio : true,
                 type    : 'html',
-                width   : '100%',
-                height  : '100%',
-                content : '<div class="fancybox-image" style="background-image:url(' + this.href + '); background-size: cover; background-position:35% 35%;background-repeat:no-repeat;height:70%;width:70%;" /></div>'
+                width   : '80%',
+                content : '<div class="fancybox-image" style="background-image:url(' + this.href + '); background-size: cover; background-position:50% 50%;background-repeat:no-repeat;height:100%;width:100%;" /></div>'
             });
         }
     });
