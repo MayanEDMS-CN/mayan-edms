@@ -9,6 +9,17 @@
 
 {% block base_title %}{% trans 'Login' %}{% endblock %}
 
+{% block stylesheets %}
+<style>
+    .footer {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+    	bottom: 15px;
+    }
+</style>
+{% endblock %}
+
 {% block project_name %}{% endblock %}
 
 {% block content_plain %}
@@ -62,4 +73,5 @@
             </div>
         </div>
     </div>
+<div class="footer"><a href="http://www.miitbeian.gov.cn/">蜀ICP备 16036509 号</a></div>
 {% endblock %}
