@@ -4,8 +4,9 @@ from django.conf.urls import url
 
 from .views import (
     RecentChangedDocumentListView, RecentAddedDocumentListView, \
-    TaggedImportantDocumentRedirect, EmptyTaggedImportantDocumentListView, \
-    MessageDisplayDetail, MessageDisplayList
+    TaggedDocumentDashboardRedirect, EmptyTaggedDocumentListDashboardView, \
+    MessageDisplayDetail, MessageDisplayList, DashboardDisplayedTagAddConfirmView, \
+    DashboardDisplayedTagRemoveConfirmView
 )
 
 urlpatterns = [
@@ -20,14 +21,14 @@ urlpatterns = [
         name='recent_added_list'
     ),
     url(
-        r'^important/empty/$',
-        EmptyTaggedImportantDocumentListView.as_view(),
-        name='empty_important_list'
+        r'^tagged/(?P<pk>\d+)/empty/$',
+        EmptyTaggedDocumentListDashboardView.as_view(),
+        name='empty_tagged_list'
     ),
     url(
-        r'^important/rediect/$',
-        TaggedImportantDocumentRedirect.as_view(),
-        name='redirect_to_important_list'
+        r'^tagged/(?P<pk>\d+)/rediect/$',
+        TaggedDocumentDashboardRedirect.as_view(),
+        name='redirect_to_tagged_list'
     ),
     url(
         r'^motd/list/$',
@@ -38,5 +39,15 @@ urlpatterns = [
         r'^motd/(?P<pk>\d+)/detail/$',
         MessageDisplayDetail.as_view(),
         name='motd_detail'
+    ),
+    url(
+        r'^dashboard/add/tag/(?P<pk>\d+)/$',
+        DashboardDisplayedTagAddConfirmView.as_view(),
+        name='dashboard_add_tag'
+    ),
+    url(
+        r'^dashboard/remove/tag/(?P<pk>\d+)/$',
+        DashboardDisplayedTagRemoveConfirmView.as_view(),
+        name='dashboard_remove_tag'
     ),
 ]

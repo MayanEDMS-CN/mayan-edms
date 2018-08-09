@@ -6,6 +6,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.template.loader import render_to_string
 
 from common.classes import DashboardWidget
+from common.dashboards import dashboard_main
 
 
 class BaseDetailedWidgetItems(object):
@@ -152,27 +153,33 @@ detailed_widget_message_of_today = DashboardWidget(
     )
 )
 
-# 重点知识
+# 打标签的知识
 
-class TaggedImportantDocumentItems(BaseDetailedWidgetItems):
+class TaggedDocumentDashboardItems(BaseDetailedWidgetItems):
+
+    def __init__(self, tag, *args, **kwargs):
+        super(TaggedDocumentDashboardItems, self).__init__(*args, **kwargs)
+        self.tag = tag
 
     def get_queryset(self):
-        Tag = apps.get_model(
-            app_label='tags', model_name='Tag'
-        )
-        important = Tag.objects.filter(label='重点知识').last()
-        if important is not None:
-            return important.documents.defer(
+        if self.tag is not None:
+            return self.tag.documents.defer(
                 'description', 'uuid', 'language', 'in_trash',
                 'deleted_date_time'
             ).filter(is_stub=False).order_by('-date_added')
         return self.queryset.none()
 
 
-detailed_widget_tagged_important_documents = DashboardWidget(
-    func=lambda :TaggedImportantDocumentItems().as_string(), icon='fa fa-tags',
-    label=_('Tagged Important Documents'),
-    link=reverse_lazy(
-        'detailed_widgets:redirect_to_important_list',
-    )
-)
+def add_tag_to_dashboard(tag):
+    dashboard_main.add_widget(DashboardWidget(
+        func=lambda: TaggedDocumentDashboardItems(tag).as_string(), icon='fa fa-tags',
+        label="%s" % tag,
+        link=reverse_lazy(
+            'detailed_widgets:redirect_to_tagged_list', kwargs={"pk": tag.id}
+        )
+    ))
+
+def remove_tag_from_dashboard(tag):
+    for widget in list(dashboard_main.widgets.keys()):
+        if widget.label == "%s" % tag:
+            del dashboard_main.widgets[widget]

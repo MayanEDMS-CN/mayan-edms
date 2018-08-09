@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 from django.apps import apps
+from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
 from acls import ModelPermission
@@ -13,11 +14,12 @@ from common.dashboards import dashboard_main
 from documents.dashboard_widgets import widget_document_types, widget_documents_in_trash, \
     widget_new_documents_this_month, widget_pages_per_month, widget_total_documents
 from checkouts.dashboard_widgets import widget_checkouts
+from navigation import SourceColumn
 from .dashboard_widgets import detailed_widget_total_documents, detailed_widget_recent_changed_documents, \
     detailed_widget_checkout_documents, detailed_widget_recent_added_documents, \
-    detailed_widget_recent_viewed_documents, detailed_widget_tagged_important_documents, \
+    detailed_widget_recent_viewed_documents, add_tag_to_dashboard, \
     detailed_widget_message_of_today
-
+from .links import link_dashboard_add_tag, link_dashboard_remove_tag
 
 class DetailedWidgetApp(MayanAppConfig):
     has_tests = True
@@ -28,9 +30,20 @@ class DetailedWidgetApp(MayanAppConfig):
 
         super(DetailedWidgetApp, self).ready()
 
-        Document = apps.get_model(
-            app_label='documents', model_name='Document'
+        Tag = apps.get_model(
+            app_label='tags', model_name='Tag'
         )
+
+        DashboardDisplayedTag = apps.get_model(
+            app_label='detailed_widgets', model_name='DashboardDisplayedTag'
+        )
+
+        SourceColumn(
+            source=Tag, label=_('On Dashboard'),
+            func=lambda context:_("True") \
+                if DashboardDisplayedTag.objects.is_tag_displayed(context["object"]) else _("False")
+        )
+
 
         dashboard_main.remove_widget(widget_total_documents)
         dashboard_main.remove_widget(widget_pages_per_month)
@@ -42,5 +55,11 @@ class DetailedWidgetApp(MayanAppConfig):
         dashboard_main.add_widget(detailed_widget_recent_added_documents)
         dashboard_main.add_widget(detailed_widget_recent_viewed_documents)
         dashboard_main.add_widget(detailed_widget_recent_changed_documents)
-        dashboard_main.add_widget(detailed_widget_tagged_important_documents)
         dashboard_main.add_widget(detailed_widget_message_of_today)
+
+        for displayed in DashboardDisplayedTag.objects.all():
+            add_tag_to_dashboard(displayed.tag)
+
+        menu_object.bind_links(
+            links=(link_dashboard_remove_tag, link_dashboard_add_tag), sources=(Tag,)
+        )

@@ -1,12 +1,19 @@
 from __future__ import absolute_import, unicode_literals
 
 from django.apps import apps
+from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import RedirectView, TemplateView
+from django.contrib import messages
 
+from common.generics import ConfirmView
 from documents.views.document_views import DocumentListView
 from motd.models import Message
+from tags.models import Tag as DocumentTag
+
+from .models import DashboardDisplayedTag
+from .dashboard_widgets import add_tag_to_dashboard, remove_tag_from_dashboard
 
 
 class MessageDisplay(TemplateView):
@@ -70,29 +77,90 @@ class RecentAddedDocumentListView(DocumentListView):
         return context
 
 
-class EmptyTaggedImportantDocumentListView(DocumentListView):
+class EmptyTaggedDocumentListDashboardView(DocumentListView):
 
     def get_document_queryset(self):
-        qs = super(EmptyTaggedImportantDocumentListView, self).get_document_queryset()
+        qs = super(EmptyTaggedDocumentListDashboardView, self).get_document_queryset()
         return qs.none()
 
     def get_extra_context(self):
-        context = super(EmptyTaggedImportantDocumentListView, self).get_extra_context()
-        context.update(
-            {
-                'title': _('Tagged Important Documents'),
-            }
+        context = super(EmptyTaggedDocumentListDashboardView, self).get_extra_context()
+        Tag = apps.get_model(
+            app_label='tags', model_name='Tag'
         )
+        pk = self.kwargs["pk"]
+        tag = Tag.objects.filter(pk=pk).last()
+
+        if tag is not None:
+            context.update(
+                {
+                    'title': _('Tagged %(tag)s Documents') % tag,
+                }
+            )
         return context
 
 
-class TaggedImportantDocumentRedirect(RedirectView):
+class TaggedDocumentDashboardRedirect(RedirectView):
 
     def get_redirect_url(self, *args, **kwargs):
         Tag = apps.get_model(
             app_label='tags', model_name='Tag'
         )
-        important = Tag.objects.filter(label='重点知识').last()
-        if important is not None:
-            return reverse_lazy("tags:tag_tagged_item_list", kwargs={"pk":important.id})
-        return reverse_lazy("detailed_widgets:empty_important_list")
+        pk = kwargs["pk"]
+        tag = Tag.objects.filter(pk=pk).last()
+        if tag is not None:
+            return reverse_lazy("tags:tag_tagged_item_list", kwargs={"pk":pk})
+        return reverse_lazy("detailed_widgets:empty_tagged_list", kwargs={"pk":pk})
+
+
+class DashboardDisplayedTagRemoveConfirmView(ConfirmView):
+    extra_context = {
+        'title': _('Remove the selected Tag\'s documents from the dashboard?')
+    }
+
+    def object_action(self, instance):
+        DashboardDisplayedTag.objects.remove_tag(instance)
+        remove_tag_from_dashboard(instance)
+
+    def view_action(self):
+        instance = get_object_or_404(DocumentTag, pk=self.kwargs['pk'])
+        if DashboardDisplayedTag.objects.is_tag_displayed(instance):
+            self.object_action(instance=instance)
+            messages.success(
+                self.request, _('Tag %(tag)s \'s documents are successfully removed from the dashboard.') % {
+                    'tag': instance
+                }
+            )
+        else:
+            messages.error(
+                self.request, _("Tag %(tag)s\'s documents are not on the dashboard.") % {
+                    'tag': instance
+                }
+            )
+
+
+
+class DashboardDisplayedTagAddConfirmView(ConfirmView):
+    extra_context = {
+        'title': _('Add the selected Tag\'s documents to the dashboard?')
+    }
+
+    def object_action(self, instance):
+        DashboardDisplayedTag.objects.add_tag(instance)
+        add_tag_to_dashboard(instance)
+
+    def view_action(self):
+        instance = get_object_or_404(DocumentTag, pk=self.kwargs['pk'])
+        if DashboardDisplayedTag.objects.is_tag_displayed(instance):
+            messages.error(
+                self.request, _("Tag %(tag)s\'s documents are already added to the dashboard.") % {
+                    'tag': instance
+                }
+            )
+        else:
+            self.object_action(instance=instance)
+            messages.success(
+                self.request, _('Tag %(tag)s \'s documents are successfully added to the dashboard.') % {
+                    'tag': instance
+                }
+            )
