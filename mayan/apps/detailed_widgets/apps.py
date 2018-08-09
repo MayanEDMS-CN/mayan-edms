@@ -10,6 +10,7 @@ from common import (
     MayanAppConfig, menu_facet, menu_main, menu_multi_item, menu_object,
     menu_sidebar, menu_secondary
 )
+from documents.menus import menu_documents
 from common.dashboards import dashboard_main
 from documents.dashboard_widgets import widget_document_types, widget_documents_in_trash, \
     widget_new_documents_this_month, widget_pages_per_month, widget_total_documents
@@ -18,8 +19,9 @@ from navigation import SourceColumn
 from .dashboard_widgets import detailed_widget_total_documents, detailed_widget_recent_changed_documents, \
     detailed_widget_checkout_documents, detailed_widget_recent_added_documents, \
     detailed_widget_recent_viewed_documents, add_tag_to_dashboard, \
-    detailed_widget_message_of_today
-from .links import link_dashboard_add_tag, link_dashboard_remove_tag
+    detailed_widget_message_of_today, detailed_widget_favourite_document
+from .links import link_dashboard_add_tag, link_dashboard_remove_tag, \
+    link_document_add_favourite, link_document_remove_favourite, link_my_favourite_documents
 
 class DetailedWidgetApp(MayanAppConfig):
     has_tests = True
@@ -29,6 +31,10 @@ class DetailedWidgetApp(MayanAppConfig):
     def ready(self):
 
         super(DetailedWidgetApp, self).ready()
+
+        Document = apps.get_model(
+            app_label='documents', model_name='Document'
+        )
 
         Tag = apps.get_model(
             app_label='tags', model_name='Tag'
@@ -56,6 +62,7 @@ class DetailedWidgetApp(MayanAppConfig):
         dashboard_main.add_widget(detailed_widget_recent_viewed_documents)
         dashboard_main.add_widget(detailed_widget_recent_changed_documents)
         dashboard_main.add_widget(detailed_widget_message_of_today)
+        dashboard_main.add_widget(detailed_widget_favourite_document)
 
         for displayed in DashboardDisplayedTag.objects.all():
             add_tag_to_dashboard(displayed.tag)
@@ -63,3 +70,12 @@ class DetailedWidgetApp(MayanAppConfig):
         menu_object.bind_links(
             links=(link_dashboard_remove_tag, link_dashboard_add_tag), sources=(Tag,)
         )
+
+        menu_object.bind_links(
+            links=(link_document_add_favourite, link_document_remove_favourite), sources=(Document,)
+        )
+
+        menu_documents.bind_links(
+            links=(link_my_favourite_documents,)
+        )
+

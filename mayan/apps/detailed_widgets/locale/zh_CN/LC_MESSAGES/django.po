@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-07 16:16+0800\n"
+"POT-Creation-Date: 2018-08-09 16:45+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,34 +17,152 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\apps.py:25
+#: apps.py:29
 msgid "Detailed Widget"
 msgstr "详情列表组件"
 
-#: .\dashboard_widgets.py:48
+#: apps.py:48
+msgid "On Dashboard"
+msgstr "显示在首页"
+
+#: apps.py:49
+msgid "True"
+msgstr "是"
+
+#: apps.py:50
+msgid "False"
+msgstr "否"
+
+#: dashboard_widgets.py:55
 msgid "Total documents"
 msgstr "所有文档"
 
-#: .\dashboard_widgets.py:65 .\views.py:51
+#: dashboard_widgets.py:72 views.py:61
 msgid "Recent Changed Documents"
 msgstr "最近修改过的文档"
 
-#: .\dashboard_widgets.py:84 .\views.py:67
+#: dashboard_widgets.py:91 views.py:77
 msgid "Recent Added Documents"
 msgstr "最近新增的文档"
 
-#: .\dashboard_widgets.py:103
+#: dashboard_widgets.py:110
 msgid "Recent Viewed Documents"
 msgstr "最近查看过的文档"
 
-#: .\dashboard_widgets.py:126
+#: dashboard_widgets.py:133
 msgid "Checkout Documents"
 msgstr "签出的文档"
 
-#: .\dashboard_widgets.py:149 .\views.py:18
+#: dashboard_widgets.py:156 views.py:28
 msgid "Message of Today"
 msgstr "通知消息"
 
-#: .\dashboard_widgets.py:174 .\views.py:83
-msgid "Tagged Important Documents"
+#: dashboard_widgets.py:220
+msgid "My Favourite"
+msgstr "我的收藏"
+
+#: links.py:19
+msgid "Remove From Dashboard"
+msgstr "从首页隐藏"
+
+#: links.py:25
+msgid "Add To Dashboard"
+msgstr "显示到首页"
+
+#: links.py:42
+msgid "Remove From My Favourites"
+msgstr "从收藏移除"
+
+#: links.py:48
+msgid "Add To My Favourites"
+msgstr "添加到收藏"
+
+#: links.py:53
+msgid "My Favourites"
+msgstr "我的收藏"
+
+#: models.py:18
+msgid "Document Tag"
+msgstr "文档标签"
+
+#: models.py:22 models.py:45
+msgid "Added Datetime"
+msgstr "添加时间"
+
+#: models.py:37
+msgid "User"
+msgstr "用户"
+
+#: models.py:43
+#, fuzzy
+#| msgid "Checkout Documents"
+msgid "Document"
+msgstr "签出的文档"
+
+#: views.py:100
+#, fuzzy, python-format
+#| msgid "Tagged Important Documents"
+msgid "Tagged %(tag)s Documents"
 msgstr "重点知识"
+
+#: views.py:122
+msgid "Remove the selected Tag's documents from the dashboard?"
+msgstr "选中标签的文档不再显示在首页？"
+
+#: views.py:134
+#, python-format
+msgid "Tag %(tag)s 's documents are successfully removed from the dashboard."
+msgstr "标签 %(tag)s 的文档已不在首页显示。"
+
+#: views.py:140
+#, python-format
+msgid "Tag %(tag)s's documents are not on the dashboard."
+msgstr "标签 %(tag)s 的文档本就不在首页显示。"
+
+#: views.py:150
+msgid "Add the selected Tag's documents to the dashboard?"
+msgstr "把选中标签的文档显示到首页？"
+
+#: views.py:161
+#, python-format
+msgid "Tag %(tag)s's documents are already added to the dashboard."
+msgstr "标签 %(tag)s 的文档已在首页显示。"
+
+#: views.py:168
+#, python-format
+msgid "Tag %(tag)s 's documents are successfully added to the dashboard."
+msgstr "标签 %(tag)s 的文档成功显示到首页。"
+
+#: views.py:177
+msgid "Remove the selected document from your favourites?"
+msgstr "选中文档从收藏移除？"
+
+#: views.py:188
+#, python-format
+msgid "%(document)s is successfully removed from your favourites."
+msgstr "%(document)s 已成功从收藏移除。"
+
+#: views.py:194
+#, python-format
+msgid "%(document)s is not in your favourites."
+msgstr "%(document)s 不在收藏中。"
+
+#: views.py:203
+msgid "Add the selected document to your favourites?"
+msgstr "选中文档加入收藏？"
+
+#: views.py:221
+#, python-format
+msgid "%(document)s is already your favourite."
+msgstr "%(document)s 已在收藏中。"
+
+#: views.py:228
+#, python-format
+msgid "%(document)s is successfully added to your favourite."
+msgstr "%(document)s 已成功加入收藏。"
+
+#: views.py:244
+#, fuzzy
+#| msgid "Checkout Documents"
+msgid "My Favourite Documents"
+msgstr "我的收藏"

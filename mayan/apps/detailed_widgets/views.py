@@ -7,12 +7,15 @@ from django.utils.translation import ugettext_lazy as _
 from django.views.generic import RedirectView, TemplateView
 from django.contrib import messages
 
+from acls.models import AccessControlList
 from common.generics import ConfirmView
+from documents.models import Document
+from documents.permissions import permission_document_view
 from documents.views.document_views import DocumentListView
 from motd.models import Message
 from tags.models import Tag as DocumentTag
 
-from .models import DashboardDisplayedTag
+from .models import DashboardDisplayedTag, FavouriteDocument
 from .dashboard_widgets import add_tag_to_dashboard, remove_tag_from_dashboard
 
 
@@ -114,6 +117,7 @@ class TaggedDocumentDashboardRedirect(RedirectView):
 
 
 class DashboardDisplayedTagRemoveConfirmView(ConfirmView):
+
     extra_context = {
         'title': _('Remove the selected Tag\'s documents from the dashboard?')
     }
@@ -141,6 +145,7 @@ class DashboardDisplayedTagRemoveConfirmView(ConfirmView):
 
 
 class DashboardDisplayedTagAddConfirmView(ConfirmView):
+
     extra_context = {
         'title': _('Add the selected Tag\'s documents to the dashboard?')
     }
@@ -164,3 +169,79 @@ class DashboardDisplayedTagAddConfirmView(ConfirmView):
                     'tag': instance
                 }
             )
+
+
+class FavouriteDocumentRemoveConfirmView(ConfirmView):
+
+    extra_context = {
+        'title': _('Remove the selected document from your favourites?')
+    }
+
+    def object_action(self, instance):
+        FavouriteDocument.objects.remove_users_favourite(self.request.user, instance)
+
+    def view_action(self):
+        instance = get_object_or_404(Document, pk=self.kwargs['pk'])
+        if FavouriteDocument.objects.is_users_favourite(self.request.user, instance) :
+            self.object_action(instance=instance)
+            messages.success(
+                self.request, _('%(document)s is successfully removed from your favourites.') % {
+                    'document': instance
+                }
+            )
+        else:
+            messages.error(
+                self.request, _("%(document)s is not in your favourites.") % {
+                    'document': instance
+                }
+            )
+
+
+class FavouriteDocumentAddConfirmView(ConfirmView):
+
+    extra_context = {
+        'title': _('Add the selected document to your favourites?')
+    }
+
+    def object_action(self, instance):
+        source_document = get_object_or_404(
+            Document.passthrough, pk=instance.pk
+        )
+
+        AccessControlList.objects.check_access(
+            permissions=permission_document_view, user=self.request.user,
+            obj=source_document
+        )
+        FavouriteDocument.objects.add_users_favourite(self.request.user, instance)
+
+    def view_action(self):
+        instance = get_object_or_404(Document, pk=self.kwargs['pk'])
+        if FavouriteDocument.objects.is_users_favourite(self.request.user, instance):
+            messages.error(
+                self.request, _("%(document)s is already your favourite.") % {
+                    'document': instance
+                }
+            )
+        else:
+            self.object_action(instance=instance)
+            messages.success(
+                self.request, _('%(document)s is successfully added to your favourite.') % {
+                    'document': instance
+                }
+            )
+
+
+class FavouriteDocumentListView(DocumentListView):
+
+    def get_document_queryset(self):
+        qs = super(FavouriteDocumentListView, self).get_document_queryset().filter(favouritees__user=self.request.user)
+        return qs.order_by('-favouritees__added_datetime')
+
+    def get_extra_context(self):
+        context = super(FavouriteDocumentListView, self).get_extra_context()
+        context.update(
+            {
+                'title': _('My Favourite Documents'),
+            }
+        )
+        return context

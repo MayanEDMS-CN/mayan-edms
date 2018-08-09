@@ -1,4 +1,5 @@
 {% load i18n %}
+{% load detailed_widgets_tags %}
 
 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 match-height">
     <div class="panel panel-secondary dashboard-widget">
@@ -11,7 +12,11 @@
                     <strong>{{ widget.label }}</strong>
                     <div class="huge">
                         {% if widget.func %}
-                            {{ widget.func }}
+                            {% if widget.func == 'user_favourites_items' %}
+                                {% user_favourites_items %}
+                            {% else %}
+                                {{ widget.func }}
+                            {% endif %}
                         {% else %}
                             {{ widget.queryset.count }}
                         {% endif %}

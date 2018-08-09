@@ -3,10 +3,11 @@ from __future__ import unicode_literals
 from django.conf.urls import url
 
 from .views import (
-    RecentChangedDocumentListView, RecentAddedDocumentListView, \
-    TaggedDocumentDashboardRedirect, EmptyTaggedDocumentListDashboardView, \
-    MessageDisplayDetail, MessageDisplayList, DashboardDisplayedTagAddConfirmView, \
-    DashboardDisplayedTagRemoveConfirmView
+    RecentChangedDocumentListView, RecentAddedDocumentListView,
+    TaggedDocumentDashboardRedirect, EmptyTaggedDocumentListDashboardView,
+    MessageDisplayDetail, MessageDisplayList, DashboardDisplayedTagAddConfirmView,
+    DashboardDisplayedTagRemoveConfirmView, FavouriteDocumentAddConfirmView,
+    FavouriteDocumentRemoveConfirmView, FavouriteDocumentListView
 )
 
 urlpatterns = [
@@ -49,5 +50,20 @@ urlpatterns = [
         r'^dashboard/remove/tag/(?P<pk>\d+)/$',
         DashboardDisplayedTagRemoveConfirmView.as_view(),
         name='dashboard_remove_tag'
+    ),
+    url(
+        r'^document/(?P<pk>\d+)/add/favourite/$',
+        FavouriteDocumentAddConfirmView.as_view(),
+        name='document_add_favourite'
+    ),
+    url(
+        r'^document/(?P<pk>\d+)/remove/favourite/$',
+        FavouriteDocumentRemoveConfirmView.as_view(),
+        name='document_remove_favourite'
+    ),
+    url(
+        r'^favourite/documents/$',
+        FavouriteDocumentListView.as_view(),
+        name='favourite_document_list'
     ),
 ]

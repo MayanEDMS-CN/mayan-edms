@@ -18,3 +18,24 @@ class DashboardDisplayedTagManager(models.Manager):
         ins = self.model.objects.filter(tag=tag).last()
         if ins is not None:
             ins.delete()
+
+
+class FavouriteDocumentManager(models.Manager):
+
+    def is_users_favourite(self, user, document):
+        num  = self.model.objects.filter(
+            user=user, document=document
+        ).count()
+        return num > 0
+
+    def add_users_favourite(self, user, document):
+        if not self.is_users_favourite(user, document):
+            self.model.objects.create(
+                user=user, document=document
+            )
+
+    def remove_users_favourite(self, user, document):
+        fav = self.model.objects.filter(user=user, document=document).last()
+        if fav is not None:
+            fav.delete()
+

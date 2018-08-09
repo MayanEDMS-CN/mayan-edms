@@ -1,5 +1,8 @@
 from __future__ import absolute_import, unicode_literals
 
+import logging
+import json
+
 from django.apps import apps
 from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
@@ -7,6 +10,9 @@ from django.template.loader import render_to_string
 
 from common.classes import DashboardWidget
 from common.dashboards import dashboard_main
+
+
+logger = logging.getLogger(__file__)
 
 
 class BaseDetailedWidgetItems(object):
@@ -183,3 +189,36 @@ def remove_tag_from_dashboard(tag):
     for widget in list(dashboard_main.widgets.keys()):
         if widget.label == "%s" % tag:
             del dashboard_main.widgets[widget]
+
+
+# 我的收藏
+# 因为 widget 无法获取 context["user"]， 所以，必须
+# 配合 templatetags.detailed_widgets_tags.user_favourites_items 使用
+# 还要改 templates
+
+class FavouriteDocumentDashboardItems(BaseDetailedWidgetItems):
+
+    def __init__(self, user, *args, **kwargs):
+        super(FavouriteDocumentDashboardItems, self).__init__(*args, **kwargs)
+        self.user = user
+
+    def get_queryset(self):
+        qs = super(FavouriteDocumentDashboardItems, self).get_queryset()
+        return qs.filter(favouritees__user=self.user).order_by("-favouritees__added_datetime")
+
+
+def my_favourite_documents(context):
+    user = context["user"]
+    return FavouriteDocumentDashboardItems(
+            user,
+            template_name="detailed_widgets/detailed_dashboard_widget_items_favourite_added.html"
+        ).as_string()
+
+
+detailed_widget_favourite_document = DashboardWidget(
+    func = lambda : "user_favourites_items",
+    label = _("My Favourite"), icon='fa fa-star-o',
+    link=reverse_lazy(
+        "detailed_widgets:favourite_document_list"
+    )
+)
