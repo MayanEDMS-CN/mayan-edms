@@ -39,7 +39,7 @@ msgstr "所有文档"
 
 #: dashboard_widgets.py:72 views.py:61
 msgid "Recent Changed Documents"
-msgstr "最近修改过的文档"
+msgstr "版本更新过的文档"
 
 #: dashboard_widgets.py:91 views.py:77
 msgid "Recent Added Documents"
