@@ -139,7 +139,7 @@ detailed_widget_checkout_documents = DashboardWidget(
 
 # 今日消息
 
-class MesageOfTodayItems(BaseDetailedWidgetItems):
+class MessageOfTodayItems(BaseDetailedWidgetItems):
 
     def get_queryset(self):
         Message = apps.get_model(
@@ -149,7 +149,7 @@ class MesageOfTodayItems(BaseDetailedWidgetItems):
 
 
 detailed_widget_message_of_today = DashboardWidget(
-    func=lambda: MesageOfTodayItems(
+    func=lambda: MessageOfTodayItems(
             template_name="detailed_widgets/detailed_dashboard_widget_motd.html"
         ).as_string(),
     icon='fa fa-bell-o',
@@ -176,14 +176,14 @@ class TaggedDocumentDashboardItems(BaseDetailedWidgetItems):
         return self.queryset.none()
 
 
-def add_tag_to_dashboard(tag):
+def add_tag_to_dashboard(tag, order=0):
     dashboard_main.add_widget(DashboardWidget(
         func=lambda: TaggedDocumentDashboardItems(tag).as_string(), icon='fa fa-tags',
         label="%s" % tag,
         link=reverse_lazy(
             'detailed_widgets:redirect_to_tagged_list', kwargs={"pk": tag.id}
         )
-    ))
+    ), order=order)
 
 def remove_tag_from_dashboard(tag):
     for widget in list(dashboard_main.widgets.keys()):

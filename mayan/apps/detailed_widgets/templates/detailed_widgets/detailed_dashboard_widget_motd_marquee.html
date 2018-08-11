@@ -1,0 +1,7 @@
+{% if documents.count > 0 %}
+<marquee behavior="scroll" scrollamount="3" direction="left" class="col-lg-12 col-xs-12">
+{% for message in documents %}
+    <a href="{% url 'detailed_widgets:motd_detail' message.id %}" ><embed>{{ message.label }}:</embed>{{ message.message }}</a>
+{% endfor %}
+</marquee>
+{% endif %}

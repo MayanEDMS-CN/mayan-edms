@@ -5,6 +5,7 @@
 
 {% load common_tags %}
 {% load navigation_tags %}
+{% load detailed_widgets_tags %}
 
 {% block title %}{% trans 'Dashboard' %}{% endblock %}
 
@@ -74,6 +75,7 @@
 
     {% get_dashboard 'main' as dashboard %}
     <div class="row">
+        {% motd_marquee %}
         {% for widget in dashboard.get_widgets %}
             {% include 'appearance/dashboard_widget.html' %}
         {% endfor %}
