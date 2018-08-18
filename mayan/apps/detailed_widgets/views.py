@@ -152,7 +152,7 @@ class DashboardDisplayedTagAddConfirmView(ConfirmView):
 
     def object_action(self, instance):
         DashboardDisplayedTag.objects.add_tag(instance)
-        add_tag_to_dashboard(instance)
+        add_tag_to_dashboard(instance, order=4)
 
     def view_action(self):
         instance = get_object_or_404(DocumentTag, pk=self.kwargs['pk'])
