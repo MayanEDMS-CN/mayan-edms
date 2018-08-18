@@ -20,7 +20,7 @@ $(function(){
                anchor.attr("data-href", href);
                anchor.attr("data-images", JSON.stringify(jsonData));
 
-               // pre load images, but no more than first two.
+               // pre load images, but no more than first two 
                for(var i=0;((i<jsonData.length)&&(i<2));i++){
                    var obj = jsonData[i];
                    var img = new Image();
